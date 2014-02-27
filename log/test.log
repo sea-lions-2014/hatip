@@ -1,4 +1,9 @@
 Connecting to database specified by database.yml
+<<<<<<< HEAD
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+=======
   [1m[36m (0.1ms)[0m  [1mBEGIN[0m
 PG::UndefinedTable: ERROR:  relation "users" does not exist
 LINE 5:              WHERE a.attrelid = '"users"'::regclass
@@ -363,3 +368,4 @@ Connecting to database specified by database.yml
   [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
   [1m[35m (0.2ms)[0m  BEGIN
   [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+>>>>>>> 776240ea0d188c4212f13b3b9de037ae3f161a1c

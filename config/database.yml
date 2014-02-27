@@ -17,4 +17,3 @@ test:
   database: hatip_test
   pool: 5
   timeout: 5000
-
