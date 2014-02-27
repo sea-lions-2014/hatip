@@ -49,16 +49,15 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.7.0)
-<<<<<<< HEAD
+
     database_cleaner (1.2.0)
-=======
+
     devise (3.2.3)
       bcrypt-ruby (~> 3.0)
       orm_adapter (~> 0.1)
       railties (>= 3.2.6, < 5)
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
->>>>>>> 776240ea0d188c4212f13b3b9de037ae3f161a1c
     diff-lcs (1.2.5)
     erubis (2.7.0)
     execjs (2.0.2)
@@ -83,12 +82,9 @@ GEM
     mime-types (1.25.1)
     mini_portile (0.5.2)
     multi_json (1.8.4)
-<<<<<<< HEAD
     nokogiri (1.6.1)
       mini_portile (~> 0.5.0)
-=======
     orm_adapter (0.5.0)
->>>>>>> 776240ea0d188c4212f13b3b9de037ae3f161a1c
     pg (0.17.1)
     polyglot (0.3.4)
     rack (1.4.5)
@@ -128,23 +124,21 @@ GEM
       rspec-core (~> 2.14.0)
       rspec-expectations (~> 2.14.0)
       rspec-mocks (~> 2.14.0)
-<<<<<<< HEAD
+
     rubyzip (1.1.0)
-=======
->>>>>>> 776240ea0d188c4212f13b3b9de037ae3f161a1c
+
     sass (3.2.14)
     sass-rails (3.2.6)
       railties (~> 3.2.0)
       sass (>= 3.1.10)
       tilt (~> 1.3)
-<<<<<<< HEAD
+
     selenium-webdriver (2.39.0)
       childprocess (>= 0.2.5)
       multi_json (~> 1.0)
       rubyzip (~> 1.0)
       websocket (~> 1.0.4)
-=======
->>>>>>> 776240ea0d188c4212f13b3b9de037ae3f161a1c
+
     shoulda-matchers (2.5.0)
       activesupport (>= 3.0.0)
     sprockets (2.2.2)
@@ -163,14 +157,14 @@ GEM
     uglifier (2.4.0)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
-<<<<<<< HEAD
+
     websocket (1.0.7)
     xpath (2.0.0)
       nokogiri (~> 1.3)
-=======
+
     warden (1.2.3)
       rack (>= 1.0)
->>>>>>> 776240ea0d188c4212f13b3b9de037ae3f161a1c
+
 
 PLATFORMS
   ruby
@@ -178,21 +172,20 @@ PLATFORMS
 DEPENDENCIES
   capybara
   coffee-rails (~> 3.2.1)
-<<<<<<< HEAD
+
   database_cleaner
   factory_girl_rails
   faker
-=======
+
   devise
->>>>>>> 776240ea0d188c4212f13b3b9de037ae3f161a1c
+
   jquery-rails
   pg
   rails (= 3.2.14)
   rspec-rails
   sass-rails (~> 3.2.3)
-<<<<<<< HEAD
+
   selenium-webdriver
-=======
->>>>>>> 776240ea0d188c4212f13b3b9de037ae3f161a1c
+
   shoulda-matchers
   uglifier (>= 1.0.3)
