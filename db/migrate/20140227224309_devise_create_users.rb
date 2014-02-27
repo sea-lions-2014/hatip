@@ -19,6 +19,17 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.string   :current_sign_in_ip
       t.string   :last_sign_in_ip
 
+
+      t.string  :stage_name
+      t.string  :twitter_handle
+      t.boolean :verified, :default => false
+      t.string :city
+      t.string :state
+      t.string :country
+      t.string :genre
+      t.text   :story
+      t.string :profile_image_url
+
       ## Confirmable
       # t.string   :confirmation_token
       # t.datetime :confirmed_at
@@ -30,15 +41,6 @@ class DeviseCreateUsers < ActiveRecord::Migration
       # t.string   :unlock_token # Only if unlock strategy is :email or :both
       # t.datetime :locked_at
 
-      t.string  :stage_name
-      t.string  :twitter_handle
-      t.boolean :verified, :default => false
-      t.string :city
-      t.string :state
-      t.string :country
-      t.string :genre
-      t.text   :story
-      t.string :profile_image_url
 
       t.timestamps
     end
