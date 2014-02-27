@@ -3,7 +3,7 @@ hatip
 
 Alex, Aditya, Emily, Emmanuel
 
-users:
+**users:**
 
 email
 
@@ -31,7 +31,7 @@ story
 
 profile_image_url
 
-posts:
+**posts:**
 
 title
 
