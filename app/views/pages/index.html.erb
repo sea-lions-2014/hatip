@@ -6,12 +6,8 @@
   <h1 >HaTip</h1>
   <div id="card-wrapper">
 
-    <%= render partial: 'artist_cards', locals: { artists: @artists } %>
+    <%= render partial: 'post_cards', locals: { posts: @posts } %>
   </div>
 </div>
 
-<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-  Launch demo modal
-</button>
-
-<%= render partial: 'artist_card_modal' %>
+<%= render partial: 'post_card_modal' %>
