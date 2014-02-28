@@ -14,7 +14,6 @@ var CardModal = {
   getModalData: function(){
     console.log(CardModal.artistId);
     $.get('/api/users/' + CardModal.artistId, function(data){
-      console.log(data);
       CardModal.data = data;
       CardModal.updateModalElements();
       CardModal.displayModal();
@@ -22,8 +21,8 @@ var CardModal = {
   },
 
   updateModalElements: function(){
-    $('#cardModalLabel').text(CardModal.data.first_name + ' ' + CardModal.data.last_name);
-    $('#cardModalVideo').attr("src", "//www.youtube.com/embed/IYH7_GzP4Tg");
+    $('#cardModalLabel').text(CardModal.data.name);
+    $('#cardModalVideo').attr("src", CardModal.data.highlight_youtube_url);
     $('#cardModalDescription').text(CardModal.data.story);
   },
 
