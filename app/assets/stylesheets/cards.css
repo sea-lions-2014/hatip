@@ -53,6 +53,10 @@
   margin: 0;
 }
 
+.modal-body {
+  height: 500px;
+}
+
 .modal-dialog {
   width: 80%;
   min-width: 800px;
@@ -60,6 +64,19 @@
 }
 
 .modal-description {
-  float: right;
+  margin-left: 10px;
+  width: 250px;
+  display: inline-block;
+  float: left;
 }
 
+.modal-description p {
+  height: 60px;
+}
+
+.modal-video {
+  display: inline-block;
+  float: left;
+  padding-right: 10px;
+  border-right: 1px solid black;
+}

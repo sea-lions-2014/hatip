@@ -13,7 +13,7 @@ class Post < ActiveRecord::Base
   end
 
   def youtube_embed_url(video_id)
-    "http://www.youtube.com/embed/#{ video_id }?controls=1&showinfo=0&rel=0"
+    "http://www.youtube.com/embed/#{ video_id }?controls=1&showinfo=0&rel=0&enablejsapi=1"
   end
 
   def youtube_thumbnail_url

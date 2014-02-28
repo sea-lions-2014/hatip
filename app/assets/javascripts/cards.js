@@ -1,5 +1,6 @@
 $(function(){
   $('.post-card').click(CardModal.init);
+  $('#cardModal').on('hidden.bs.modal', CardModal.stopVideo)
 });
 
 var CardModal = {
@@ -25,11 +26,15 @@ var CardModal = {
     $('#cardModalLabel').text(CardModal.data.title);
     $('#cardModalArtistName').text(CardModal.data.artist_name);
     $('#cardModalArtistName').attr("href", CardModal.data.artist_page_url);
-    $('.modal-video').attr("src", CardModal.data.youtube_embed_url);
-    $('.modal-description').text(CardModal.data.description);
+    $('#cardVideo').attr("src", CardModal.data.youtube_embed_url);
+    $('.video-description').text(CardModal.data.description);
   },
 
   displayModal: function() {
     $('#cardModal').modal('show');
-  }
+  },
+
+  stopVideo: function() {
+    $('#cardVideo').attr('src', '');
+ }
 }
