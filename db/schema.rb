@@ -24,6 +24,8 @@ ActiveRecord::Schema.define(:version => 20140227224309) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
+    t.string   "first_name"
+    t.string   "last_name"
     t.string   "stage_name"
     t.string   "twitter_handle"
     t.boolean  "verified",               :default => false
@@ -31,6 +33,7 @@ ActiveRecord::Schema.define(:version => 20140227224309) do
     t.string   "state"
     t.string   "country"
     t.string   "genre"
+    t.string   "tagline"
     t.text     "story"
     t.string   "profile_image_url"
     t.datetime "created_at",                                :null => false

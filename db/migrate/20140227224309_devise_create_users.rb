@@ -19,17 +19,18 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.string   :current_sign_in_ip
       t.string   :last_sign_in_ip
 
-
+      t.string  :first_name
+      t.string  :last_name
       t.string  :stage_name
       t.string  :twitter_handle
       t.boolean :verified, :default => false
-      t.string :city
-      t.string :state
-      t.string :country
-      t.string :genre
-      t.string :tagline
-      t.text   :story
-      t.string :profile_image_url
+      t.string  :city
+      t.string  :state
+      t.string  :country
+      t.string  :genre
+      t.string  :tagline
+      t.text    :story
+      t.string  :profile_image_url
 
       ## Confirmable
       # t.string   :confirmation_token
