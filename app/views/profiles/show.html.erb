@@ -3,7 +3,7 @@
   <div><%= link_to "Edit Profile", edit_profile_path(@user) %></div>
   <% end %>
   <div class='tv'>
-    <iframe width="640" height="510" src="//www.youtube.com/embed/5d7aruKYkKs" frameborder="0" allowfullscreen></iframe>
+    <!-- <iframe width="640" height="510" src="//www.youtube.com/embed/5d7aruKYkKs" frameborder="0" allowfullscreen></iframe> -->
   </div>
   <button>Tip the Hat!</button>
 
@@ -23,5 +23,15 @@
   </div>
 
   <div class='contact'>
-      <p> Twitter: <a href="http://www.twitter.com/<%= @user.twitter_handle%>">@<%= @user.twitter_handle %> </p>
+      <p> Twitter: <a href="http://www.twitter.com/<%= @user.twitter_handle%>">@<%= @user.twitter_handle %></a> </p>
+  </div>
+
+  <div class="posts-container">
+    <% @user.posts.each do |post| %>
+      <div class="post">
+        <p><%= post.title %></p>
+          <%= raw(youtube_embed post.youtube_url, 200, 300) %>
+        <p><%= post.description %></p>
+      </div>
+    <% end %>
   </div>
