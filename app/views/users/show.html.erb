@@ -1,0 +1,22 @@
+<div class="container">
+<h1>Welcome to <%= @user.stage_name %>'s Profile</h1>
+
+  <% if may_edit_profile %>
+    <div>
+      <%= link_to "Edit Profile", edit_profile_path(@user) %>
+    </div>
+  <% end %>
+
+  <div class='tv'>
+    <%= raw(youtube_embed @user.highlight_youtube_url, 300, 500) %>
+  </div>
+
+  <button>Tip the Hat!</button>
+  <%# if may_edit_profile %>
+    <button id="new_post_button">Create New Post</button>
+    <%= render partial: 'posts/post_form', post: @post %>
+  <%# end %>
+
+  <%= render partial: 'profile_content' %>
+  <%= render partial: 'posts/artist_posts' %>
+</div>

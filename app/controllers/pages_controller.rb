@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
   def index
-    @artists = CardContainer.artists_to_feature
+    @artists = User.find(:all, :limit => 10)
   end
 end

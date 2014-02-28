@@ -6,6 +6,7 @@ class CreatePosts < ActiveRecord::Migration
       t.string :description
       t.integer :hype
       t.belongs_to :user
+
       t.timestamps
     end
   end
