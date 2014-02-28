@@ -31,6 +31,7 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.string  :tagline
       t.text    :story
       t.string  :profile_image_url
+      t.string  :featured_youtube_url
 
       ## Confirmable
       # t.string   :confirmation_token

@@ -7,7 +7,8 @@ class User < ActiveRecord::Base
 
   attr_accessible :email, :password, :password_confirmation, :remember_me, :first_name,
                   :last_name, :password_hash, :stage_name, :twitter_handle, :verified,
-                  :tagline, :city, :state, :country, :genre, :story, :profile_image_url
+                  :tagline, :city, :state, :country, :genre, :story, :profile_image_url,
+                  :featured_youtube_url
 
 
   # Should refactor and put youtube functionality into module
