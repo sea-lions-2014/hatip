@@ -1,0 +1,14 @@
+<div class='profile_image'>
+  <img src= <%= @user.profile_image_url %> />
+</div>
+
+<div class='genre'>
+  <p><%= @user.genre.capitalize %></p>
+ </div>
+
+<%= render partial: 'artist_info', :user => @user %>
+
+
+<div class='contact'>
+    <p> Twitter: <a href="http://www.twitter.com/<%= @user.twitter_handle%>">@<%= @user.twitter_handle %></a> </p>
+</div>

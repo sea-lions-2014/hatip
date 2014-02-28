@@ -1,37 +1,17 @@
 <h1>Welcome to <%= @user.stage_name %>'s Profile</h1>
+
   <% if may_edit_profile %>
-  <div><%= link_to "Edit Profile", edit_profile_path(@user) %></div>
+    <div>
+      <%= link_to "Edit Profile", edit_profile_path(@user) %>
+    </div>
   <% end %>
+
   <div class='tv'>
-    <!-- <iframe width="640" height="510" src="//www.youtube.com/embed/5d7aruKYkKs" frameborder="0" allowfullscreen></iframe> -->
+    <%= raw(youtube_embed @user.highlight_youtube_url, 300, 500) %>
   </div>
+
   <button>Tip the Hat!</button>
 
-  <div class='profile_image'>
-    <img src= <%= @user.profile_image_url %> />
-  </div>
+  <%= render partial: 'profile_content' %>
+  <%= render partial: 'posts/artist_posts' %>
 
-  <div class='genre'>
-    <p><%= @user.genre.capitalize %></p>
-   </div>
-
-  <div class='artist_info'>
-    <h2>Hometown</h2>
-    <p><%= @user.city %>, <%= @user.state %></p>
-    <h3>Background Story</h3>
-    <p><%= @user.story %></p>
-  </div>
-
-  <div class='contact'>
-      <p> Twitter: <a href="http://www.twitter.com/<%= @user.twitter_handle%>">@<%= @user.twitter_handle %></a> </p>
-  </div>
-
-  <div class="posts-container">
-    <% @user.posts.each do |post| %>
-      <div class="post">
-        <p><%= post.title %></p>
-          <%= raw(youtube_embed post.youtube_url, 200, 300) %>
-        <p><%= post.description %></p>
-      </div>
-    <% end %>
-  </div>

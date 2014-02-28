@@ -7,4 +7,9 @@ class User < ActiveRecord::Base
                   :last_name, :password_hash, :stage_name, :twitter_handle, :verified,
                   :tagline, :city, :state, :country, :genre, :story, :profile_image_url
 
+
+  def highlight_youtube_url
+    self.posts.first.youtube_url
+  end
+
 end
