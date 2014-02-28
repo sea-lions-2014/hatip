@@ -1,4 +1,4 @@
-<% @user = User.find(3)  %>
+<% @user  %>
 <%= form_for [@user, @post], remote: true do |f| %>
   <div class="form-group">
     <%= f.label :title %>
