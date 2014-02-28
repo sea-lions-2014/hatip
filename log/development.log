@@ -735,3 +735,1532 @@ Connecting to database specified by database.yml
   [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
 >>>>>>> 618b6aa8836cde027bfa1b9103552de9feabd9ea
 Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Connecting to database specified by database.yml
+  [1m[36m (3.6ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [1m[35m (1.9ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.3ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to DeviseCreateUsers (20140227224309)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (4.3ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "email" character varying(255) DEFAULT '' NOT NULL, "encrypted_password" character varying(255) DEFAULT '' NOT NULL, "reset_password_token" character varying(255), "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" timestamp, "last_sign_in_at" timestamp, "current_sign_in_ip" character varying(255), "last_sign_in_ip" character varying(255), "first_name" character varying(255), "last_name" character varying(255), "stage_name" character varying(255), "twitter_handle" character varying(255), "verified" boolean DEFAULT 'f', "city" character varying(255), "state" character varying(255), "country" character varying(255), "genre" character varying(255), "tagline" character varying(255), "story" text, "profile_image_url" character varying(255), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (1.0ms)[0m  CREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")
+  [1m[36m (0.8ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35m (0.4ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20140227224309')
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.8ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'jacquelyn@little.biz' LIMIT 1[0m
+  [1m[35mSQL (42.8ms)[0m  INSERT INTO "users" ("city", "country", "created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "first_name", "genre", "last_name", "last_sign_in_at", "last_sign_in_ip", "profile_image_url", "remember_created_at", "reset_password_sent_at", "reset_password_token", "sign_in_count", "stage_name", "state", "story", "tagline", "twitter_handle", "updated_at", "verified") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20, $21, $22, $23, $24) RETURNING "id"  [["city", "North Darbyfort"], ["country", "Korea"], ["created_at", Fri, 28 Feb 2014 00:30:14 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "jacquelyn@little.biz"], ["encrypted_password", "$2a$10$63Ln9rdufsPCT6WNRpY50eBOBzwHDlNpsu3EAfm0i5l9T925Hkrv2"], ["first_name", "Velva"], ["genre", "country"], ["last_name", "Davis"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["profile_image_url", "http://placehold.it/230X180"], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["stage_name", "The Big Show"], ["state", "Rhode Island"], ["story", "Assumenda vitae amet repudiandae sit consequuntur. Alias dolorem sint quibusdam. Quaerat ut eligendi repudiandae labore vero voluptas. Reprehenderit sapiente porro illo repellat. Architecto voluptas ut iure nemo."], ["tagline", "is this the interwebs?"], ["twitter_handle", "tbs002"], ["updated_at", Fri, 28 Feb 2014 00:30:14 UTC +00:00], ["verified", true]]
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'garnett.howell@hansen.com' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("city", "country", "created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "first_name", "genre", "last_name", "last_sign_in_at", "last_sign_in_ip", "profile_image_url", "remember_created_at", "reset_password_sent_at", "reset_password_token", "sign_in_count", "stage_name", "state", "story", "tagline", "twitter_handle", "updated_at", "verified") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20, $21, $22, $23, $24) RETURNING "id"  [["city", "North Rashawn"], ["country", "Gibraltar"], ["created_at", Fri, 28 Feb 2014 00:30:14 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "garnett.howell@hansen.com"], ["encrypted_password", "$2a$10$jpN2MaGlFPk1ABDX8OjHJO6lr0krKDA0L9eKtKHb8lRU0YmGXCBTW"], ["first_name", "Queen"], ["genre", "country"], ["last_name", "Mertz"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["profile_image_url", "http://placehold.it/230X180"], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["stage_name", "The Big Show"], ["state", "Wisconsin"], ["story", "Iusto sunt expedita itaque voluptatem omnis ab. Ut similique asperiores quaerat recusandae. Aut dicta adipisci eum officiis veniam ut."], ["tagline", "is this the interwebs?"], ["twitter_handle", "tbs002"], ["updated_at", Fri, 28 Feb 2014 00:30:14 UTC +00:00], ["verified", true]]
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'litzy@leannonledner.net' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("city", "country", "created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "first_name", "genre", "last_name", "last_sign_in_at", "last_sign_in_ip", "profile_image_url", "remember_created_at", "reset_password_sent_at", "reset_password_token", "sign_in_count", "stage_name", "state", "story", "tagline", "twitter_handle", "updated_at", "verified") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20, $21, $22, $23, $24) RETURNING "id"  [["city", "East Fabiolastad"], ["country", "Palau"], ["created_at", Fri, 28 Feb 2014 00:30:15 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "litzy@leannonledner.net"], ["encrypted_password", "$2a$10$p3yDZGbXBIKOFjtV26DEPez6AiEGTDpkZ04Orjush8E1gCrIRGciO"], ["first_name", "Kylee"], ["genre", "country"], ["last_name", "Littel"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["profile_image_url", "http://placehold.it/230X180"], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["stage_name", "The Big Show"], ["state", "Minnesota"], ["story", "Sit nemo et quisquam voluptas autem aut. Ullam aut distinctio qui voluptates. Repudiandae expedita et et aliquam cumque odio."], ["tagline", "is this the interwebs?"], ["twitter_handle", "tbs002"], ["updated_at", Fri, 28 Feb 2014 00:30:15 UTC +00:00], ["verified", true]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'magdalen.reinger@paucek.name' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("city", "country", "created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "first_name", "genre", "last_name", "last_sign_in_at", "last_sign_in_ip", "profile_image_url", "remember_created_at", "reset_password_sent_at", "reset_password_token", "sign_in_count", "stage_name", "state", "story", "tagline", "twitter_handle", "updated_at", "verified") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20, $21, $22, $23, $24) RETURNING "id"  [["city", "Fadelport"], ["country", "Cyprus"], ["created_at", Fri, 28 Feb 2014 00:30:15 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "magdalen.reinger@paucek.name"], ["encrypted_password", "$2a$10$vgzNW3UBUIZE2AJMw10yuezPt.PnhODdm4ScoWexiWW8ZAX9UFBie"], ["first_name", "Hailee"], ["genre", "country"], ["last_name", "Gottlieb"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["profile_image_url", "http://placehold.it/230X180"], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["stage_name", "The Big Show"], ["state", "Montana"], ["story", "Sapiente laboriosam molestias numquam consectetur odio sint aut. Qui est voluptatum voluptate quos est quod. Voluptatem tempora sed quisquam ipsum."], ["tagline", "is this the interwebs?"], ["twitter_handle", "tbs002"], ["updated_at", Fri, 28 Feb 2014 00:30:15 UTC +00:00], ["verified", true]]
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'guie@ferry.com' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("city", "country", "created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "first_name", "genre", "last_name", "last_sign_in_at", "last_sign_in_ip", "profile_image_url", "remember_created_at", "reset_password_sent_at", "reset_password_token", "sign_in_count", "stage_name", "state", "story", "tagline", "twitter_handle", "updated_at", "verified") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20, $21, $22, $23, $24) RETURNING "id"  [["city", "Brittanyborough"], ["country", "Rwanda"], ["created_at", Fri, 28 Feb 2014 00:30:15 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "guie@ferry.com"], ["encrypted_password", "$2a$10$8i32I8rxzgc3j36G6bj6BuWqEosZcRe/ypOCVCI9/.Sx1Abu27Nhq"], ["first_name", "Ole"], ["genre", "country"], ["last_name", "Muller"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["profile_image_url", "http://placehold.it/230X180"], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["stage_name", "The Big Show"], ["state", "Delaware"], ["story", "Vitae saepe quis. Minus dicta ut. Soluta odit hic dolorum autem ratione. Aut rerum qui."], ["tagline", "is this the interwebs?"], ["twitter_handle", "tbs002"], ["updated_at", Fri, 28 Feb 2014 00:30:15 UTC +00:00], ["verified", true]]
+  [1m[36m (0.8ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'taryn.dicki@breitenberg.name' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("city", "country", "created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "first_name", "genre", "last_name", "last_sign_in_at", "last_sign_in_ip", "profile_image_url", "remember_created_at", "reset_password_sent_at", "reset_password_token", "sign_in_count", "stage_name", "state", "story", "tagline", "twitter_handle", "updated_at", "verified") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20, $21, $22, $23, $24) RETURNING "id"  [["city", "Ondrickashire"], ["country", "Christmas Island"], ["created_at", Fri, 28 Feb 2014 00:30:15 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "taryn.dicki@breitenberg.name"], ["encrypted_password", "$2a$10$Tx2PgSE0yINmUNdSDvDMw.lDQhSz2c2MEdJddKuuIDKPaX1ohxh/e"], ["first_name", "Efren"], ["genre", "country"], ["last_name", "Considine"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["profile_image_url", "http://placehold.it/230X180"], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["stage_name", "The Big Show"], ["state", "Indiana"], ["story", "Et veritatis ipsam voluptas. Et non animi blanditiis iusto veniam repellendus. Voluptatem perspiciatis ut quaerat et vero. Praesentium illum aliquid tempore. Magnam dignissimos reprehenderit iure repudiandae rerum et quasi."], ["tagline", "is this the interwebs?"], ["twitter_handle", "tbs002"], ["updated_at", Fri, 28 Feb 2014 00:30:15 UTC +00:00], ["verified", true]]
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'margret.mante@klingmaggio.name' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("city", "country", "created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "first_name", "genre", "last_name", "last_sign_in_at", "last_sign_in_ip", "profile_image_url", "remember_created_at", "reset_password_sent_at", "reset_password_token", "sign_in_count", "stage_name", "state", "story", "tagline", "twitter_handle", "updated_at", "verified") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20, $21, $22, $23, $24) RETURNING "id"  [["city", "Gutkowskimouth"], ["country", "Cocos (Keeling) Islands"], ["created_at", Fri, 28 Feb 2014 00:30:15 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "margret.mante@klingmaggio.name"], ["encrypted_password", "$2a$10$vgIO/3ue6/Kkz/kvvoLzBu0YUvoPqGpSSY5chJZmyCT4uhN5idHc."], ["first_name", "Lavinia"], ["genre", "country"], ["last_name", "Fritsch"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["profile_image_url", "http://placehold.it/230X180"], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["stage_name", "The Big Show"], ["state", "Rhode Island"], ["story", "Soluta repellat minima doloremque reprehenderit. Voluptas provident quisquam officiis rerum consequatur velit. Commodi quia assumenda velit ea quae neque necessitatibus. Et accusantium adipisci tempora nesciunt qui tenetur. Voluptate blanditiis molestiae ea voluptas eum."], ["tagline", "is this the interwebs?"], ["twitter_handle", "tbs002"], ["updated_at", Fri, 28 Feb 2014 00:30:15 UTC +00:00], ["verified", true]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'treva_spencer@hartmann.biz' LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "users" ("city", "country", "created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "first_name", "genre", "last_name", "last_sign_in_at", "last_sign_in_ip", "profile_image_url", "remember_created_at", "reset_password_sent_at", "reset_password_token", "sign_in_count", "stage_name", "state", "story", "tagline", "twitter_handle", "updated_at", "verified") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20, $21, $22, $23, $24) RETURNING "id"  [["city", "Tiannachester"], ["country", "Cyprus"], ["created_at", Fri, 28 Feb 2014 00:30:15 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "treva_spencer@hartmann.biz"], ["encrypted_password", "$2a$10$RArNCjselDQ7kH0zxlknKuSrIGrvk.5.S4KtvhqIftZlzWZ8KYsmu"], ["first_name", "April"], ["genre", "country"], ["last_name", "Murphy"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["profile_image_url", "http://placehold.it/230X180"], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["stage_name", "The Big Show"], ["state", "North Carolina"], ["story", "Magni repellendus et nesciunt. Autem magni totam et impedit eveniet. Et fugiat placeat natus molestiae. Ut est quo tempora assumenda deleniti fugiat rerum."], ["tagline", "is this the interwebs?"], ["twitter_handle", "tbs002"], ["updated_at", Fri, 28 Feb 2014 00:30:15 UTC +00:00], ["verified", true]]
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'marlen_altenwerth@jast.biz' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("city", "country", "created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "first_name", "genre", "last_name", "last_sign_in_at", "last_sign_in_ip", "profile_image_url", "remember_created_at", "reset_password_sent_at", "reset_password_token", "sign_in_count", "stage_name", "state", "story", "tagline", "twitter_handle", "updated_at", "verified") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20, $21, $22, $23, $24) RETURNING "id"  [["city", "South Winstonchester"], ["country", "Guinea-Bissau"], ["created_at", Fri, 28 Feb 2014 00:30:15 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "marlen_altenwerth@jast.biz"], ["encrypted_password", "$2a$10$Xot5ssuC///CEiBZnVrJL.p2YGfvvhMWRNGuUZagcDiFZXI8WLXAu"], ["first_name", "Colby"], ["genre", "country"], ["last_name", "Schultz"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["profile_image_url", "http://placehold.it/230X180"], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["stage_name", "The Big Show"], ["state", "Michigan"], ["story", "Iure sit vitae tempora aliquid mollitia. Laudantium optio molestiae sequi ut quos. Suscipit cum in."], ["tagline", "is this the interwebs?"], ["twitter_handle", "tbs002"], ["updated_at", Fri, 28 Feb 2014 00:30:15 UTC +00:00], ["verified", true]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'roxanne.harvey@hahn.info' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("city", "country", "created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "first_name", "genre", "last_name", "last_sign_in_at", "last_sign_in_ip", "profile_image_url", "remember_created_at", "reset_password_sent_at", "reset_password_token", "sign_in_count", "stage_name", "state", "story", "tagline", "twitter_handle", "updated_at", "verified") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20, $21, $22, $23, $24) RETURNING "id"  [["city", "New Dejonstad"], ["country", "Holy See (Vatican City State)"], ["created_at", Fri, 28 Feb 2014 00:30:15 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "roxanne.harvey@hahn.info"], ["encrypted_password", "$2a$10$eIeWjw5cjJNkE/Az/uxgm.xdAls3jcnCUO8/AqLGBa7zcdPLNFG2a"], ["first_name", "Kali"], ["genre", "country"], ["last_name", "Leannon"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["profile_image_url", "http://placehold.it/230X180"], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["stage_name", "The Big Show"], ["state", "Arkansas"], ["story", "Sit optio eos repudiandae assumenda a aliquid. Consequatur maxime voluptas qui quidem iure. Non mollitia fuga voluptate rerum."], ["tagline", "is this the interwebs?"], ["twitter_handle", "tbs002"], ["updated_at", Fri, 28 Feb 2014 00:30:15 UTC +00:00], ["verified", true]]
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'murray@auer.org' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("city", "country", "created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "first_name", "genre", "last_name", "last_sign_in_at", "last_sign_in_ip", "profile_image_url", "remember_created_at", "reset_password_sent_at", "reset_password_token", "sign_in_count", "stage_name", "state", "story", "tagline", "twitter_handle", "updated_at", "verified") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20, $21, $22, $23, $24) RETURNING "id"  [["city", "South Julesville"], ["country", "Liechtenstein"], ["created_at", Fri, 28 Feb 2014 00:30:15 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "murray@auer.org"], ["encrypted_password", "$2a$10$D1ujf4qCBOzlds0k.aDFkeOWNU/bolEYpSIs5HACjKqZQDxC59pFG"], ["first_name", "Willis"], ["genre", "country"], ["last_name", "Wuckert"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["profile_image_url", "http://placehold.it/230X180"], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["stage_name", "The Big Show"], ["state", "Virginia"], ["story", "Aliquid aut rerum non eum. Perferendis dolores dolor. Iste blanditiis et voluptas facilis quia. Sint omnis consequatur aut consectetur delectus ducimus itaque. Laboriosam enim et aut ratione sunt quibusdam ut."], ["tagline", "is this the interwebs?"], ["twitter_handle", "tbs002"], ["updated_at", Fri, 28 Feb 2014 00:30:15 UTC +00:00], ["verified", true]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'alia@cummerata.org' LIMIT 1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "users" ("city", "country", "created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "first_name", "genre", "last_name", "last_sign_in_at", "last_sign_in_ip", "profile_image_url", "remember_created_at", "reset_password_sent_at", "reset_password_token", "sign_in_count", "stage_name", "state", "story", "tagline", "twitter_handle", "updated_at", "verified") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20, $21, $22, $23, $24) RETURNING "id"  [["city", "Lueilwitzbury"], ["country", "Wallis and Futuna"], ["created_at", Fri, 28 Feb 2014 00:30:15 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "alia@cummerata.org"], ["encrypted_password", "$2a$10$7RVsGExcQEFa5I53ZZU.ZuYecOCGEarGDpf8eAO.V1crtGyeW7bCG"], ["first_name", "Giuseppe"], ["genre", "country"], ["last_name", "Connelly"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["profile_image_url", "http://placehold.it/230X180"], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["stage_name", "The Big Show"], ["state", "Nebraska"], ["story", "At officia quaerat asperiores non delectus eaque. Minima voluptatem quisquam rerum et dignissimos voluptate. Non explicabo inventore sed voluptatum. Qui aut minima ullam sed consequatur neque."], ["tagline", "is this the interwebs?"], ["twitter_handle", "tbs002"], ["updated_at", Fri, 28 Feb 2014 00:30:15 UTC +00:00], ["verified", true]]
+  [1m[36m (0.9ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'briana.bahringer@zieme.name' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("city", "country", "created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "first_name", "genre", "last_name", "last_sign_in_at", "last_sign_in_ip", "profile_image_url", "remember_created_at", "reset_password_sent_at", "reset_password_token", "sign_in_count", "stage_name", "state", "story", "tagline", "twitter_handle", "updated_at", "verified") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20, $21, $22, $23, $24) RETURNING "id"  [["city", "North Peter"], ["country", "Suriname"], ["created_at", Fri, 28 Feb 2014 00:30:15 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "briana.bahringer@zieme.name"], ["encrypted_password", "$2a$10$YZT08il/AUV2mrN7GV1c1ukoCdvOlck3XcGt7CM0lTjJZ2gBYwq7m"], ["first_name", "Izaiah"], ["genre", "country"], ["last_name", "Ortiz"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["profile_image_url", "http://placehold.it/230X180"], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["stage_name", "The Big Show"], ["state", "Minnesota"], ["story", "Quam perferendis explicabo voluptate sit. Provident maxime aspernatur ut. Minima alias et aspernatur nihil ullam et. Reiciendis tempora labore placeat et in. Aperiam molestiae officia error harum."], ["tagline", "is this the interwebs?"], ["twitter_handle", "tbs002"], ["updated_at", Fri, 28 Feb 2014 00:30:15 UTC +00:00], ["verified", true]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'chadd@durgan.biz' LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "users" ("city", "country", "created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "first_name", "genre", "last_name", "last_sign_in_at", "last_sign_in_ip", "profile_image_url", "remember_created_at", "reset_password_sent_at", "reset_password_token", "sign_in_count", "stage_name", "state", "story", "tagline", "twitter_handle", "updated_at", "verified") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20, $21, $22, $23, $24) RETURNING "id"  [["city", "Christstad"], ["country", "Brazil"], ["created_at", Fri, 28 Feb 2014 00:30:15 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "chadd@durgan.biz"], ["encrypted_password", "$2a$10$NyMGWNaFcZ0i4.hCJ/4Twe2XPijFALnAKhi3JlNvjzrCsa6wzOx3G"], ["first_name", "Xavier"], ["genre", "country"], ["last_name", "Lesch"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["profile_image_url", "http://placehold.it/230X180"], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["stage_name", "The Big Show"], ["state", "Nebraska"], ["story", "Cumque nesciunt laudantium. Quam eveniet reiciendis delectus alias aut neque voluptate. In eaque consequuntur. Quo accusantium quos aut eligendi autem et. Nisi voluptatibus est velit."], ["tagline", "is this the interwebs?"], ["twitter_handle", "tbs002"], ["updated_at", Fri, 28 Feb 2014 00:30:15 UTC +00:00], ["verified", true]]
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'jacques_beier@hintz.net' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("city", "country", "created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "first_name", "genre", "last_name", "last_sign_in_at", "last_sign_in_ip", "profile_image_url", "remember_created_at", "reset_password_sent_at", "reset_password_token", "sign_in_count", "stage_name", "state", "story", "tagline", "twitter_handle", "updated_at", "verified") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20, $21, $22, $23, $24) RETURNING "id"  [["city", "Trevashire"], ["country", "Rwanda"], ["created_at", Fri, 28 Feb 2014 00:30:16 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "jacques_beier@hintz.net"], ["encrypted_password", "$2a$10$QedbOkYbjPyUoCHCA8O9.eNnKNywjEBpcZH7RB6gtjdPGP78CbDMG"], ["first_name", "Polly"], ["genre", "country"], ["last_name", "Eichmann"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["profile_image_url", "http://placehold.it/230X180"], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["stage_name", "The Big Show"], ["state", "Florida"], ["story", "Hic sunt officia corporis aut ut qui. Unde sed iure. Maiores enim voluptatibus tempore officiis autem qui aperiam. Quis eum id voluptatem explicabo consequatur."], ["tagline", "is this the interwebs?"], ["twitter_handle", "tbs002"], ["updated_at", Fri, 28 Feb 2014 00:30:16 UTC +00:00], ["verified", true]]
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'ladarius_bauch@farrell.biz' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("city", "country", "created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "first_name", "genre", "last_name", "last_sign_in_at", "last_sign_in_ip", "profile_image_url", "remember_created_at", "reset_password_sent_at", "reset_password_token", "sign_in_count", "stage_name", "state", "story", "tagline", "twitter_handle", "updated_at", "verified") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20, $21, $22, $23, $24) RETURNING "id"  [["city", "South Terryhaven"], ["country", "Cote d'Ivoire"], ["created_at", Fri, 28 Feb 2014 00:30:16 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "ladarius_bauch@farrell.biz"], ["encrypted_password", "$2a$10$PX.Yktp1iOG0F4ahqa0z7uhpmWFc47YdeIaUkPz5Gw7L3RJcqlj5i"], ["first_name", "Tiana"], ["genre", "country"], ["last_name", "Abernathy"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["profile_image_url", "http://placehold.it/230X180"], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["stage_name", "The Big Show"], ["state", "Georgia"], ["story", "Quos inventore odit omnis consectetur itaque. Quas qui molestiae nihil. Officiis sit dolores dolorem aperiam consequatur. Consequatur voluptate aut non necessitatibus expedita. Aliquam ex aut eos."], ["tagline", "is this the interwebs?"], ["twitter_handle", "tbs002"], ["updated_at", Fri, 28 Feb 2014 00:30:16 UTC +00:00], ["verified", true]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'trent.cummerata@botsfordlittel.com' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("city", "country", "created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "first_name", "genre", "last_name", "last_sign_in_at", "last_sign_in_ip", "profile_image_url", "remember_created_at", "reset_password_sent_at", "reset_password_token", "sign_in_count", "stage_name", "state", "story", "tagline", "twitter_handle", "updated_at", "verified") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20, $21, $22, $23, $24) RETURNING "id"  [["city", "Lake Paige"], ["country", "Romania"], ["created_at", Fri, 28 Feb 2014 00:30:16 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "trent.cummerata@botsfordlittel.com"], ["encrypted_password", "$2a$10$tOQ.bzWlP61296idPE65LeVo5dJNSK4q7teFmDHFicgbbwq1Kn3ci"], ["first_name", "Pauline"], ["genre", "country"], ["last_name", "Rempel"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["profile_image_url", "http://placehold.it/230X180"], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["stage_name", "The Big Show"], ["state", "Washington"], ["story", "Animi quis nobis aut unde optio blanditiis. Enim corrupti sed earum nulla voluptas. Nobis iste aut dolorem et sed."], ["tagline", "is this the interwebs?"], ["twitter_handle", "tbs002"], ["updated_at", Fri, 28 Feb 2014 00:30:16 UTC +00:00], ["verified", true]]
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'bettie@schoen.info' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("city", "country", "created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "first_name", "genre", "last_name", "last_sign_in_at", "last_sign_in_ip", "profile_image_url", "remember_created_at", "reset_password_sent_at", "reset_password_token", "sign_in_count", "stage_name", "state", "story", "tagline", "twitter_handle", "updated_at", "verified") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20, $21, $22, $23, $24) RETURNING "id"  [["city", "New Mitchel"], ["country", "Egypt"], ["created_at", Fri, 28 Feb 2014 00:30:16 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "bettie@schoen.info"], ["encrypted_password", "$2a$10$aoMfLO7rLmQ6Oe3hag7ScOt9YuuTklSc7xSeOtsUX5pWLHyyBx6t."], ["first_name", "Fern"], ["genre", "country"], ["last_name", "Runolfsdottir"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["profile_image_url", "http://placehold.it/230X180"], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["stage_name", "The Big Show"], ["state", "South Dakota"], ["story", "Qui consequatur distinctio reprehenderit qui nulla non iure. Autem sapiente voluptas in repudiandae qui quis ut. Facilis qui praesentium neque qui illo assumenda."], ["tagline", "is this the interwebs?"], ["twitter_handle", "tbs002"], ["updated_at", Fri, 28 Feb 2014 00:30:16 UTC +00:00], ["verified", true]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'edwina.leuschke@schmidt.com' LIMIT 1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "users" ("city", "country", "created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "first_name", "genre", "last_name", "last_sign_in_at", "last_sign_in_ip", "profile_image_url", "remember_created_at", "reset_password_sent_at", "reset_password_token", "sign_in_count", "stage_name", "state", "story", "tagline", "twitter_handle", "updated_at", "verified") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20, $21, $22, $23, $24) RETURNING "id"  [["city", "McGlynnfort"], ["country", "Malawi"], ["created_at", Fri, 28 Feb 2014 00:30:16 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "edwina.leuschke@schmidt.com"], ["encrypted_password", "$2a$10$tx1oo/0Pk7pmt6R../8bHOvF0FPHiRtzwIo0jX/iQa6kiQhQfDcou"], ["first_name", "Maiya"], ["genre", "country"], ["last_name", "Rau"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["profile_image_url", "http://placehold.it/230X180"], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["stage_name", "The Big Show"], ["state", "Mississippi"], ["story", "Odio repudiandae veritatis. Dolores est qui et corporis quia ut eaque. Sint labore at dolore ex delectus atque dolorum."], ["tagline", "is this the interwebs?"], ["twitter_handle", "tbs002"], ["updated_at", Fri, 28 Feb 2014 00:30:16 UTC +00:00], ["verified", true]]
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'antonetta@gerhold.org' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("city", "country", "created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "first_name", "genre", "last_name", "last_sign_in_at", "last_sign_in_ip", "profile_image_url", "remember_created_at", "reset_password_sent_at", "reset_password_token", "sign_in_count", "stage_name", "state", "story", "tagline", "twitter_handle", "updated_at", "verified") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20, $21, $22, $23, $24) RETURNING "id"  [["city", "Enricomouth"], ["country", "Nigeria"], ["created_at", Fri, 28 Feb 2014 00:30:16 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "antonetta@gerhold.org"], ["encrypted_password", "$2a$10$EAdUnbry.7K/EStSUKy93.cvy3CsHU5u9WL8OoMF59kJTNznkonIm"], ["first_name", "Zena"], ["genre", "country"], ["last_name", "O'Hara"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["profile_image_url", "http://placehold.it/230X180"], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["stage_name", "The Big Show"], ["state", "New York"], ["story", "Temporibus laborum nam incidunt eum saepe consequuntur. Nemo quas numquam aut. Quis voluptates deserunt in. Dolor aut architecto ut veniam. Quae minus accusantium voluptatum temporibus enim quia doloribus."], ["tagline", "is this the interwebs?"], ["twitter_handle", "tbs002"], ["updated_at", Fri, 28 Feb 2014 00:30:16 UTC +00:00], ["verified", true]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'jonatan@millchiller.com' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("city", "country", "created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "first_name", "genre", "last_name", "last_sign_in_at", "last_sign_in_ip", "profile_image_url", "remember_created_at", "reset_password_sent_at", "reset_password_token", "sign_in_count", "stage_name", "state", "story", "tagline", "twitter_handle", "updated_at", "verified") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20, $21, $22, $23, $24) RETURNING "id"  [["city", "South Jacintoland"], ["country", "Togo"], ["created_at", Fri, 28 Feb 2014 00:30:16 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "jonatan@millchiller.com"], ["encrypted_password", "$2a$10$MbQdyz6a6zQw/S5gtNulz.FctDZwGuaqD.9dD/pNZ.J8Gg.frZoFO"], ["first_name", "Hadley"], ["genre", "country"], ["last_name", "Raynor"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["profile_image_url", "http://placehold.it/230X180"], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["stage_name", "The Big Show"], ["state", "Minnesota"], ["story", "Eius pariatur consequatur architecto blanditiis hic quia. Aut molestias tenetur maxime enim earum. Eum nihil repellendus et."], ["tagline", "is this the interwebs?"], ["twitter_handle", "tbs002"], ["updated_at", Fri, 28 Feb 2014 00:30:16 UTC +00:00], ["verified", true]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'moriah@rowepowlowski.biz' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("city", "country", "created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "first_name", "genre", "last_name", "last_sign_in_at", "last_sign_in_ip", "profile_image_url", "remember_created_at", "reset_password_sent_at", "reset_password_token", "sign_in_count", "stage_name", "state", "story", "tagline", "twitter_handle", "updated_at", "verified") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20, $21, $22, $23, $24) RETURNING "id"  [["city", "East Drake"], ["country", "Thailand"], ["created_at", Fri, 28 Feb 2014 00:30:16 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "moriah@rowepowlowski.biz"], ["encrypted_password", "$2a$10$RR29RoHxUxHVeswhxBaASOFPUbqJ1RoR5qsE8KSgtNV16MXz.bt7K"], ["first_name", "Ava"], ["genre", "country"], ["last_name", "O'Reilly"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["profile_image_url", "http://placehold.it/230X180"], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["stage_name", "The Big Show"], ["state", "Nebraska"], ["story", "Dolore facilis hic ipsam dolor. Et odit et facere sapiente laborum corrupti. Molestiae repellendus tenetur debitis pariatur optio."], ["tagline", "is this the interwebs?"], ["twitter_handle", "tbs002"], ["updated_at", Fri, 28 Feb 2014 00:30:16 UTC +00:00], ["verified", true]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'sabrina@berge.com' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("city", "country", "created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "first_name", "genre", "last_name", "last_sign_in_at", "last_sign_in_ip", "profile_image_url", "remember_created_at", "reset_password_sent_at", "reset_password_token", "sign_in_count", "stage_name", "state", "story", "tagline", "twitter_handle", "updated_at", "verified") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20, $21, $22, $23, $24) RETURNING "id"  [["city", "Pfannerstillland"], ["country", "Sri Lanka"], ["created_at", Fri, 28 Feb 2014 00:30:16 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "sabrina@berge.com"], ["encrypted_password", "$2a$10$FIL9L59vghuqzUauVVacZev4nf36XHcbBtDXsbEc90qZVdWvl/0fe"], ["first_name", "Vicenta"], ["genre", "country"], ["last_name", "Bartoletti"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["profile_image_url", "http://placehold.it/230X180"], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["stage_name", "The Big Show"], ["state", "Tennessee"], ["story", "Repellendus explicabo eum veritatis placeat praesentium vel saepe. Esse et dolores et numquam facere. Sed eius sequi et quod iure aut ut. Soluta similique est."], ["tagline", "is this the interwebs?"], ["twitter_handle", "tbs002"], ["updated_at", Fri, 28 Feb 2014 00:30:16 UTC +00:00], ["verified", true]]
+  [1m[36m (0.8ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'edison.purdy@berge.name' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("city", "country", "created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "first_name", "genre", "last_name", "last_sign_in_at", "last_sign_in_ip", "profile_image_url", "remember_created_at", "reset_password_sent_at", "reset_password_token", "sign_in_count", "stage_name", "state", "story", "tagline", "twitter_handle", "updated_at", "verified") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20, $21, $22, $23, $24) RETURNING "id"  [["city", "Janstad"], ["country", "Croatia"], ["created_at", Fri, 28 Feb 2014 00:30:16 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "edison.purdy@berge.name"], ["encrypted_password", "$2a$10$98SBXAJXlrvNpXL9Ic07p.QMi1V7iHVnJe2nD2NqzIVg4bzB.RBN."], ["first_name", "Nathen"], ["genre", "country"], ["last_name", "Marvin"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["profile_image_url", "http://placehold.it/230X180"], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["stage_name", "The Big Show"], ["state", "California"], ["story", "Ipsam enim corrupti eaque. Et quia voluptates sunt quisquam. Eligendi at qui soluta. Ex velit provident."], ["tagline", "is this the interwebs?"], ["twitter_handle", "tbs002"], ["updated_at", Fri, 28 Feb 2014 00:30:16 UTC +00:00], ["verified", true]]
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'montana_kuhn@kuhnmarks.info' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("city", "country", "created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "first_name", "genre", "last_name", "last_sign_in_at", "last_sign_in_ip", "profile_image_url", "remember_created_at", "reset_password_sent_at", "reset_password_token", "sign_in_count", "stage_name", "state", "story", "tagline", "twitter_handle", "updated_at", "verified") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20, $21, $22, $23, $24) RETURNING "id"  [["city", "Jaylonmouth"], ["country", "Dominica"], ["created_at", Fri, 28 Feb 2014 00:30:16 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "montana_kuhn@kuhnmarks.info"], ["encrypted_password", "$2a$10$vwZm09FwnczyTsOR7oHj/.yoM/SRB8SFU0Th705CnT5JRRdHkRt.K"], ["first_name", "Damaris"], ["genre", "country"], ["last_name", "Brown"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["profile_image_url", "http://placehold.it/230X180"], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["stage_name", "The Big Show"], ["state", "Minnesota"], ["story", "Sapiente maiores expedita dolores non voluptatibus. Ullam quis sunt quis nobis molestias. Perferendis voluptatem ut qui aliquam ratione saepe. Blanditiis eum aliquid dolore omnis. Sed et quam illum in aut neque cumque."], ["tagline", "is this the interwebs?"], ["twitter_handle", "tbs002"], ["updated_at", Fri, 28 Feb 2014 00:30:16 UTC +00:00], ["verified", true]]
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'daisha_okeefe@predovic.name' LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "users" ("city", "country", "created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "first_name", "genre", "last_name", "last_sign_in_at", "last_sign_in_ip", "profile_image_url", "remember_created_at", "reset_password_sent_at", "reset_password_token", "sign_in_count", "stage_name", "state", "story", "tagline", "twitter_handle", "updated_at", "verified") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20, $21, $22, $23, $24) RETURNING "id"  [["city", "O'Connerfort"], ["country", "Bahrain"], ["created_at", Fri, 28 Feb 2014 00:30:17 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "daisha_okeefe@predovic.name"], ["encrypted_password", "$2a$10$nXK0yHS2Z2uI21Nk365o7.eSdekIa/njVf7w696foW12twmDQgCMO"], ["first_name", "Kassandra"], ["genre", "country"], ["last_name", "Connelly"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["profile_image_url", "http://placehold.it/230X180"], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["stage_name", "The Big Show"], ["state", "Arkansas"], ["story", "Non a unde voluptates distinctio qui. Tempore autem expedita. Dicta facere blanditiis laudantium possimus. Odit quis laudantium quasi."], ["tagline", "is this the interwebs?"], ["twitter_handle", "tbs002"], ["updated_at", Fri, 28 Feb 2014 00:30:17 UTC +00:00], ["verified", true]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'evelyn.pagac@millershanahan.com' LIMIT 1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("city", "country", "created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "first_name", "genre", "last_name", "last_sign_in_at", "last_sign_in_ip", "profile_image_url", "remember_created_at", "reset_password_sent_at", "reset_password_token", "sign_in_count", "stage_name", "state", "story", "tagline", "twitter_handle", "updated_at", "verified") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20, $21, $22, $23, $24) RETURNING "id"  [["city", "Port Dale"], ["country", "Saint Helena"], ["created_at", Fri, 28 Feb 2014 00:30:17 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "evelyn.pagac@millershanahan.com"], ["encrypted_password", "$2a$10$ga7p2edTAFaxsrPkzdbg5uKnpx3WkMFWsT1J1fmx4SK7CutzKhofC"], ["first_name", "Kaleb"], ["genre", "country"], ["last_name", "Prosacco"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["profile_image_url", "http://placehold.it/230X180"], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["stage_name", "The Big Show"], ["state", "Idaho"], ["story", "Voluptas praesentium beatae necessitatibus. Nisi quos est recusandae. Aperiam necessitatibus aspernatur aut incidunt dicta doloremque veritatis. Voluptate eveniet sint facere aut quos doloremque quia."], ["tagline", "is this the interwebs?"], ["twitter_handle", "tbs002"], ["updated_at", Fri, 28 Feb 2014 00:30:17 UTC +00:00], ["verified", true]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'narciso.kutch@bins.name' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("city", "country", "created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "first_name", "genre", "last_name", "last_sign_in_at", "last_sign_in_ip", "profile_image_url", "remember_created_at", "reset_password_sent_at", "reset_password_token", "sign_in_count", "stage_name", "state", "story", "tagline", "twitter_handle", "updated_at", "verified") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20, $21, $22, $23, $24) RETURNING "id"  [["city", "West Lelah"], ["country", "Myanmar"], ["created_at", Fri, 28 Feb 2014 00:30:17 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "narciso.kutch@bins.name"], ["encrypted_password", "$2a$10$.2Et2CDYIUvDbLvSEjt0TeGRAIaUhOWCNsPh6psGeS9/7lGwfoRwi"], ["first_name", "Marina"], ["genre", "country"], ["last_name", "Barrows"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["profile_image_url", "http://placehold.it/230X180"], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["stage_name", "The Big Show"], ["state", "Utah"], ["story", "Dolorem saepe impedit. Ducimus enim culpa cupiditate fugit. Deleniti qui odit. Voluptatem quia iste quam perferendis. Dolorum magnam qui aliquid laborum voluptatum occaecati quis."], ["tagline", "is this the interwebs?"], ["twitter_handle", "tbs002"], ["updated_at", Fri, 28 Feb 2014 00:30:17 UTC +00:00], ["verified", true]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'rocky_price@berge.com' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("city", "country", "created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "first_name", "genre", "last_name", "last_sign_in_at", "last_sign_in_ip", "profile_image_url", "remember_created_at", "reset_password_sent_at", "reset_password_token", "sign_in_count", "stage_name", "state", "story", "tagline", "twitter_handle", "updated_at", "verified") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20, $21, $22, $23, $24) RETURNING "id"  [["city", "Lake Caleb"], ["country", "Finland"], ["created_at", Fri, 28 Feb 2014 00:30:17 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "rocky_price@berge.com"], ["encrypted_password", "$2a$10$EPVfRZ83BL/a7cQupigMre2o22No9IQBJ8v4Lv8bIsyJ4ifcGqD6K"], ["first_name", "Rollin"], ["genre", "country"], ["last_name", "Reichert"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["profile_image_url", "http://placehold.it/230X180"], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["stage_name", "The Big Show"], ["state", "Georgia"], ["story", "Facilis beatae id nisi fuga praesentium ut ut. Nemo omnis provident aspernatur officiis vitae ut. Velit at provident dolores assumenda."], ["tagline", "is this the interwebs?"], ["twitter_handle", "tbs002"], ["updated_at", Fri, 28 Feb 2014 00:30:17 UTC +00:00], ["verified", true]]
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE "users"."email" = 'buddy.ratke@leuschke.info' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "users" ("city", "country", "created_at", "current_sign_in_at", "current_sign_in_ip", "email", "encrypted_password", "first_name", "genre", "last_name", "last_sign_in_at", "last_sign_in_ip", "profile_image_url", "remember_created_at", "reset_password_sent_at", "reset_password_token", "sign_in_count", "stage_name", "state", "story", "tagline", "twitter_handle", "updated_at", "verified") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20, $21, $22, $23, $24) RETURNING "id"  [["city", "Boyerview"], ["country", "Malawi"], ["created_at", Fri, 28 Feb 2014 00:30:17 UTC +00:00], ["current_sign_in_at", nil], ["current_sign_in_ip", nil], ["email", "buddy.ratke@leuschke.info"], ["encrypted_password", "$2a$10$K1alBhbtZdfCi3bESh5sT.NJLIcbxE5esX5rJuBHcHZuPgbcTcS0S"], ["first_name", "Westley"], ["genre", "country"], ["last_name", "D'Amore"], ["last_sign_in_at", nil], ["last_sign_in_ip", nil], ["profile_image_url", "http://placehold.it/230X180"], ["remember_created_at", nil], ["reset_password_sent_at", nil], ["reset_password_token", nil], ["sign_in_count", 0], ["stage_name", "The Big Show"], ["state", "Pennsylvania"], ["story", "Soluta dolorum architecto sit. Ab accusamus reiciendis dolor culpa quia. Voluptas voluptas reiciendis consequuntur minima."], ["tagline", "is this the interwebs?"], ["twitter_handle", "tbs002"], ["updated_at", Fri, 28 Feb 2014 00:30:17 UTC +00:00], ["verified", true]]
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (112.7ms)[0m  DROP DATABASE IF EXISTS "hatip_test"
+  [1m[36m (289.4ms)[0m  [1mCREATE DATABASE "hatip_test" ENCODING = 'utf8'[0m
+  [1m[35m (6.6ms)[0m  CREATE TABLE "users" ("id" serial primary key, "email" character varying(255) DEFAULT '' NOT NULL, "encrypted_password" character varying(255) DEFAULT '' NOT NULL, "reset_password_token" character varying(255), "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" timestamp, "last_sign_in_at" timestamp, "current_sign_in_ip" character varying(255), "last_sign_in_ip" character varying(255), "first_name" character varying(255), "last_name" character varying(255), "stage_name" character varying(255), "twitter_handle" character varying(255), "verified" boolean DEFAULT 'f', "city" character varying(255), "state" character varying(255), "country" character varying(255), "genre" character varying(255), "tagline" character varying(255), "story" text, "profile_image_url" character varying(255), "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (1.8ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (1.4ms)[0m  CREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")
+  [1m[36m (1.8ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [1m[35m (1.6ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.3ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (0.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20140227224309')
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 127.0.0.1 at 2014-02-27 16:52:25 -0800
+Processing by PagesController#index as HTML
+Completed 500 Internal Server Error in 2ms
+
+NoMethodError (undefined method `artists_to_feature' for CardContainer:Class):
+  app/controllers/pages_controller.rb:3:in `index'
+
+
+  Rendered /Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+  Rendered /Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+  Rendered /Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (16.5ms)
+
+
+Started GET "/profile/1" for 127.0.0.1 at 2014-02-27 16:52:38 -0800
+
+SyntaxError (/Users/apprentice/hatip/hatip/app/controllers/profile_controller.rb:20: syntax error, unexpected $end, expecting keyword_end):
+  activesupport (3.2.14) lib/active_support/dependencies.rb:469:in `load'
+  activesupport (3.2.14) lib/active_support/dependencies.rb:469:in `block in load_file'
+  activesupport (3.2.14) lib/active_support/dependencies.rb:639:in `new_constants_in'
+  activesupport (3.2.14) lib/active_support/dependencies.rb:468:in `load_file'
+  activesupport (3.2.14) lib/active_support/dependencies.rb:353:in `require_or_load'
+  activesupport (3.2.14) lib/active_support/dependencies.rb:502:in `load_missing_constant'
+  activesupport (3.2.14) lib/active_support/dependencies.rb:192:in `block in const_missing'
+  activesupport (3.2.14) lib/active_support/dependencies.rb:190:in `each'
+  activesupport (3.2.14) lib/active_support/dependencies.rb:190:in `const_missing'
+  activesupport (3.2.14) lib/active_support/inflector/methods.rb:230:in `block in constantize'
+  activesupport (3.2.14) lib/active_support/inflector/methods.rb:229:in `each'
+  activesupport (3.2.14) lib/active_support/inflector/methods.rb:229:in `constantize'
+  activesupport (3.2.14) lib/active_support/dependencies.rb:554:in `get'
+  actionpack (3.2.14) lib/action_dispatch/routing/route_set.rb:69:in `controller_reference'
+  actionpack (3.2.14) lib/action_dispatch/routing/route_set.rb:54:in `controller'
+  actionpack (3.2.14) lib/action_dispatch/routing/route_set.rb:32:in `call'
+  journey (1.0.4) lib/journey/router.rb:68:in `block in call'
+  journey (1.0.4) lib/journey/router.rb:56:in `each'
+  journey (1.0.4) lib/journey/router.rb:56:in `call'
+  actionpack (3.2.14) lib/action_dispatch/routing/route_set.rb:608:in `call'
+  warden (1.2.3) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.3) lib/warden/manager.rb:34:in `catch'
+  warden (1.2.3) lib/warden/manager.rb:34:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.5) lib/rack/etag.rb:23:in `call'
+  rack (1.4.5) lib/rack/conditionalget.rb:25:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:210:in `context'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:205:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/cookies.rb:341:in `call'
+  activerecord (3.2.14) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.14) lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:405:in `_run__74152041628466174__call__1317712092553369461__callbacks'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.14) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.14) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.14) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.14) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.14) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.14) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.14) lib/rails/engine.rb:484:in `call'
+  railties (3.2.14) lib/rails/application.rb:231:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.14) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/apprentice/.rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/apprentice/.rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/apprentice/.rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+  Rendered /Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+  Rendered /Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (7.3ms)
+
+
+Started GET "/profile/1" for 127.0.0.1 at 2014-02-27 16:52:58 -0800
+Processing by ProfileController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+Completed 500 Internal Server Error in 130ms
+
+ActionView::MissingTemplate (Missing template profile/show, application/show with {:locale=>[:en], :formats=>[:html], :handlers=>[:erb, :builder, :coffee]}. Searched in:
+  * "/Users/apprentice/hatip/hatip/app/views"
+  * "/Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/devise-3.2.3/app/views"
+):
+  actionpack (3.2.14) lib/action_view/path_set.rb:58:in `find'
+  actionpack (3.2.14) lib/action_view/lookup_context.rb:115:in `find'
+  actionpack (3.2.14) lib/action_view/renderer/abstract_renderer.rb:3:in `find_template'
+  actionpack (3.2.14) lib/action_view/renderer/template_renderer.rb:35:in `determine_template'
+  actionpack (3.2.14) lib/action_view/renderer/template_renderer.rb:10:in `render'
+  actionpack (3.2.14) lib/action_view/renderer/renderer.rb:36:in `render_template'
+  actionpack (3.2.14) lib/action_view/renderer/renderer.rb:17:in `render'
+  actionpack (3.2.14) lib/abstract_controller/rendering.rb:110:in `_render_template'
+  actionpack (3.2.14) lib/action_controller/metal/streaming.rb:225:in `_render_template'
+  actionpack (3.2.14) lib/abstract_controller/rendering.rb:103:in `render_to_body'
+  actionpack (3.2.14) lib/action_controller/metal/renderers.rb:28:in `render_to_body'
+  actionpack (3.2.14) lib/action_controller/metal/compatibility.rb:50:in `render_to_body'
+  actionpack (3.2.14) lib/abstract_controller/rendering.rb:88:in `render'
+  actionpack (3.2.14) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (3.2.14) lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+  activesupport (3.2.14) lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+  /Users/apprentice/.rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/benchmark.rb:295:in `realtime'
+  activesupport (3.2.14) lib/active_support/core_ext/benchmark.rb:5:in `ms'
+  actionpack (3.2.14) lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+  actionpack (3.2.14) lib/action_controller/metal/instrumentation.rb:83:in `cleanup_view_runtime'
+  activerecord (3.2.14) lib/active_record/railties/controller_runtime.rb:24:in `cleanup_view_runtime'
+  actionpack (3.2.14) lib/action_controller/metal/instrumentation.rb:39:in `render'
+  actionpack (3.2.14) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (3.2.14) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (3.2.14) lib/abstract_controller/base.rb:167:in `process_action'
+  actionpack (3.2.14) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (3.2.14) lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:414:in `_run__4092857898412201124__process_action__343839353649941828__callbacks'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:385:in `_run_process_action_callbacks'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.14) lib/abstract_controller/callbacks.rb:17:in `process_action'
+  actionpack (3.2.14) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (3.2.14) lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+  activesupport (3.2.14) lib/active_support/notifications.rb:123:in `block in instrument'
+  activesupport (3.2.14) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (3.2.14) lib/active_support/notifications.rb:123:in `instrument'
+  actionpack (3.2.14) lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+  actionpack (3.2.14) lib/action_controller/metal/params_wrapper.rb:207:in `process_action'
+  activerecord (3.2.14) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (3.2.14) lib/abstract_controller/base.rb:121:in `process'
+  actionpack (3.2.14) lib/abstract_controller/rendering.rb:45:in `process'
+  actionpack (3.2.14) lib/action_controller/metal.rb:203:in `dispatch'
+  actionpack (3.2.14) lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+  actionpack (3.2.14) lib/action_controller/metal.rb:246:in `block in action'
+  actionpack (3.2.14) lib/action_dispatch/routing/route_set.rb:73:in `call'
+  actionpack (3.2.14) lib/action_dispatch/routing/route_set.rb:73:in `dispatch'
+  actionpack (3.2.14) lib/action_dispatch/routing/route_set.rb:36:in `call'
+  journey (1.0.4) lib/journey/router.rb:68:in `block in call'
+  journey (1.0.4) lib/journey/router.rb:56:in `each'
+  journey (1.0.4) lib/journey/router.rb:56:in `call'
+  actionpack (3.2.14) lib/action_dispatch/routing/route_set.rb:608:in `call'
+  warden (1.2.3) lib/warden/manager.rb:35:in `block in call'
+  warden (1.2.3) lib/warden/manager.rb:34:in `catch'
+  warden (1.2.3) lib/warden/manager.rb:34:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.5) lib/rack/etag.rb:23:in `call'
+  rack (1.4.5) lib/rack/conditionalget.rb:25:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:210:in `context'
+  rack (1.4.5) lib/rack/session/abstract/id.rb:205:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/cookies.rb:341:in `call'
+  activerecord (3.2.14) lib/active_record/query_cache.rb:64:in `call'
+  activerecord (3.2.14) lib/active_record/connection_adapters/abstract/connection_pool.rb:479:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:405:in `_run__74152041628466174__call__1317712092553369461__callbacks'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.14) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.14) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.14) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.14) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.14) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.14) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.14) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.14) lib/rails/engine.rb:484:in `call'
+  railties (3.2.14) lib/rails/application.rb:231:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.14) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/apprentice/.rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/apprentice/.rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/apprentice/.rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (0.5ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/profile/1" for 127.0.0.1 at 2014-02-27 16:53:57 -0800
+
+ActionController::RoutingError (No route matches [GET] "/profile/1"):
+  actionpack (3.2.14) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.14) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.14) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.14) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.14) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.14) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.14) lib/rails/engine.rb:484:in `call'
+  railties (3.2.14) lib/rails/application.rb:231:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.14) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/apprentice/.rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/apprentice/.rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/apprentice/.rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/profile/1" for 127.0.0.1 at 2014-02-27 16:54:22 -0800
+
+ActionController::RoutingError (No route matches [GET] "/profile/1"):
+  actionpack (3.2.14) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.14) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.14) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.14) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.14) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.14) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.14) lib/rails/engine.rb:484:in `call'
+  railties (3.2.14) lib/rails/application.rb:231:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.14) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/apprentice/.rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/apprentice/.rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/apprentice/.rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/profile/1" for 127.0.0.1 at 2014-02-27 16:54:24 -0800
+
+ActionController::RoutingError (No route matches [GET] "/profile/1"):
+  actionpack (3.2.14) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.14) lib/rails/rack/logger.rb:32:in `call_app'
+  railties (3.2.14) lib/rails/rack/logger.rb:16:in `block in call'
+  activesupport (3.2.14) lib/active_support/tagged_logging.rb:22:in `tagged'
+  railties (3.2.14) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.5) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.14) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.5) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.14) lib/action_dispatch/middleware/static.rb:63:in `call'
+  railties (3.2.14) lib/rails/engine.rb:484:in `call'
+  railties (3.2.14) lib/rails/application.rb:231:in `call'
+  rack (1.4.5) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.14) lib/rails/rack/log_tailer.rb:17:in `call'
+  rack (1.4.5) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/apprentice/.rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/webrick/httpserver.rb:138:in `service'
+  /Users/apprentice/.rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/webrick/httpserver.rb:94:in `run'
+  /Users/apprentice/.rvm/rubies/ruby-1.9.3-p448/lib/ruby/1.9.1/webrick/server.rb:191:in `block in start_thread'
+
+
+  Rendered /Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/profiles/1" for 127.0.0.1 at 2014-02-27 16:54:26 -0800
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", "1"]]
+  Rendered profiles/show.html.erb within layouts/application (24.1ms)
+Completed 500 Internal Server Error in 56ms
+
+ActionView::Template::Error (undefined method `youtube_url' for #<User:0x007fe1ff872cb8>):
+    1: <h1>Welcome to Your Profile</h1>
+    2:   <div class='tv'>
+    3:     <iframe title="YouTube video player" class="youtube-player" type="text/html"
+    4:       width="640" height="390" src= <%= @user.youtube_url %>
+    5:       frameborder="0" allowFullScreen></iframe>
+    6:   </div>
+    7: 
+  app/views/profiles/show.html.erb:4:in `_app_views_profiles_show_html_erb__1902325140911131977_70304318783740'
+
+
+  Rendered /Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+  Rendered /Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.8ms)
+  Rendered /Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (7.7ms)
+
+
+Started GET "/profiles/1" for 127.0.0.1 at 2014-02-27 16:55:28 -0800
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+  Rendered profiles/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 13ms (Views: 11.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-27 16:55:28 -0800
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-27 16:55:28 -0800
+Served asset /jquery.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-02-27 16:55:28 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-27 16:55:28 -0800
+Served asset /application.js - 304 Not Modified (4ms)
+
+
+Started GET "/profiles/Velva" for 127.0.0.1 at 2014-02-27 16:55:28 -0800
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"Velva"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", "Velva"]]
+Completed 404 Not Found in 2ms
+
+ActiveRecord::RecordNotFound (Couldn't find User with id=Velva):
+  app/controllers/profiles_controller.rb:4:in `show'
+
+
+  Rendered /Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered /Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.8ms)
+  Rendered /Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (6.9ms)
+
+
+Started GET "/profiles/1" for 127.0.0.1 at 2014-02-27 16:57:47 -0800
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE (1)[0m
+PG::DatatypeMismatch: ERROR:  argument of WHERE must be type boolean, not type integer
+LINE 1: SELECT "users".* FROM "users"  WHERE (1)
+                                              ^
+: SELECT "users".* FROM "users"  WHERE (1)
+  Rendered profiles/show.html.erb within layouts/application (5.5ms)
+Completed 500 Internal Server Error in 13ms
+
+ActionView::Template::Error (undefined method `first_name' for #<ActiveRecord::Relation:0x007fe1ff99feb0>):
+    1: <h1>Welcome to Your Profile</h1>
+    2:   <div class='tv'>
+    3:     <iframe title="YouTube video player" class="youtube-player" type="text/html"
+    4:       width="640" height="390" src= <%= @user.first_name %>
+    5:       frameborder="0" allowFullScreen></iframe>
+    6:   </div>
+    7: 
+  app/views/profiles/show.html.erb:4:in `_app_views_profiles_show_html_erb__1902325140911131977_70304300107720'
+
+
+  Rendered /Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+  Rendered /Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+  Rendered /Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (29.5ms)
+
+
+Started GET "/profiles/1" for 127.0.0.1 at 2014-02-27 16:58:41 -0800
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", "1"]]
+  Rendered profiles/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 32ms (Views: 3.2ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-27 16:58:41 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-02-27 16:58:41 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-27 16:58:41 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-27 16:58:41 -0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/profiles/Velva" for 127.0.0.1 at 2014-02-27 16:58:41 -0800
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"Velva"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", "Velva"]]
+Completed 404 Not Found in 2ms
+
+ActiveRecord::RecordNotFound (Couldn't find User with id=Velva):
+  app/controllers/profiles_controller.rb:4:in `show'
+
+
+  Rendered /Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.9ms)
+  Rendered /Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+  Rendered /Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (9.9ms)
+
+
+Started GET "/profiles/1" for 127.0.0.1 at 2014-02-27 17:00:02 -0800
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", "1"]]
+  Rendered profiles/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 53ms (Views: 3.3ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-27 17:00:02 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-27 17:00:02 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-02-27 17:00:02 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-27 17:00:02 -0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/profiles/Velva" for 127.0.0.1 at 2014-02-27 17:00:02 -0800
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"Velva"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", "Velva"]]
+Completed 404 Not Found in 2ms
+
+ActiveRecord::RecordNotFound (Couldn't find User with id=Velva):
+  app/controllers/profiles_controller.rb:4:in `show'
+
+
+  Rendered /Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.9ms)
+  Rendered /Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+  Rendered /Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (9.5ms)
+
+
+Started GET "/profiles/1" for 127.0.0.1 at 2014-02-27 17:02:11 -0800
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE (1)
+PG::DatatypeMismatch: ERROR:  argument of WHERE must be type boolean, not type integer
+LINE 1: SELECT "users".* FROM "users"  WHERE (1)
+                                              ^
+: SELECT "users".* FROM "users"  WHERE (1)
+  Rendered profiles/show.html.erb within layouts/application (4.4ms)
+Completed 500 Internal Server Error in 12ms
+
+ActionView::Template::Error (undefined method `first_name' for #<ActiveRecord::Relation:0x007fe1ff85e420>):
+    1: <h1>Welcome to Your Profile</h1>
+    2:   <div class='tv'>
+    3:     <iframe title="YouTube video player" class="youtube-player" type="text/html"
+    4:       width="640" height="390" src= <%= @user.first_name %>
+    5:       frameborder="0" allowFullScreen></iframe>
+    6:   </div>
+    7: 
+  app/views/profiles/show.html.erb:4:in `_app_views_profiles_show_html_erb__1902325140911131977_70304315674660'
+
+
+  Rendered /Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered /Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.8ms)
+  Rendered /Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (6.7ms)
+
+
+Started GET "/profiles/1" for 127.0.0.1 at 2014-02-27 17:02:37 -0800
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"1"}
+  Rendered profiles/show.html.erb within layouts/application (0.7ms)
+Completed 500 Internal Server Error in 4ms
+
+ActionView::Template::Error (undefined method `first_name' for nil:NilClass):
+    1: <h1>Welcome to Your Profile</h1>
+    2:   <div class='tv'>
+    3:     <iframe title="YouTube video player" class="youtube-player" type="text/html"
+    4:       width="640" height="390" src= <%= @user.first_name %>
+    5:       frameborder="0" allowFullScreen></iframe>
+    6:   </div>
+    7: 
+  app/views/profiles/show.html.erb:4:in `_app_views_profiles_show_html_erb__1902325140911131977_70304315674660'
+
+
+  Rendered /Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+  Rendered /Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.8ms)
+  Rendered /Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (7.0ms)
+
+
+Started GET "/profiles/1" for 127.0.0.1 at 2014-02-27 17:02:53 -0800
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+  Rendered profiles/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 30ms (Views: 3.3ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-27 17:02:53 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-27 17:02:53 -0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-27 17:02:53 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-02-27 17:02:53 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/profiles/Velva" for 127.0.0.1 at 2014-02-27 17:02:53 -0800
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"Velva"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", "Velva"]]
+Completed 404 Not Found in 2ms
+
+ActiveRecord::RecordNotFound (Couldn't find User with id=Velva):
+  app/controllers/profiles_controller.rb:4:in `show'
+
+
+  Rendered /Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+  Rendered /Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.5ms)
+  Rendered /Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (8.9ms)
+
+
+Started GET "/profiles/1" for 127.0.0.1 at 2014-02-27 17:03:26 -0800
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+  Rendered profiles/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 5ms (Views: 3.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-27 17:03:26 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-02-27 17:03:26 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-27 17:03:26 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-27 17:03:26 -0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/profiles/1" for 127.0.0.1 at 2014-02-27 17:03:38 -0800
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", "1"]]
+  Rendered profiles/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 57ms (Views: 3.3ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-27 17:03:38 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-27 17:03:38 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-02-27 17:03:38 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-27 17:03:38 -0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/profiles/1" for 127.0.0.1 at 2014-02-27 17:04:56 -0800
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+  Rendered profiles/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 5ms (Views: 3.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-27 17:04:56 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-27 17:04:56 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-27 17:04:56 -0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-02-27 17:04:56 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/profiles/frameborder=%220%22" for 127.0.0.1 at 2014-02-27 17:04:56 -0800
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"frameborder=\"0\""}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", "frameborder=\"0\""]]
+Completed 404 Not Found in 1ms
+
+ActiveRecord::RecordNotFound (Couldn't find User with id=frameborder="0"):
+  app/controllers/profiles_controller.rb:4:in `show'
+
+
+  Rendered /Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+  Rendered /Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.4ms)
+  Rendered /Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (11.5ms)
+
+
+Started GET "/profiles/1" for 127.0.0.1 at 2014-02-27 17:05:12 -0800
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+  Rendered profiles/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 6ms (Views: 4.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-27 17:05:12 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-27 17:05:12 -0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-02-27 17:05:12 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-27 17:05:12 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/profiles/1" for 127.0.0.1 at 2014-02-27 17:05:41 -0800
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", "1"]]
+  Rendered profiles/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 5ms (Views: 3.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-27 17:05:41 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-02-27 17:05:41 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-27 17:05:41 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-27 17:05:41 -0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/profiles/1" for 127.0.0.1 at 2014-02-27 17:05:43 -0800
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+  Rendered profiles/show.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 5ms (Views: 3.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-27 17:05:43 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-27 17:05:43 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-27 17:05:43 -0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-02-27 17:05:43 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/profiles/1" for 127.0.0.1 at 2014-02-27 17:06:21 -0800
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", "1"]]
+  Rendered profiles/show.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-27 17:06:21 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-27 17:06:21 -0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-02-27 17:06:21 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-27 17:06:21 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/profiles/1" for 127.0.0.1 at 2014-02-27 17:07:08 -0800
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+  Rendered profiles/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-27 17:07:09 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-27 17:07:09 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-02-27 17:07:09 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-27 17:07:09 -0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/profiles/Velva" for 127.0.0.1 at 2014-02-27 17:07:09 -0800
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"Velva"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", "Velva"]]
+Completed 404 Not Found in 2ms
+
+ActiveRecord::RecordNotFound (Couldn't find User with id=Velva):
+  app/controllers/profiles_controller.rb:4:in `show'
+
+
+  Rendered /Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.9ms)
+  Rendered /Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (31.6ms)
+  Rendered /Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (40.1ms)
+
+
+Started GET "/profiles/1" for 127.0.0.1 at 2014-02-27 17:07:20 -0800
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+  Rendered profiles/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 5ms (Views: 3.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-27 17:07:20 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-27 17:07:20 -0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-02-27 17:07:20 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-27 17:07:20 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/profiles/Velva" for 127.0.0.1 at 2014-02-27 17:07:20 -0800
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"Velva"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", "Velva"]]
+Completed 404 Not Found in 2ms
+
+ActiveRecord::RecordNotFound (Couldn't find User with id=Velva):
+  app/controllers/profiles_controller.rb:4:in `show'
+
+
+  Rendered /Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+  Rendered /Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.6ms)
+  Rendered /Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (11.5ms)
+
+
+Started GET "/profiles/1" for 127.0.0.1 at 2014-02-27 17:07:55 -0800
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+  Rendered profiles/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 5ms (Views: 3.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-27 17:07:55 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-02-27 17:07:55 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-27 17:07:55 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-27 17:07:55 -0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/profiles/North%20Darbyfort" for 127.0.0.1 at 2014-02-27 17:07:55 -0800
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"North Darbyfort"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", "North Darbyfort"]]
+Completed 404 Not Found in 2ms
+
+ActiveRecord::RecordNotFound (Couldn't find User with id=North Darbyfort):
+  app/controllers/profiles_controller.rb:4:in `show'
+
+
+  Rendered /Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered /Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.8ms)
+  Rendered /Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (6.8ms)
+
+
+Started GET "/profiles/1" for 127.0.0.1 at 2014-02-27 17:08:33 -0800
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+  Rendered profiles/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 5ms (Views: 3.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-27 17:08:33 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-02-27 17:08:33 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-27 17:08:33 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-27 17:08:33 -0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/profiles/1" for 127.0.0.1 at 2014-02-27 17:09:31 -0800
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", "1"]]
+  Rendered profiles/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 5ms (Views: 3.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-27 17:09:31 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-27 17:09:31 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-27 17:09:31 -0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-02-27 17:09:31 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/profiles/1" for 127.0.0.1 at 2014-02-27 17:09:38 -0800
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+  Rendered profiles/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 5ms (Views: 3.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-27 17:09:38 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-27 17:09:38 -0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-27 17:09:38 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-02-27 17:09:38 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/profiles/1" for 127.0.0.1 at 2014-02-27 17:09:59 -0800
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", "1"]]
+  Rendered profiles/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 5ms (Views: 3.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-27 17:09:59 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-27 17:09:59 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-27 17:09:59 -0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-02-27 17:09:59 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/profiles/1" for 127.0.0.1 at 2014-02-27 17:11:03 -0800
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+  Rendered profiles/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 5ms (Views: 3.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-27 17:11:03 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-02-27 17:11:03 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-27 17:11:03 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-27 17:11:03 -0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/profiles/1" for 127.0.0.1 at 2014-02-27 17:12:14 -0800
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", "1"]]
+  Rendered profiles/show.html.erb within layouts/application (1.4ms)
+Completed 500 Internal Server Error in 4ms
+
+ActionView::Template::Error (undefined method `profile_pic_url' for #<User:0x007fe1fff34038>):
+    4:   </div>
+    5: 
+    6:   <div class='profile_pic'>
+    7:     <%= @user.profile_pic_url %>
+    8:   </div>
+    9: 
+    10:   <div class='story'>
+  app/views/profiles/show.html.erb:7:in `_app_views_profiles_show_html_erb__1902325140911131977_70304319244620'
+
+
+  Rendered /Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_trace.erb (27.0ms)
+  Rendered /Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.9ms)
+  Rendered /Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (33.5ms)
+
+
+Started GET "/profiles/1" for 127.0.0.1 at 2014-02-27 17:12:44 -0800
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+  Rendered profiles/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 7ms (Views: 4.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-27 17:12:44 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-02-27 17:12:44 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-27 17:12:44 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-27 17:12:44 -0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/profiles/1" for 127.0.0.1 at 2014-02-27 17:13:09 -0800
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", "1"]]
+  Rendered profiles/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 5ms (Views: 3.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-27 17:13:09 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-02-27 17:13:09 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-27 17:13:09 -0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-27 17:13:09 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/profiles/1" for 127.0.0.1 at 2014-02-27 17:13:55 -0800
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+  Rendered profiles/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 5ms (Views: 3.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-27 17:13:55 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-27 17:13:55 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-02-27 17:13:55 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-27 17:13:55 -0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/profiles/1" for 127.0.0.1 at 2014-02-27 17:14:48 -0800
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", "1"]]
+  Rendered profiles/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 5ms (Views: 3.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-27 17:14:48 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-27 17:14:48 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-02-27 17:14:48 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-27 17:14:48 -0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/profiles/1" for 127.0.0.1 at 2014-02-27 17:15:02 -0800
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+  Rendered profiles/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-27 17:15:02 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-27 17:15:02 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-27 17:15:02 -0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-02-27 17:15:02 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/profiles/1" for 127.0.0.1 at 2014-02-27 17:15:18 -0800
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", "1"]]
+  Rendered profiles/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-27 17:15:18 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-02-27 17:15:18 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-27 17:15:18 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-27 17:15:18 -0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/profiles/1" for 127.0.0.1 at 2014-02-27 17:16:09 -0800
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+  Rendered profiles/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-27 17:16:10 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-27 17:16:10 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-02-27 17:16:10 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-27 17:16:10 -0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/profiles/1" for 127.0.0.1 at 2014-02-27 17:21:46 -0800
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", "1"]]
+  Rendered profiles/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 5ms (Views: 3.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-27 17:21:46 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-27 17:21:46 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-02-27 17:21:46 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-27 17:21:46 -0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/profiles/1" for 127.0.0.1 at 2014-02-27 17:23:20 -0800
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+  Rendered profiles/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 5ms (Views: 3.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-27 17:23:20 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-27 17:23:20 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-02-27 17:23:20 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-27 17:23:20 -0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/profiles/1" for 127.0.0.1 at 2014-02-27 17:28:14 -0800
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", "1"]]
+  Rendered profiles/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 6ms (Views: 4.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-27 17:28:14 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-27 17:28:14 -0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-27 17:28:14 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-02-27 17:28:14 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/profiles/1" for 127.0.0.1 at 2014-02-27 17:29:01 -0800
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+  Rendered profiles/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 5ms (Views: 3.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-27 17:29:01 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-27 17:29:01 -0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-02-27 17:29:01 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-27 17:29:01 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/profiles/1" for 127.0.0.1 at 2014-02-27 17:31:32 -0800
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", "1"]]
+  Rendered profiles/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 6ms (Views: 4.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-27 17:31:32 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-27 17:31:32 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-27 17:31:32 -0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-02-27 17:31:32 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/profiles/1" for 127.0.0.1 at 2014-02-27 17:31:59 -0800
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+  Rendered profiles/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 5ms (Views: 3.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-27 17:31:59 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-27 17:31:59 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-02-27 17:31:59 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-27 17:31:59 -0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/profiles/1" for 127.0.0.1 at 2014-02-27 17:38:15 -0800
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", "1"]]
+  Rendered profiles/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 6ms (Views: 4.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-27 17:38:15 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-02-27 17:38:15 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-27 17:38:15 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-27 17:38:15 -0800
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/profiles/1" for 127.0.0.1 at 2014-02-27 17:38:27 -0800
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+  Rendered profiles/show.html.erb within layouts/application (1.2ms)
+Completed 500 Internal Server Error in 5ms
+
+ActionView::Template::Error (undefined method `captialize' for "country":String):
+    9:   </div>
+    10: 
+    11:   <div class='genre'>
+    12:     <p><%= @user.genre.captialize %></p>
+    13:    </div>
+    14: 
+    15:   <div class='artist_info'>
+  app/views/profiles/show.html.erb:12:in `_app_views_profiles_show_html_erb__1902325140911131977_70304300709600'
+
+
+  Rendered /Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+  Rendered /Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.8ms)
+  Rendered /Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (7.2ms)
+
+
+Started GET "/profiles/1" for 127.0.0.1 at 2014-02-27 17:38:42 -0800
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", "1"]]
+  Rendered profiles/show.html.erb within layouts/application (1.1ms)
+Completed 500 Internal Server Error in 5ms
+
+ActionView::Template::Error (undefined method `captialize!' for "country":String):
+    9:   </div>
+    10: 
+    11:   <div class='genre'>
+    12:     <p><%= @user.genre.captialize! %></p>
+    13:    </div>
+    14: 
+    15:   <div class='artist_info'>
+  app/views/profiles/show.html.erb:12:in `_app_views_profiles_show_html_erb__1902325140911131977_70304309041320'
+
+
+  Rendered /Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered /Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.4ms)
+  Rendered /Users/apprentice/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (7.6ms)
+
+
+Started GET "/profiles/1" for 127.0.0.1 at 2014-02-27 17:38:53 -0800
+Processing by ProfilesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+  Rendered profiles/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 5ms (Views: 3.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-02-27 17:38:53 -0800
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-02-27 17:38:53 -0800
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-02-27 17:38:53 -0800
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-02-27 17:38:53 -0800
+Served asset /application.js - 304 Not Modified (0ms)

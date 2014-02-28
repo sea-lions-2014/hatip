@@ -6,8 +6,4 @@ class User < ActiveRecord::Base
                   :last_name, :password_hash, :stage_name, :twitter_handle, :verified,
                   :tagline, :city, :state, :country, :genre, :story, :profile_image_url
 
-  def current_user
-    User.find(params[:id])
-  end
-
 end
