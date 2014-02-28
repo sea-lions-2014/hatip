@@ -25,8 +25,8 @@ var CardModal = {
     $('#cardModalLabel').text(CardModal.data.title);
     $('#cardModalArtistName').text(CardModal.data.artist_name);
     $('#cardModalArtistName').attr("href", CardModal.data.artist_page_url);
-    $('#cardModalVideo').attr("src", CardModal.data.youtube_embed_url);
-    $('#cardModalDescription').text(CardModal.data.description);
+    $('.modal-video').attr("src", CardModal.data.youtube_embed_url);
+    $('.modal-description').text(CardModal.data.description);
   },
 
   displayModal: function() {

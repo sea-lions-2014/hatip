@@ -17,11 +17,15 @@ class Post < ActiveRecord::Base
   end
 
   def youtube_thumbnail_url
-    "http://img.youtube.com/vi/#{ self.youtube_id(self.youtube_url) }/1.jpg"
+    "http://img.youtube.com/vi/#{ self.youtube_id(self.youtube_url) }/0.jpg"
   end
 
   def card_data
-    { artist_name: self.user.name, title: self.title, youtube_embed_url: self.youtube_embed_url(self.youtube_id(self.youtube_url)), description: self.description, artist_page_url: Rails.application.routes.url_helpers.user_path(self.user) }
+    { artist_name: self.user.name,
+      title: self.title,
+      youtube_embed_url: self.youtube_embed_url(self.youtube_id(self.youtube_url)),
+      description: self.description,
+      artist_page_url: Rails.application.routes.url_helpers.user_path(self.user) }
   end
 
 end
