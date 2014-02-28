@@ -1,0 +1,48 @@
+<h1>Edit <%= @user.stage_name %>'s Profile</h1>
+  <!-- <div class='tv'>
+    <iframe width="640" height="510" src="//www.youtube.com/embed/5d7aruKYkKs" frameborder="0" allowfullscreen></iframe>
+  </div>
+  <button>Tip the Hat!</button>
+
+  <div class='profile_image'>
+    <img src= <%= @user.profile_image_url %> />
+  </div>
+
+  <div class='genre'>
+    <p><%= @user.genre.capitalize %></p>
+   </div>
+
+  <div class='artist_info'>
+    <h2>Hometown</h2>
+    <p><%= @user.city %>, <%= @user.state %></p>
+    <h3>Background Story</h3>
+    <p><%= @user.story %></p>
+  </div>
+
+  <div class='contact'>
+      <p> Twitter: <a href="http://www.twitter.com/<%= @user.twitter_handle%>">@<%= @user.twitter_handle %> </p>
+  </div> -->
+
+
+<%= form_for [ @user, @post ] do |f| %>
+  <%= f.label :stage_name %>
+  <%= f.text_field :stage_name, text_field_html: { value: @user.stage_name } %>
+
+  <%= f.label :youtube_url %>
+  <%= f.text_field :youtube_url %>
+
+  <%= f.label :city %>
+  <%= f.text_field :city %>
+
+  <%= f.label :state %>
+  <%= f.text_field :state %>
+
+  <%= f.label :story %>
+  <%= f.text_field :story %>
+
+  <%= f.label :twitter_handle %>
+  <%= f.text_field :twitter_handle %>
+
+  <%= f.submit %>
+  <% end %>
+
