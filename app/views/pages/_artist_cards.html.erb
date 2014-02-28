@@ -1,7 +1,5 @@
-<div class="container">
-  <div class="card-container">
-    <% @artists.each do |artist| %>
-      <%= render partial: 'artist_card', :locals { artist: artist } %>
-    <% end %>
-  </div>
+<div id="columns">
+  <% @artists.each do |artist| %>
+    <%= render partial: 'artist_card', locals: { artist: artist } %>
+  <% end %>
 </div>
