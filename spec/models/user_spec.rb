@@ -11,6 +11,7 @@ describe User do
   it { should have_db_column :state }
   it { should have_db_column :country }
   it { should have_db_column :genre }
+  it { should have_db_column :tagline }
   it { should have_db_column :story }
   it { should have_db_column :profile_image_url }
   it { should have_many :posts }

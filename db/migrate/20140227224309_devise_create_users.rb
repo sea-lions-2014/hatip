@@ -27,6 +27,7 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.string :state
       t.string :country
       t.string :genre
+      t.string :tagline
       t.text   :story
       t.string :profile_image_url
 
