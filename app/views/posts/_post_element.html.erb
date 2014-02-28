@@ -1,0 +1,5 @@
+<div class="post">
+  <p><%= @post.title %></p>
+    <%= raw(youtube_embed @post.youtube_url, 200, 300) %>
+  <p><%= @post.description %></p>
+</div>
