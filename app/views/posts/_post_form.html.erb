@@ -1,0 +1,10 @@
+<%= form_for [current_user, @post], remote: true do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+
+  <%= f.label :youtube_url %>
+  <%= f.text_field :youtube_url %>
+
+  <%= f.label :description %>
+  <%= f.text_area :description %>
+<% end  %>
