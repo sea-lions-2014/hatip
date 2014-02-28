@@ -1,17 +1,25 @@
 $(function(){
-  $('.artist-card').click(CardModal.init);
+  $('.artist-card').click(callCardModal);
 });
 
+function callCardModal(event){
+  CardModal.init(event.currentTarget);
+}
+
 var CardModal = {
-  init: function(event) {
-    this.artistId = $(event.target).data('id');
-    var data = this.getModalData();
+  init: function(card) {
+    this.artistId = $(card).data('id');
+    var data = CardModal.getModalData();
   },
 
   getModalData: function(){
-    $.get('/api/artists/' + this.artistId, this.displayModal);
-  }
+    $.get('/api/users/' + this.artistId, this.displayModal);
+  },
+
   displayModal: function(data) {
-    debugger
+    $('#cardModalLabel').text(data.first_name + ' ' + data.last_name);
+    $('#cardModalVideo').attr("src", "//www.youtube.com/embed/IYH7_GzP4Tg");
+    $('#cardModalDescription').text(data.story);
+    $('#cardModal').modal('show');
   }
 }
