@@ -15,6 +15,7 @@ Hatip::Application.routes.draw do
 
   namespace :api do
     resources :users
+    resources :posts
   end
 
 end
