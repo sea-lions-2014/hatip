@@ -1,6 +1,10 @@
 $(function(){
   $('.post-card').click(CardModal.init);
-  $('#cardModal').on('hidden.bs.modal', CardModal.stopVideo)
+  $('#cardModal').on('hidden.bs.modal', CardModal.stopVideo);
+  $('.coinbase-button2').click(function(){
+    $(document).trigger('coinbase_show_modal', CardModal.data.payment_button_code);
+    return false;
+  });
 });
 
 var CardModal = {

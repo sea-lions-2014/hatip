@@ -39,7 +39,7 @@ class Post < ActiveRecord::Base
                 price5: '10'
               }
             }
-    button = coinbase.create_button("Tip for #{ self.user.name }", 0, 'b', 'b', opts)
+    button = coinbase.create_button("Tip for #{ self.user.name }", 1, 'b', 'b', opts)
 
     {
       artist_name: self.user.name,
@@ -47,7 +47,8 @@ class Post < ActiveRecord::Base
       youtube_id: self.youtube_id,
       description: self.description,
       artist_page_url: Rails.application.routes.url_helpers.user_path(self.user),
-      payment_button: button.embed_html
+      payment_button: button.embed_html,
+      payment_button_code: button.button.code
     }
   end
 end
