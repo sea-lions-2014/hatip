@@ -13,6 +13,7 @@ var CardModal = {
   },
 
   getModalData: function(){
+    // var modal = this;
     console.log(CardModal.artistId);
     $.get('/api/posts/' + CardModal.postId, function(data){
       CardModal.data = data;
