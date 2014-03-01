@@ -9,9 +9,8 @@ Hatip::Application.routes.draw do
     resources :posts
   end
 
-  resources :tips, :only => [:create]
-
   post "callback", :to => 'tips#create'
+  get "callback", :to => 'tips#index'
 
   devise_scope :user do
     get 'sign_out', :to => 'devise/sessions#destroy', :as => :destroy_user_session
