@@ -1,6 +1,6 @@
 $(function(){
   $('.post-card').click(CardModal.init);
-  $('#cardModal').on('hidden.bs.modal', CardModal.stopVideo)
+  $('#cardModal').on('hidden.bs.modal', CardModal.stopVideo);
 });
 
 var CardModal = {
@@ -16,7 +16,6 @@ var CardModal = {
     $.get('/api/posts/' + CardModal.postId, function(data){
       console.log(data);
       CardModal.data = data;
-      console.log(data);
       CardModal.updateModalElements();
       CardModal.displayModal();
     });
