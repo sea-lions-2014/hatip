@@ -9,6 +9,7 @@ gem 'pg'
 gem 'omniauth-facebook'
 gem 'coinbase'
 gem 'dotenv'
+gem 'faker'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
