@@ -21,11 +21,15 @@ class Post < ActiveRecord::Base
   end
 
   def card_data
+    coinbase = Coinbase::Client.new(ENV['COINBASE_API_KEY'], ENV['COINBASE_API_SECRET'])
+    button  = coinbase.create_button "Tip for #{self.user.name}"
+
     { artist_name: self.user.name,
       title: self.title,
       youtube_embed_url: self.youtube_embed_url(self.youtube_id(self.youtube_url)),
       description: self.description,
-      artist_page_url: Rails.application.routes.url_helpers.user_path(self.user) }
+      artist_page_url: Rails.application.routes.url_helpers.user_path(self.user)
+    }
   end
 
 end
