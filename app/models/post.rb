@@ -2,6 +2,10 @@ class Post < ActiveRecord::Base
   attr_accessible :youtube_url, :title, :description, :hype
   belongs_to :user
 
+  def post_embed
+    YoutubeBuddy.new(youtube_url).iframe_html
+  end
+
   def youtube_id
     YoutubeBuddy.new(youtube_url).youtube_id
   end
