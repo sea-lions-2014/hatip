@@ -1,12 +1,12 @@
 require 'faker'
 
 urls = [
-        "www.youtube.com/watch?v=_L9h2w798yY",
-        "www.youtube.com/watch?v=q9JClFXo6dM",
-        "www.youtube.com/watch?v=_KpkoF5eMhw",
-        "www.youtube.com/watch?v=IuKltB-wPV8",
-        "www.youtube.com/watch?v=S1_Iv8bviiw",
-        "www.youtube.com/watch?v=Jy9pxDYupkM"
+        "http://youtu.be/Cgoqrgc_0cM",
+        "https://www.youtube.com/watch?v=ar-sduhNbi4",
+        "http://youtu.be/Y34jC4I1m70",
+        "http://youtu.be/2IH8tNQAzSs",
+        "http://youtu.be/nQJACVmankY",
+        "http://www.youtube.com/watch?v=N46x3_cObxM"
       ]
 
 30.times do
@@ -30,8 +30,6 @@ urls = [
     featured_youtube_url: urls.sample
     )
 end
-
-
 
 User.all.each do |user|
   4.times do

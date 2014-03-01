@@ -9,12 +9,15 @@ Hatip::Application.routes.draw do
     resources :posts
   end
 
+  resources :tips, :only => [:create]
+
   devise_scope :user do
     get 'sign_out', :to => 'devise/sessions#destroy', :as => :destroy_user_session
   end
 
   namespace :api do
     resources :users
+    resources :posts
   end
 
 end

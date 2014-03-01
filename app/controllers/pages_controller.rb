@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
   def index
-    @artists = User.find(:all, :limit => 10)
+    @posts = Post.find(:all, :limit => 20)
   end
 end

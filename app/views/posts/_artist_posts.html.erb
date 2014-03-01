@@ -2,7 +2,7 @@
   <% @user.posts.each do |post| %>
     <div class="post">
       <p><%= post.title %></p>
-        <%= raw(post.embed_url) %>
+        <%= raw(post.iframe_html) %>
       <p><%= post.description %></p>
     </div>
   <% end %>

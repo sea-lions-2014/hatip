@@ -4,7 +4,6 @@ class YoutubeBuddy < ActiveRecord::Base
     @youtube_url = youtube_url
   end
 
-
   def youtube_id
     if @youtube_url[/youtu\.be\/([^\?]*)/]
       youtube_id = $1
@@ -15,12 +14,12 @@ class YoutubeBuddy < ActiveRecord::Base
     end
   end
 
-  def embed_url(height=390, width=640)
+  def iframe_html(height=390, width=640)
     %Q{<iframe title="YouTube video player" width="#{width}" height="#{height}" src="http://www.youtube.com/embed/#{ youtube_id }?controls=0&showinfo=0&rel=0"  frameborder="0" allowfullscreen></iframe>}
   end
 
   def thumbnail_url
-    "http://img.youtube.com/vi/#{ youtube_id }/1.jpg"
+    "http://img.youtube.com/vi/#{ youtube_id }/0.jpg"
   end
 
 end

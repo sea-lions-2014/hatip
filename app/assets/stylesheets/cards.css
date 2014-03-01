@@ -1,24 +1,24 @@
 #card-wrapper {
-  width: 90%;
   max-width: 1100px;
   min-width: 800px;
   margin: 50px auto;
 }
 
 .columns {
-  -webkit-column-count: 3;
+  -webkit-column-count: 4;
   -webkit-column-gap: 10px;
   -webkit-column-fill: auto;
-  -moz-column-count: 3;
+  -moz-column-count: 4;
   -moz-column-gap: 10px;
   -moz-column-fill: auto;
-  column-count: 3;
+  column-count: 4;
   column-gap: 15px;
   column-fill: auto;
 }
 
-.artist-card {
+.post-card {
   display: inline-block;
+  width: 250px;
   background: #FEFEFE;
   border: 2px solid #FAFAFA;
   box-shadow: 0 1px 2px rgba(34, 25, 25, 0.4);
@@ -37,18 +37,46 @@
   transition: all .2s ease;
 }
 
-.artist-card:hover {
+.post-card:hover {
   cursor: pointer;
 }
 
-.artist-card img {
+.post-card img {
   width: 100%;
   padding-bottom: 15px;
   margin-bottom: 5px;
 }
 
-.artist-card p {
+.post-card p {
   font: 12px/18px Arial, sans-serif;
   color: #333;
   margin: 0;
+}
+
+.modal-body {
+  height: 500px;
+}
+
+.modal-dialog {
+  width: 80%;
+  min-width: 800px;
+  max-width: 1000px;
+}
+
+.modal-description {
+  margin-left: 10px;
+  width: 250px;
+  display: inline-block;
+  float: left;
+}
+
+.modal-description p {
+  height: 60px;
+}
+
+.modal-video {
+  display: inline-block;
+  float: left;
+  padding-right: 10px;
+  border-right: 1px solid black;
 }
