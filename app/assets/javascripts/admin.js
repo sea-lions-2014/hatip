@@ -1,0 +1,7 @@
+ $(function() {
+        /* For zebra striping */
+        $("table tr:nth-child(odd)").addClass("odd-row");
+        /* For cell text alignment */
+        /* For removing the last border */
+        $("table td:last-child, table th:last-child").addClass("last");
+});
