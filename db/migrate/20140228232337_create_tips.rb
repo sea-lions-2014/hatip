@@ -1,6 +1,7 @@
 class CreateTips < ActiveRecord::Migration
   def change
     create_table :tips do |t|
+      t.belongs_to :user
       t.integer :amount
       t.string :currency_iso
       t.string :order_id

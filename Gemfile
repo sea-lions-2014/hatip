@@ -6,7 +6,8 @@ gem 'devise'
 
 gem 'pg'
 gem 'omniauth-facebook'
-
+gem 'coinbase'
+gem 'dotenv'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
