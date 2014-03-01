@@ -8,6 +8,8 @@ class TipsController < ApplicationController
       amount: params[:order][:total_btc][:cents]
     }
     Tip.create(tip_info)
-    format.json { head: ok }
+    respond_to do
+    	format.json { head: ok }
+    end
   end
 end
