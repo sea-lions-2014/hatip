@@ -1,0 +1,16 @@
+#new_post {
+  display: none;
+}
+
+.container{
+  margin:0 auto;
+  width: 900px;
+  border:1px dotted black;
+  padding-left: 100px
+}
+
+.edit-profile-form input {
+  margin-left: 10px;
+  width: 75%;
+}
+

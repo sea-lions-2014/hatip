@@ -1,5 +1,14 @@
 require 'faker'
 
+urls = [
+        "http://youtu.be/Cgoqrgc_0cM",
+        "https://www.youtube.com/watch?v=ar-sduhNbi4",
+        "http://youtu.be/Y34jC4I1m70",
+        "http://youtu.be/2IH8tNQAzSs",
+        "http://youtu.be/nQJACVmankY",
+        "http://www.youtube.com/watch?v=N46x3_cObxM"
+      ]
+
 30.times do
   User.create(
     email: Faker::Internet.email,
@@ -17,18 +26,10 @@ require 'faker'
     country: Faker::Address.country,
     genre: "country",
     story: Faker::Lorem.paragraph,
-    profile_image_url: 'http://placehold.it/230X180'
+    profile_image_url: 'http://placehold.it/230X180',
+    featured_youtube_url: urls.sample
     )
 end
-
-urls = [
-        "http://youtu.be/Cgoqrgc_0cM",
-        "https://www.youtube.com/watch?v=ar-sduhNbi4",
-        "http://youtu.be/Y34jC4I1m70",
-        "http://youtu.be/2IH8tNQAzSs",
-        "http://youtu.be/nQJACVmankY",
-        "http://www.youtube.com/watch?v=N46x3_cObxM"
-      ]
 
 User.all.each do |user|
   4.times do

@@ -25,7 +25,7 @@ var CardModal = {
     $('#cardModalLabel').text(CardModal.data.title);
     $('#cardModalArtistName').text(CardModal.data.artist_name);
     $('#cardModalArtistName').attr("href", CardModal.data.artist_page_url);
-    $('#cardVideo').attr("src", CardModal.data.youtube_embed_url);
+    $('#cardVideo').attr("src", "http://www.youtube.com/embed/" + CardModal.data.youtube_id);
     $('.coinbase-button').attr("data-custom", CardModal.postId + '-' + CardModal.data.artist_name)
     $('.video-description').text(CardModal.data.description);
   },
