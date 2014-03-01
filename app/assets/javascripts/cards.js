@@ -1,9 +1,6 @@
 $(function(){
   $('.post-card').click(CardModal.init);
   $('#cardModal').on('hidden.bs.modal', CardModal.stopVideo);
-  $('.coinbase-button2').click(function(){
-    $(this).show();
-  });
 });
 
 var CardModal = {
@@ -19,7 +16,6 @@ var CardModal = {
     $.get('/api/posts/' + CardModal.postId, function(data){
       console.log(data);
       CardModal.data = data;
-      console.log(data);
       CardModal.updateModalElements();
       CardModal.displayModal();
     });
