@@ -14,6 +14,7 @@ var CardModal = {
 
   getModalData: function(){
     $.get('/api/posts/' + CardModal.postId, function(data){
+      console.log(data);
       CardModal.data = data;
       console.log(data);
       CardModal.updateModalElements();
@@ -26,7 +27,7 @@ var CardModal = {
     $('#cardModalArtistName').text(CardModal.data.artist_name);
     $('#cardModalArtistName').attr("href", CardModal.data.artist_page_url);
     $('#cardVideo').attr("src", "http://www.youtube.com/embed/" + CardModal.data.youtube_id);
-    $('.coinbase-button').attr("data-custom", CardModal.postId + '-' + CardModal.data.artist_name)
+    $('.tip-button').html(CardModal.data.payment_button)
     $('.video-description').text(CardModal.data.description);
   },
 

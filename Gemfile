@@ -8,7 +8,6 @@ gem 'devise'
 gem 'pg'
 gem 'omniauth-facebook'
 gem 'coinbase'
-gem 'dotenv'
 gem 'faker'
 
 group :assets do
@@ -22,6 +21,7 @@ group :development do
 end
 group :test, :development do
   gem 'rspec-rails'
+  gem 'dotenv-rails'
 end
 
 group :test do
