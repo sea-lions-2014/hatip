@@ -2,11 +2,11 @@
   display: none;
 }
 
-.edit-profile-form {
+.container{
   margin:0 auto;
-  width: 700px;
+  width: 900px;
   border:1px dotted black;
-  padding-left: 30px
+  padding-left: 100px
 }
 
 .edit-profile-form input {
