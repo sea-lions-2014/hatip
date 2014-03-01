@@ -6,6 +6,8 @@ gem 'devise'
 
 gem 'pg'
 gem 'omniauth-facebook'
+gem "koala", "~> 1.8.0rc1"
+
 
 
 group :assets do
