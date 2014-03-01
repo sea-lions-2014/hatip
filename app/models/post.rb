@@ -29,7 +29,7 @@ class Post < ActiveRecord::Base
                 description: "Tip",
                 price_string: '1',
                 custom: "#user{ self.user.id }-post{ self.id }",
-                callback_url: 'http://http://guarded-journey-5941.herokuapp.com/callback',
+                callback_url: 'http://guarded-journey-5941.herokuapp.com/callback',
                 variable_price: true,
                 choose_price: true,
                 price1: '0.5',
