@@ -28,7 +28,7 @@ describe 'UserProfile', :js => true  do
     end
 
     it "should display a user's profile image" do
-      page.should have_css("img[src*='#{user.profile_image_url}']")
+      page.should have_css("img[src='#{user.profile_image_url}']")
     end
 
   end
