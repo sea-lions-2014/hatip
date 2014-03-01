@@ -24,9 +24,11 @@ class User < ActiveRecord::Base
     self.first_name + ' ' + self.last_name
   end
 
-  def card_data
-    { name: self.name, highlight_youtube_url: self.highlight_youtube_url, story: self.story, user_page_url: Rails.application.routes.url_helpers.user_path(self) }
-  end
+  # Possible deletion, repetition with post card data
+
+  # def card_data
+  #   { name: self.name, highlight_youtube_url: self.highlight_youtube_url, story: self.story, user_page_url: Rails.application.routes.url_helpers.user_path(self) }
+  # end
 
   def self.find_for_facebook_oauth(auth)
     where(auth.slice(:provider, :uid)).first_or_create do |user|
