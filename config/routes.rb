@@ -11,6 +11,9 @@ Hatip::Application.routes.draw do
 
   resources :tips, :only => [:create]
 
+    match 'admin', to: 'admins#index', via: :get
+  match 'admin/revoke', to: 'admins#revoke_verification', via: :get
+
   post "callback", :to => 'tips#create'
 
   devise_scope :user do
@@ -21,5 +24,8 @@ Hatip::Application.routes.draw do
     resources :users
     resources :posts
   end
+
+  match '/create_verifications', :to => 'users#create_verification'
+  match '/revoke_verifications', :to => 'users#revoke_verification'
 
 end

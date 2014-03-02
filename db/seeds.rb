@@ -19,7 +19,7 @@ urls = [
     password_confirmation: "password",
     stage_name: "The Big Show",
     twitter_handle: "tbs002",
-    verified: true,
+    verified: false,
     tagline: "is this the interwebs?",
     city: Faker::Address.city,
     state: Faker::Address.state,

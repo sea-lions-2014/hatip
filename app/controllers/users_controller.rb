@@ -28,4 +28,18 @@ class UsersController < ApplicationController
     end
   end
 
+  def create_verification
+     user = User.find(params[:user])
+     user.verified = true
+     user.save ? verified = "User has been verified" : verified = "There was an error"
+     render json: {verified: verified}
+   end
+
+   def revoke_verification
+      user = User.find(params[:user])
+      user.verified = false
+      user.save ? verified = "User is no longer verified" : verified = "There was an error"
+      render json: {verified: verified}
+    end
+
 end
