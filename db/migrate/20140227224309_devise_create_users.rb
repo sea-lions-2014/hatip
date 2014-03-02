@@ -32,6 +32,7 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.text    :story
       t.string  :profile_image_url
       t.string  :featured_youtube_url
+      t.boolean :is_admin, :default => false
 
       ## Confirmable
       # t.string   :confirmation_token

@@ -1,9 +1,8 @@
 class UsersController < ApplicationController
-  def show
 
+  def show
      @user = User.find(params[:id])
      @post = Post.new
-
   end
 
   def edit
@@ -36,10 +35,9 @@ class UsersController < ApplicationController
    end
 
    def revoke_verification
-      user = User.find(params[:user])
-      user.verified = false
-      user.save ? verified = "User is no longer verified" : verified = "There was an error"
-      render json: {verified: verified}
-    end
-
+    user = User.find(params[:user])
+    user.verified = true
+    user.save ? verified = "User has been verified" : verified = "There was an error"
+    render json: {verified: verified}
+  end
 end

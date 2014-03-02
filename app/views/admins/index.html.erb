@@ -5,7 +5,7 @@
 <tr><th>ID</th><th>User</th><th>Mark as Verified</th></tr>
 <% @unverified_users.each do |user| %>
     <tr><td><%= user.id %></td><td><%=  user.email %></td><td><%= link_to "Mark as Verified",  create_verifications_path(:user => user), remote: true, class: "create-verification", method: :post %>
-</td></tr>
+    </td></tr>
 <% end %>
 </table>
 

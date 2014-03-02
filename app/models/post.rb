@@ -14,6 +14,10 @@ class Post < ActiveRecord::Base
     YoutubeBuddy.new(youtube_url).thumbnail_url
   end
 
+  def facebook_like_url
+    FacebookBuddy.new(self.user.id).like_button_source_url
+  end
+
   def card_data
 
     coinbase = Coinbase::Client.new(ENV['COINBASE_API_KEY'], ENV['COINBASE_API_SECRET'])
@@ -28,8 +32,8 @@ class Post < ActiveRecord::Base
                 price_currency_iso: "USD",
                 description: "Tip",
                 price_string: '1',
-                custom: "#user{ self.user.id }-post{ self.id }",
-                callback_url: 'http://www.hatip.com/callback',
+                custom: "{ user_id: #{ self.user.id }, post_id: #{ self.id } }",
+                callback_url: 'http://guarded-journey-5941.herokuapp.com/callback',
                 variable_price: true,
                 choose_price: true,
                 price1: '0.5',
@@ -48,6 +52,7 @@ class Post < ActiveRecord::Base
       description: self.description,
       artist_page_url: Rails.application.routes.url_helpers.user_path(self.user),
       payment_button: button.embed_html,
+      facebook_like_url: facebook_like_url,
       payment_button_code: button.button.code
     }
   end
