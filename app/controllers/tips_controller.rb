@@ -23,7 +23,8 @@ class TipsController < ApplicationController
     }
     puts tip_info
 
-    user.tips.create(tip_info)
+    tip = Tip.create(tip_info)
+    user.tips << tip
     render json: { success: "success" }
   end
 end
