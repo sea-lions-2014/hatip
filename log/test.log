@@ -6859,3 +6859,140 @@ Connecting to database specified by database.yml
   [1m[35m (0.3ms)[0m  ALTER TABLE "posts" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "tips" DISABLE TRIGGER ALL
   [1m[36m (10.1ms)[0m  [1mTRUNCATE TABLE "posts", "users", "tips" RESTART IDENTITY CASCADE;[0m
   [1m[35m (0.5ms)[0m  ALTER TABLE "posts" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "tips" ENABLE TRIGGER ALL
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (0.7ms)[0m  [1mALTER TABLE "posts" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "tips" DISABLE TRIGGER ALL[0m
+  [1m[35m (1.7ms)[0m  select table_name from information_schema.views where table_schema = 'hatip_test'
+  [1m[36m (216.8ms)[0m  [1mTRUNCATE TABLE "posts", "users", "tips" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "posts" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "tips" ENABLE TRIGGER ALL
+Connecting to database specified by database.yml
+  [1m[36m (0.7ms)[0m  [1mALTER TABLE "posts" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "tips" DISABLE TRIGGER ALL[0m
+  [1m[35m (2.0ms)[0m  select table_name from information_schema.views where table_schema = 'hatip_test'
+  [1m[36m (9.2ms)[0m  [1mTRUNCATE TABLE "posts", "users", "tips" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "posts" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "tips" ENABLE TRIGGER ALL
+Connecting to database specified by database.yml
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "posts" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "tips" DISABLE TRIGGER ALL[0m
+  [1m[35m (2.5ms)[0m  select table_name from information_schema.views where table_schema = 'hatip_test'
+  [1m[36m (132.5ms)[0m  [1mTRUNCATE TABLE "posts", "users", "tips" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "posts" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "tips" ENABLE TRIGGER ALL
+Connecting to database specified by database.yml
+  [1m[36m (0.7ms)[0m  [1mALTER TABLE "posts" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "tips" DISABLE TRIGGER ALL[0m
+  [1m[35m (1.9ms)[0m  select table_name from information_schema.views where table_schema = 'hatip_test'
+  [1m[36m (8.7ms)[0m  [1mTRUNCATE TABLE "posts", "users", "tips" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "posts" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "tips" ENABLE TRIGGER ALL
+Connecting to database specified by database.yml
+  [1m[36m (0.7ms)[0m  [1mALTER TABLE "posts" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "tips" DISABLE TRIGGER ALL[0m
+  [1m[35m (2.0ms)[0m  select table_name from information_schema.views where table_schema = 'hatip_test'
+  [1m[36m (9.0ms)[0m  [1mTRUNCATE TABLE "posts", "users", "tips" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "posts" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "tips" ENABLE TRIGGER ALL
+Connecting to database specified by database.yml
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "posts" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "tips" DISABLE TRIGGER ALL[0m
+  [1m[35m (1.4ms)[0m  select table_name from information_schema.views where table_schema = 'hatip_test'
+  [1m[36m (8.0ms)[0m  [1mTRUNCATE TABLE "posts", "users", "tips" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "posts" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "tips" ENABLE TRIGGER ALL
+Connecting to database specified by database.yml
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "posts" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "tips" DISABLE TRIGGER ALL[0m
+  [1m[35m (2.5ms)[0m  select table_name from information_schema.views where table_schema = 'hatip_test'
+  [1m[36m (9.3ms)[0m  [1mTRUNCATE TABLE "posts", "users", "tips" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "posts" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "tips" ENABLE TRIGGER ALL
+Connecting to database specified by database.yml
+  [1m[36m (0.7ms)[0m  [1mALTER TABLE "posts" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "tips" DISABLE TRIGGER ALL[0m
+  [1m[35m (1.7ms)[0m  select table_name from information_schema.views where table_schema = 'hatip_test'
+  [1m[36m (9.0ms)[0m  [1mTRUNCATE TABLE "posts", "users", "tips" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "posts" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "tips" ENABLE TRIGGER ALL
+Connecting to database specified by database.yml
+  [1m[36m (0.7ms)[0m  [1mALTER TABLE "posts" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "tips" DISABLE TRIGGER ALL[0m
+  [1m[35m (2.0ms)[0m  select table_name from information_schema.views where table_schema = 'hatip_test'
+  [1m[36m (9.3ms)[0m  [1mTRUNCATE TABLE "posts", "users", "tips" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "posts" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "tips" ENABLE TRIGGER ALL
+Connecting to database specified by database.yml
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "posts" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "tips" DISABLE TRIGGER ALL[0m
+  [1m[35m (1.4ms)[0m  select table_name from information_schema.views where table_schema = 'hatip_test'
+  [1m[36m (9.1ms)[0m  [1mTRUNCATE TABLE "posts", "users", "tips" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "posts" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "tips" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "posts" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "tips" DISABLE TRIGGER ALL[0m
+  [1m[35m (7.4ms)[0m  TRUNCATE TABLE "posts", "users", "tips" RESTART IDENTITY CASCADE;
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "posts" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "tips" ENABLE TRIGGER ALL[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.7ms)[0m  [1mALTER TABLE "posts" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "tips" DISABLE TRIGGER ALL[0m
+  [1m[35m (1.7ms)[0m  select table_name from information_schema.views where table_schema = 'hatip_test'
+  [1m[36m (8.5ms)[0m  [1mTRUNCATE TABLE "posts", "users", "tips" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "posts" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "tips" ENABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "posts" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "tips" DISABLE TRIGGER ALL[0m
+  [1m[35m (263.2ms)[0m  TRUNCATE TABLE "posts", "users", "tips" RESTART IDENTITY CASCADE;
+  [1m[36m (0.6ms)[0m  [1mALTER TABLE "posts" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "tips" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "posts" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "tips" DISABLE TRIGGER ALL
+  [1m[36m (25.8ms)[0m  [1mTRUNCATE TABLE "posts", "users", "tips" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "posts" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "tips" ENABLE TRIGGER ALL
+Connecting to database specified by database.yml
+  [1m[36m (0.6ms)[0m  [1mALTER TABLE "posts" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "tips" DISABLE TRIGGER ALL[0m
+  [1m[35m (1.9ms)[0m  select table_name from information_schema.views where table_schema = 'hatip_test'
+  [1m[36m (8.0ms)[0m  [1mTRUNCATE TABLE "posts", "users", "tips" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "posts" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "tips" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "posts" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "tips" DISABLE TRIGGER ALL[0m
+  [1m[35m (7.2ms)[0m  TRUNCATE TABLE "posts", "users", "tips" RESTART IDENTITY CASCADE;
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "posts" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "tips" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "posts" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "tips" DISABLE TRIGGER ALL
+  [1m[36m (8.9ms)[0m  [1mTRUNCATE TABLE "posts", "users", "tips" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.6ms)[0m  ALTER TABLE "posts" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "tips" ENABLE TRIGGER ALL
+Connecting to database specified by database.yml
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "posts" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "tips" DISABLE TRIGGER ALL[0m
+  [1m[35m (1.4ms)[0m  select table_name from information_schema.views where table_schema = 'hatip_test'
+  [1m[36m (8.5ms)[0m  [1mTRUNCATE TABLE "posts", "users", "tips" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "posts" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "tips" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "posts" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "tips" DISABLE TRIGGER ALL[0m
+  [1m[35m (7.7ms)[0m  TRUNCATE TABLE "posts", "users", "tips" RESTART IDENTITY CASCADE;
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "posts" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "tips" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "posts" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "tips" DISABLE TRIGGER ALL
+  [1m[36m (8.4ms)[0m  [1mTRUNCATE TABLE "posts", "users", "tips" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.6ms)[0m  ALTER TABLE "posts" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "tips" ENABLE TRIGGER ALL
+Connecting to database specified by database.yml
+  [1m[36m (0.7ms)[0m  [1mALTER TABLE "posts" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "tips" DISABLE TRIGGER ALL[0m
+  [1m[35m (1.6ms)[0m  select table_name from information_schema.views where table_schema = 'hatip_test'
+  [1m[36m (8.6ms)[0m  [1mTRUNCATE TABLE "posts", "users", "tips" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "posts" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "tips" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "posts" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "tips" DISABLE TRIGGER ALL[0m
+  [1m[35m (8.0ms)[0m  TRUNCATE TABLE "posts", "users", "tips" RESTART IDENTITY CASCADE;
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "posts" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "tips" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "posts" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "tips" DISABLE TRIGGER ALL
+  [1m[36m (9.1ms)[0m  [1mTRUNCATE TABLE "posts", "users", "tips" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.5ms)[0m  ALTER TABLE "posts" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "tips" ENABLE TRIGGER ALL
+Connecting to database specified by database.yml
+  [1m[36m (0.7ms)[0m  [1mALTER TABLE "posts" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "tips" DISABLE TRIGGER ALL[0m
+  [1m[35m (2.0ms)[0m  select table_name from information_schema.views where table_schema = 'hatip_test'
+  [1m[36m (8.7ms)[0m  [1mTRUNCATE TABLE "posts", "users", "tips" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "posts" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "tips" ENABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "posts" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "tips" DISABLE TRIGGER ALL[0m
+  [1m[35m (8.2ms)[0m  TRUNCATE TABLE "posts", "users", "tips" RESTART IDENTITY CASCADE;
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "posts" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "tips" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "posts" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "tips" DISABLE TRIGGER ALL
+  [1m[36m (8.0ms)[0m  [1mTRUNCATE TABLE "posts", "users", "tips" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.5ms)[0m  ALTER TABLE "posts" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "tips" ENABLE TRIGGER ALL
+Connecting to database specified by database.yml
+  [1m[36m (0.9ms)[0m  [1mALTER TABLE "posts" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "tips" DISABLE TRIGGER ALL[0m
+  [1m[35m (1.9ms)[0m  select table_name from information_schema.views where table_schema = 'hatip_test'
+  [1m[36m (9.5ms)[0m  [1mTRUNCATE TABLE "posts", "users", "tips" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "posts" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "tips" ENABLE TRIGGER ALL
+  [1m[36m (0.1ms)[0m  [1mALTER TABLE "posts" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "tips" DISABLE TRIGGER ALL[0m
+  [1m[35m (8.5ms)[0m  TRUNCATE TABLE "posts", "users", "tips" RESTART IDENTITY CASCADE;
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "posts" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "tips" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.1ms)[0m  ALTER TABLE "posts" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "tips" DISABLE TRIGGER ALL
+  [1m[36m (9.3ms)[0m  [1mTRUNCATE TABLE "posts", "users", "tips" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.5ms)[0m  ALTER TABLE "posts" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "tips" ENABLE TRIGGER ALL
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "posts" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "tips" DISABLE TRIGGER ALL[0m
+  [1m[35m (9.4ms)[0m  TRUNCATE TABLE "posts", "users", "tips" RESTART IDENTITY CASCADE;
+  [1m[36m (0.7ms)[0m  [1mALTER TABLE "posts" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "tips" ENABLE TRIGGER ALL[0m
+Connecting to database specified by database.yml
+  [1m[36m (0.6ms)[0m  [1mALTER TABLE "posts" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "tips" DISABLE TRIGGER ALL[0m
+  [1m[35m (1.5ms)[0m  select table_name from information_schema.views where table_schema = 'hatip_test'
+  [1m[36m (8.7ms)[0m  [1mTRUNCATE TABLE "posts", "users", "tips" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.3ms)[0m  ALTER TABLE "posts" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "tips" ENABLE TRIGGER ALL
+  [1m[36m (0.2ms)[0m  [1mALTER TABLE "posts" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "tips" DISABLE TRIGGER ALL[0m
+  [1m[35m (6.9ms)[0m  TRUNCATE TABLE "posts", "users", "tips" RESTART IDENTITY CASCADE;
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "posts" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "tips" ENABLE TRIGGER ALL[0m
+  [1m[35m (0.2ms)[0m  ALTER TABLE "posts" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "tips" DISABLE TRIGGER ALL
+  [1m[36m (8.0ms)[0m  [1mTRUNCATE TABLE "posts", "users", "tips" RESTART IDENTITY CASCADE;[0m
+  [1m[35m (0.5ms)[0m  ALTER TABLE "posts" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "tips" ENABLE TRIGGER ALL
+  [1m[36m (0.3ms)[0m  [1mALTER TABLE "posts" DISABLE TRIGGER ALL;ALTER TABLE "users" DISABLE TRIGGER ALL;ALTER TABLE "schema_migrations" DISABLE TRIGGER ALL;ALTER TABLE "tips" DISABLE TRIGGER ALL[0m
+  [1m[35m (10.6ms)[0m  TRUNCATE TABLE "posts", "users", "tips" RESTART IDENTITY CASCADE;
+  [1m[36m (0.5ms)[0m  [1mALTER TABLE "posts" ENABLE TRIGGER ALL;ALTER TABLE "users" ENABLE TRIGGER ALL;ALTER TABLE "schema_migrations" ENABLE TRIGGER ALL;ALTER TABLE "tips" ENABLE TRIGGER ALL[0m
