@@ -18,6 +18,7 @@ Hatip::Application.routes.draw do
   match '/create_verifications', :to => 'users#create_verification'
   match '/revoke_verifications', :to => 'users#revoke_verification'
 
+  post "callback", :to => 'tips#create'
 
   devise_scope :user do
     get 'sign_out', :to => 'devise/sessions#destroy', :as => :destroy_user_session

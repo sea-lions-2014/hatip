@@ -17,3 +17,9 @@ test:
   database: hatip_test
   pool: 5
   timeout: 5000
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: myapp_production
+  pool: 5

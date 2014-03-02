@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby '2.0.0'
 
 gem 'rails', '3.2.14'
 
@@ -7,7 +8,7 @@ gem 'devise'
 gem 'pg'
 gem 'omniauth-facebook'
 gem 'coinbase'
-gem 'dotenv'
+gem 'faker'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
@@ -20,6 +21,7 @@ group :development do
 end
 group :test, :development do
   gem 'rspec-rails'
+  gem 'dotenv-rails'
 end
 
 group :test do
@@ -32,3 +34,6 @@ group :test do
 end
 
 gem 'jquery-rails'
+
+gem 'rails_12factor', group: :production
+

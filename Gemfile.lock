@@ -66,6 +66,8 @@ GEM
       warden (~> 1.2.3)
     diff-lcs (1.2.5)
     dotenv (0.10.0)
+    dotenv-rails (0.10.0)
+      dotenv (= 0.10.0)
     erubis (2.7.0)
     execjs (2.0.2)
     factory_girl (4.4.0)
@@ -137,6 +139,11 @@ GEM
       activesupport (= 3.2.14)
       bundler (~> 1.0)
       railties (= 3.2.14)
+    rails_12factor (0.0.2)
+      rails_serve_static_assets
+      rails_stdout_logging
+    rails_serve_static_assets (0.0.2)
+    rails_stdout_logging (0.0.3)
     railties (3.2.14)
       actionpack (= 3.2.14)
       activesupport (= 3.2.14)
@@ -204,13 +211,14 @@ DEPENDENCIES
   coinbase
   database_cleaner
   devise
-  dotenv
+  dotenv-rails
   factory_girl_rails (~> 4.0)
   faker
   jquery-rails
   omniauth-facebook
   pg
   rails (= 3.2.14)
+  rails_12factor
   rspec-rails
   sass-rails (~> 3.2.3)
   selenium-webdriver
