@@ -1,41 +1,61 @@
 $(function(){
-  $('.post-card').click(CardModal.init);
-  $('#cardModal').on('hidden.bs.modal', CardModal.stopVideo);
+  CardMaster.bindEventListeners();
 });
 
-var CardModal = {
-  data: {},
-
-  init: function(event) {
-    var card = event.currentTarget;
-    CardModal.postId = $(card).data('id');
-    CardModal.getModalData();
+// CardMaster is the controller to handle the card and card modal creation
+var CardMaster = {
+  bindEventListeners: function(){
+    $('.post-card').click(CardMaster.launchModal);
+    $('#cardModal').on('hidden.bs.modal', CardModal.stopVideo);
   },
 
-  getModalData: function(){
-    $.get('/api/posts/' + CardModal.postId, function(data){
-      console.log(data);
-      CardModal.data = data;
-      CardModal.updateModalElements();
-      CardModal.displayModal();
-    });
+  launchModal: function(event){
+    var card = CardMaster.buildCard(event);
+    var modal = new CardModal(card, 'launch');
   },
 
-  updateModalElements: function(){
-    $('#cardModalLabel').text(CardModal.data.title);
-    $('#cardModalArtistName').text(CardModal.data.artist_name);
-    $('#cardModalArtistName').attr("href", CardModal.data.artist_page_url);
-    $('#cardVideo').attr("src", "http://www.youtube.com/embed/" + CardModal.data.youtube_id);
-    $('.tip-button').html(CardModal.data.payment_button)
-    $('.video-description').text(CardModal.data.description);
-    $('.fb-like-button').attr("src", CardModal.data.facebook_like_url);
-  },
+  buildCard: function(event) {
+    var postId = $(event.currentTarget).data('id');
+    return new Card(postId);
+  }
+}
 
-  displayModal: function() {
-    $('#cardModal').modal('show');
-  },
+// Card constructor
+function Card(postId) {
+  this.postId = postId;
+}
 
-  stopVideo: function() {
-    $('#cardVideo').attr('src', '');
- }
+// Modal constructor (named card modal to not interfere with modal in bootstrap js)
+function CardModal(card, callback) {
+  this.dataCache = {};
+  this.dataCache.postId = card.postId;
+  this.callback = callback;
+  this.getDataFromServer();
+}
+
+CardModal.prototype.launch = function(){
+  $('#cardModal').modal('show');
+}
+
+CardModal.prototype.getDataFromServer = function() {
+  var modal = this;
+  $.ajax({
+    url:      '/api/posts/' + modal.dataCache.postId,
+    success:  function(data) {
+                $.extend(modal.dataCache, data);
+                // console.log(modal.dataCache);
+                modal.updateModalElements();
+                modal[modal.callback]();
+              }
+  });
+}
+
+CardModal.prototype.updateModalElements = function() {
+  $('#cardModalLabel').text(this.dataCache.title);
+  $('#cardModalArtistName').text(this.dataCache.artist_name);
+  $('#cardModalArtistName').attr("href", this.dataCache.artist_page_url);
+  $('#cardVideo').attr("src", "http://www.youtube.com/embed/" + this.dataCache.youtube_id);
+  $('.tip-button').html(this.dataCache.payment_button);
+  $('.video-description').text(this.dataCache.description);
+  $('.fb-like-button').attr("src", this.dataCache.facebook_like_url);
 }
