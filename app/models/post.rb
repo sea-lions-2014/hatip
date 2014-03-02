@@ -52,7 +52,7 @@ class Post < ActiveRecord::Base
       description: self.description,
       artist_page_url: Rails.application.routes.url_helpers.user_path(self.user),
       payment_button: button.embed_html,
-      facebook_like_url: facebook_like_url
+      facebook_like_url: facebook_like_url,
       payment_button_code: button.button.code
     }
   end
