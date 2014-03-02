@@ -15,4 +15,5 @@
         var $this = $(this);
         $this.toggleClass('active').next('ul').toggleClass('active');
       });
+      
   });
