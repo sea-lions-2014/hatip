@@ -4,6 +4,7 @@ class TipsController < ApplicationController
 	end
 
   def create
+  	puts params
     tip_info = {
       amount: params[:order][:total_btc][:cents]
     }
