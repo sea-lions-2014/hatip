@@ -1,0 +1,33 @@
+        <a class="menu-link" href="#menu">Menu</a>
+
+        <nav id="menu" class="menu">
+          <ul>
+            <img class="logo" src="http://placehold.it/200x50" />
+                <li class="has-submenu nav-first">
+
+                  <%= link_to "Home", root_path %>
+                  <ul class="sub-menu">
+                     <li><a href="#">Artificial Turf</a></li>
+                     <li class="has-submenu">
+                      <a href="#">Batting Cages</a>
+                      <ul>
+                        <li><a href="#">Indoor</a></li>
+                        <li><a href="#">Outdoor</a></li>
+                      </ul>
+                     </li>
+                  </ul>
+                </li>
+
+                <li class="has-submenu">
+                  <%= link_to "Explore", root_path %>
+                  <ul class="sub-menu">
+                     <li><a href="#">Ladders &amp; Sticks</a></li>
+                     <li><a href="#">Hurdles</a></li>
+                  </ul>
+                </li>
+
+              </ul>
+        </nav>
+
+
+

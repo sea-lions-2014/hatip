@@ -1,11 +1,9 @@
-
-  <%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %>
-  <div class="card-container">
-
-  <h1 >HaTip</h1>
+<div class="card-container">
   <div id="card-wrapper">
-
     <%= render partial: 'post_cards', locals: { posts: @posts } %>
   </div>
+  <%= render partial: 'post_card_modal' %>
+</div>
 
-<%= render partial: 'post_card_modal' %>
+
+
