@@ -1,7 +1,7 @@
 <%= render partial: 'admin_navbar' %>
 
 
-<table cellspacing="0">
+<table class="admin_table" cellspacing="0">
 <tr><th>ID</th><th>User</th><th>Mark as Verified</th></tr>
 <% @unverified_users.each do |user| %>
     <tr><td><%= user.id %></td><td><%=  user.email %></td><td><%= link_to "Mark as Verified",  create_verifications_path(:user => user), remote: true, class: "create-verification", method: :post %>
@@ -49,7 +49,7 @@
     CSS Tricks also has a nice writeup: http://css-tricks.com/feature-table-design/
     */
 
-    table {
+    .admin_table {
         overflow:hidden;
         border:1px solid #d3d3d3;
         background:#fefefe;
@@ -63,33 +63,33 @@
     }
 
 
-    th, td {padding:18px 28px 18px; text-align:center; }
+    .admin_table th, td {padding:18px 28px 18px; text-align:center; }
 
-    th {padding-top:22px; text-shadow: 1px 1px 1px #fff; background:#e8eaeb;}
+    .admin_table th {padding-top:22px; text-shadow: 1px 1px 1px #fff; background:#e8eaeb;}
 
-    td {border-top:1px solid #e0e0e0; border-right:1px solid #e0e0e0;}
+    .admin_table td {border-top:1px solid #e0e0e0; border-right:1px solid #e0e0e0;}
 
-    tr.odd-row td {background:#f6f6f6;}
+    .admin_table tr.odd-row td {background:#f6f6f6;}
 
-    td.first, th.first {text-align:left}
+    .admin_table td.first, th.first {text-align:left}
 
-    td.last {border-right:none;}
+    .admin_table td.last {border-right:none;}
 
     /*
     Background gradients are completely unnecessary but a neat effect.
     */
 
-    td {
+    .admin_table td {
         background: -moz-linear-gradient(100% 25% 90deg, #fefefe, #f9f9f9);
         background: -webkit-gradient(linear, 0% 0%, 0% 25%, from(#f9f9f9), to(#fefefe));
     }
 
-    tr.odd-row td {
+    .admin_table tr.odd-row td {
         background: -moz-linear-gradient(100% 25% 90deg, #f6f6f6, #f1f1f1);
         background: -webkit-gradient(linear, 0% 0%, 0% 25%, from(#f1f1f1), to(#f6f6f6));
     }
 
-    th {
+    .admin_table th {
         background: -moz-linear-gradient(100% 20% 90deg, #e8eaeb, #ededed);
         background: -webkit-gradient(linear, 0% 0%, 0% 20%, from(#ededed), to(#e8eaeb));
     }
@@ -101,22 +101,22 @@
     And, since we've applied the background colors to td/th element because of IE, Gecko browsers also need it.
     */
 
-    tr:first-child th.first {
+    .admin_table tr:first-child th.first {
         -moz-border-radius-topleft:5px;
         -webkit-border-top-left-radius:5px; /* Saf3-4 */
     }
 
-    tr:first-child th.last {
+    .admin_table tr:first-child th.last {
         -moz-border-radius-topright:5px;
         -webkit-border-top-right-radius:5px; /* Saf3-4 */
     }
 
-    tr:last-child td.first {
+    .admin_table tr:last-child td.first {
         -moz-border-radius-bottomleft:5px;
         -webkit-border-bottom-left-radius:5px; /* Saf3-4 */
     }
 
-    tr:last-child td.last {
+    .admin_table tr:last-child td.last {
         -moz-border-radius-bottomright:5px;
         -webkit-border-bottom-right-radius:5px; /* Saf3-4 */
     }
@@ -152,6 +152,7 @@
     .nav-links li a {
         color: white;
         font-weight: bold;
+        text-decoration: none;
     }
 
     .nav-links li a:hover {
