@@ -3,7 +3,7 @@
 </div>
 
 <div class='genre'>
-  <p><%= @user.genre.capitalize %></p>
+  <p><%= @user.genre.capitalize if @user.genre %></p>
  </div>
 
 <%= render partial: 'artist_info', :user => @user %>

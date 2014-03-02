@@ -25,7 +25,12 @@ class User < ActiveRecord::Base
   end
 
   def card_data
-    { name: self.name, highlight_youtube_url: self.highlight_youtube_url, story: self.story, user_page_url: Rails.application.routes.url_helpers.user_path(self) }
+    {
+      name: self.name,
+      highlight_youtube_url: self.highlight_youtube_url,
+      story: self.story,
+      user_page_url: Rails.application.routes.url_helpers.user_path(self)
+    }
   end
 
   def self.find_for_facebook_oauth(auth)
@@ -34,10 +39,10 @@ class User < ActiveRecord::Base
       user.uid = auth.uid
       user.email = auth.info.email
       user.password = Devise.friendly_token[0,20]
-      # user.name = auth.info.name   # assuming the user model has a name
+      user.stage_name = auth.info.name   # assuming the user model has a name
       user.oauth_token = auth.credentials.token
       user.oauth_expires_at = Time.at(auth.credentials.expires_at)
-      # user.image = auth.info.image # assuming the user model has an image
+      user.profile_image_url = auth.info.image # assuming the user model has an image
     end
   end
 

@@ -58,6 +58,7 @@ ActiveRecord::Schema.define(:version => 20140228232337) do
     t.text     "story"
     t.string   "profile_image_url"
     t.string   "featured_youtube_url"
+    t.boolean  "is_admin",               :default => false
     t.datetime "created_at",                                :null => false
     t.datetime "updated_at",                                :null => false
     t.string   "provider"

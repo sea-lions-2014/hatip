@@ -16,7 +16,6 @@ var CardModal = {
     $.get('/api/posts/' + CardModal.postId, function(data){
       console.log(data);
       CardModal.data = data;
-      console.log(data);
       CardModal.updateModalElements();
       CardModal.displayModal();
     });
@@ -29,6 +28,7 @@ var CardModal = {
     $('#cardVideo').attr("src", "http://www.youtube.com/embed/" + CardModal.data.youtube_id);
     $('.tip-button').html(CardModal.data.payment_button)
     $('.video-description').text(CardModal.data.description);
+    $('.fb-like-button').attr("src", CardModal.data.facebook_like_url);
   },
 
   displayModal: function() {

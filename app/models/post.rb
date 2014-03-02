@@ -14,6 +14,10 @@ class Post < ActiveRecord::Base
     YoutubeBuddy.new(youtube_url).thumbnail_url
   end
 
+  def facebook_like_url
+    FacebookBuddy.new(self.user.id).like_button_source_url
+  end
+
   def card_data
 
     coinbase = Coinbase::Client.new(ENV['COINBASE_API_KEY'], ENV['COINBASE_API_SECRET'])
@@ -47,7 +51,8 @@ class Post < ActiveRecord::Base
       youtube_id: self.youtube_id,
       description: self.description,
       artist_page_url: Rails.application.routes.url_helpers.user_path(self.user),
-      payment_button: button.embed_html
+      payment_button: button.embed_html,
+      facebook_like_url: facebook_like_url
     }
   end
 end

@@ -2,7 +2,7 @@
 <h1>Edit <%= @user.stage_name %>'s Profile</h1>
   <%= form_for [ @user] do |f| %>
     <%= f.label :stage_name %>
-    <p><%= f.text_field :stage_name %></p>
+    <p><%= f.text_field :stage_name, :value => @user.stage_name %></p>
 
     <%= f.label :featured_youtube_url %>
     <p><%= f.text_field :featured_youtube_url %></p>
