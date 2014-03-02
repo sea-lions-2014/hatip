@@ -3,7 +3,6 @@ class CreateTips < ActiveRecord::Migration
     create_table :tips do |t|
       t.belongs_to  :user
       t.string      :coinbase_id
-      t.integer     :amount
       t.string      :post_id
       t.string      :fiat_iso
       t.integer     :fiat_cents

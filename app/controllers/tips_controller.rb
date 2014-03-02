@@ -10,7 +10,6 @@ class TipsController < ApplicationController
 
     tip_info = {
     	coinbase_id: 			order['id'],
-      amount: 					order['order'],
       post_id: 					custom_info[:post_id],
       fiat_iso: 				order['total_native']['currency_iso'],
       fiat_cents: 			order['total_native']['cents'],
