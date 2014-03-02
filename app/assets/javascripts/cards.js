@@ -27,8 +27,9 @@ function Card(postId) {
 
 // Modal constructor (named card modal to not interfere with modal in bootstrap js)
 function CardModal(card, callback) {
-  this.dataCache = {};
-  this.dataCache.postId = card.postId;
+  this.dataCache = {
+    postId: card.postId
+  };
   this.callback = callback;
   this.getDataFromServer();
 }
@@ -43,7 +44,6 @@ CardModal.prototype.getDataFromServer = function() {
     url:      '/api/posts/' + modal.dataCache.postId,
     success:  function(data) {
                 $.extend(modal.dataCache, data);
-                // console.log(modal.dataCache);
                 modal.updateModalElements();
                 modal[modal.callback]();
               }
