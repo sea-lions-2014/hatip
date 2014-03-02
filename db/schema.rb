@@ -25,13 +25,17 @@ ActiveRecord::Schema.define(:version => 20140228232337) do
 
   create_table "tips", :force => true do |t|
     t.integer "user_id"
+    t.string  "coinbase_id"
     t.integer "amount"
-    t.string  "currency_iso"
-    t.string  "order_id"
-    t.string  "receive_address"
-    t.string  "tx_id"
+    t.string  "post_id"
+    t.string  "fiat_iso"
+    t.integer "fiat_cents"
+    t.string  "crypto_iso"
+    t.integer "crypto_cents"
     t.string  "tx_hash"
-    t.string  "tipper_email"
+    t.string  "tx_id"
+    t.string  "status"
+    t.string  "receive_address"
   end
 
   create_table "users", :force => true do |t|

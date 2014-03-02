@@ -32,8 +32,8 @@ class Post < ActiveRecord::Base
                 price_currency_iso: "USD",
                 description: "Tip",
                 price_string: '1',
-                custom: "#user{ self.user.id }-post{ self.id }",
-                callback_url: 'http://www.hatip.com/callback',
+                custom: "{ user_id: #{ self.user.id }, post_id: #{ self.id } }",
+                callback_url: 'http://guarded-journey-5941.herokuapp.com/callback',
                 variable_price: true,
                 choose_price: true,
                 price1: '0.5',
@@ -43,7 +43,7 @@ class Post < ActiveRecord::Base
                 price5: '10'
               }
             }
-    button = coinbase.create_button("Tip for #{ self.user.name }", 0, 'b', 'b', opts)
+    button = coinbase.create_button("Tip for #{ self.user.name }", 1, 'b', 'b', opts)
 
     {
       artist_name: self.user.name,
@@ -53,6 +53,7 @@ class Post < ActiveRecord::Base
       artist_page_url: Rails.application.routes.url_helpers.user_path(self.user),
       payment_button: button.embed_html,
       facebook_like_url: facebook_like_url
+      payment_button_code: button.button.code
     }
   end
 end

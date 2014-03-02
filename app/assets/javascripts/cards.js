@@ -1,6 +1,6 @@
 $(function(){
   $('.post-card').click(CardModal.init);
-  $('#cardModal').on('hidden.bs.modal', CardModal.stopVideo)
+  $('#cardModal').on('hidden.bs.modal', CardModal.stopVideo);
 });
 
 var CardModal = {

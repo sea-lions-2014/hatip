@@ -13,11 +13,12 @@ Hatip::Application.routes.draw do
   match 'admin', to: 'admins#index', via: :get
   match 'admin/revoke', to: 'admins#revoke_verification', via: :get
 
-
   match '/create_verifications', :to => 'users#create_verification'
   match '/revoke_verifications', :to => 'users#revoke_verification'
 
+
   post "callback", :to => 'tips#create'
+  get "callback", :to => 'tips#index'
 
   devise_scope :user do
     get 'sign_out', :to => 'devise/sessions#destroy', :as => :destroy_user_session
