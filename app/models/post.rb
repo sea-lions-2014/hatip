@@ -28,7 +28,7 @@ class Post < ActiveRecord::Base
                 price_currency_iso: "USD",
                 description: "Tip",
                 price_string: '1',
-                custom: "#user{ self.user.id }-post{ self.id }",
+                custom: "{ user_id: #{ self.user.id }, post_id: #{ self.id } }",
                 callback_url: 'http://guarded-journey-5941.herokuapp.com/callback',
                 variable_price: true,
                 choose_price: true,
