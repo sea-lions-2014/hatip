@@ -42,13 +42,6 @@ class UsersController < ApplicationController
     render json: {verified: verified}
   end
 
-  def show_user_posts
-    render partial: 'users/show_posts'
-  end
-
-  def show_user_info
-    render partial: 'users/artist_info', locals: {user: User.find(params[:user].to_i)}
-  end
 
 
 

@@ -2,6 +2,12 @@ class Post < ActiveRecord::Base
   attr_accessible :youtube_url, :title, :description, :hype
   belongs_to :user
 
+  validates :youtube_url, presence: true
+  validates :title, presence: true
+  validates_uniqueness_of :youtube_url, scope: :user_id
+
+  validate :validate_youtube_url
+
   def post_embed
     YoutubeBuddy.new(youtube_url).iframe_html
   end
@@ -58,7 +64,12 @@ class Post < ActiveRecord::Base
       artist_page_url: Rails.application.routes.url_helpers.user_path(self.user),
       payment_button: button.embed_html,
       facebook_like_url: facebook_like_url,
-      payment_button_code: button.button.code
     }
+  end
+
+  def validate_youtube_url
+    unless YoutubeBuddy.new(youtube_url).valid_video?
+      errors.add(:youtube_url, "is not valid")
+    end
   end
 end

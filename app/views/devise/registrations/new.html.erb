@@ -1,6 +1,6 @@
 <div class="devise-form">
   <div class="form-container">
-    <div class="actual-form">
+    <div class="field-holder">
 
       <h2 class="devise-title">Sign up</h2>
 
@@ -13,15 +13,14 @@
 
       <div class="form-field"><%= f.password_field :password_confirmation, placeholder: "Password Confirmation" %></div>
 
-      <div><%= f.submit "Sign Up", class: "form-button" %></div>
+      <div><%= f.submit "Sign Up", class: "success-button" %></div>
       <% end %>
     </div>
       <div class="line-holder">
         <p class="or-fb"><span class="line-center">OR</span></p>
       </div>
     <div class="actual-form">
-      <img class="fbbutton" src="http://localhost:3000/assets/fblogin.png" />
-
+      <%= image_tag "fblogin.png", class: "fbbutton" %>
     </div>
   </div>
 </div>

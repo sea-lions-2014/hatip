@@ -26,4 +26,9 @@ class YoutubeBuddy < ActiveRecord::Base
     "http://img.youtube.com/vi/#{ youtube_id }/0.jpg"
   end
 
+  def valid_video?
+    return false if youtube_id.nil?
+    r = HTTParty.get('http://gdata.youtube.com/feeds/api/videos/' + youtube_id).response
+    r.class == Net::HTTPOK
+  end
 end
