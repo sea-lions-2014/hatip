@@ -7,7 +7,7 @@ var Profile = {
   bindEventListeners: function(){
     $('#new_post_button').click(Profile.displayModal);
     $("#new_post").on("ajax:success", Profile.notifyUserSuccess);
-    $("#new_post").on("ajax:error", Profile.notifyUser(e, data));
+    $("#new_post").on("ajax:error", Profile.notifyUserFailure);
   },
 
   displayModal: function(){
@@ -25,10 +25,11 @@ var Profile = {
     $('#create-post-button').replaceWith('Post Created!');
   },
 
-  notifyUserFailure: function(e, data) {
-    debugger
-    console.log(e)
-    $('.new_post').append
+  notifyUserFailure: function(e, xhr, status, error) {
+    var errorList = xhr.responseJSON.errors
+    for(var i=0; i<errorList.length; i++) {
+      $('.errors').html(errorList[i] + '<br>');
+    }
   }
 }
 

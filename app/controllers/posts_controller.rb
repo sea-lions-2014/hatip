@@ -7,7 +7,7 @@ class PostsController < ApplicationController
     if @post.save
       render :nothing => true, :status => :ok
     else
-      render :json => { :errors => @post.errors.full_messages }, :status => 422
+      render :json => { :errors => @post.errors.full_messages }.to_json.html_safe, :status => 422
     end
   end
 end
