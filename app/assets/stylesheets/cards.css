@@ -7,6 +7,19 @@ html body {
 
 .main-image{
   width: 100%;
+  height: 650px;
+  background-image: url(/assets/guitar_plain.png);
+}
+
+#talent-button {
+  margin: 0 auto;
+  background-color: #76cc1e;
+  display: inline-block;
+  color: white;
+  padding: 10px 20px;
+  height: 30px;
+  width: 170px;
+  vertical-align: baseline;
 }
 
 #card-wrapper {

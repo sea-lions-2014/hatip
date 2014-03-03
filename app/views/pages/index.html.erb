@@ -1,4 +1,9 @@
-<%= image_tag "guitar.png", class: "main-image" %>
+<%#= image_tag "guitar.png", class: "main-image" %>
+<div class="main-image">
+  <div class="btn" id="talent-button">
+    What's Your Talent?
+  </div>
+</div>
 <div class="card-container">
   <div id="card-wrapper">
     <%= render partial: 'pages/post_cards', locals: { posts: @posts } %>
