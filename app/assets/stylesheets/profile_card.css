@@ -1,6 +1,4 @@
 
-
-
 .profile-columns {
   -webkit-column-count: 4;
   -webkit-column-gap: 10px;
@@ -50,3 +48,16 @@
   color: #333;
   margin: 0;
 }
+
+#postModal {
+  margin-top: 150px;
+}
+
+.post-modal-dialog {
+
+}
+
+#postModal > div {
+  -webkit-transform: translate(0, 0);
+}
+

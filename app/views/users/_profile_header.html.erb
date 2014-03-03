@@ -8,12 +8,12 @@
         <img src="<%= @user.profile_image_url if @user.profile_image_url%>" height="125" width="125" />
       </td>
       <td class="user-info">
-        <p class="user-name"><%= @user.stage_name %> <a class="twitter" href="http://www.twitter.com/<%= @user.twitter_handle%>">@<%= @user.twitter_handle %></a></p>
+        <p class="user-name"><%= @user.stage_name %> <a class="twitter" href="http://www.twitter.com/<%= @user.twitter_handle%>">@<%= @user.twitter_handle  %></a></p>
         <p class="user-city"><%= @user.city %>, <%= @user.state %></p>
         <p class="user-story"><%= @user.story %></p>
-        <div class="tip-button">
-        </div>
-        <button class="tip-hat">Tip the Hat!</button>
+        <% unless may_edit_profile %>
+          <div class="tip-hat" data-id="<%= @user.posts.first.id %>"></div>
+        <% end %>
         <span class="fb-like">
           <iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fguarded-journey-5941.herokuapp.com%2Fusers%2F<%= @user.id %>&amp;width&amp;layout=button_count&amp;action=like&amp;show_faces=true&amp;share=true&amp;height=21&amp;appId=265059916990245" scrolling="no" frameborder="0" style="border:none; overflow:hidden; height:21px;" allowTransparency="true"></iframe>
         </span>

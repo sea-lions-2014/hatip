@@ -1,8 +1,7 @@
 class PostsController < ApplicationController
   def create
     @post = Post.new(params[:post])
-    if @post.save
-      render partial: 'post_element'
-    end
+    @post.user = User.find(params[:user_id])
+    @post.save
   end
 end

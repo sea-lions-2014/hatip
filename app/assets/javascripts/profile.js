@@ -1,19 +1,25 @@
 $(function(){
   Profile.bindEventListeners();
+  Profile.generateCoinbaseButton();
 });
 
 var Profile = {
   bindEventListeners: function(){
-    $('#new_post_button').click(Profile.showForm);
-    $("#new_post").on("ajax:success", Profile.appendPost);
+    $('#new_post_button').click(Profile.displayModal);
+    // $("#new_post").on("ajax:success", Profile.appendPost);
   },
 
-  showForm: function(){
-    $('#new_post').show();
+  displayModal: function(){
+    $('#postModal').show();
   },
 
-  appendPost: function(e, data, status, xhr){
-    $('.posts-container').append(data);
+  generateCoinbaseButton: function() {
+    var user_id = $('.tip-hat').data('id');
+    $.get('/api/posts/' + user_id, function (data) {
+      $('.tip-hat').html(data.payment_button);
+    })
   }
+
+
 }
 
