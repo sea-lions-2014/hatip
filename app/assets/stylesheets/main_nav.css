@@ -10,8 +10,8 @@
     }
 
     .search-form {
-      position: relative;
-      left: 200px;
+      /*position: relative;*/
+      width: 300px;
       padding-top: 18px;
       display: inline-block;
     }
@@ -83,7 +83,7 @@
     }
     .menu > ul > li {
       display: inline-block;
-      float: right;
+      float: left;
     }
     .menu ul li a {
       display: block;
