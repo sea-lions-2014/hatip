@@ -6,7 +6,7 @@ $(function(){
 var CardMaster = {
   bindEventListeners: function(){
     $('.post-card').click(CardMaster.launchModal);
-    $('#cardModal').on('hidden.bs.modal', CardModal.stopVideo);
+    $('#cardModal').on('hidden.bs.modal', CardMaster.stopVideo);
   },
 
   launchModal: function(event){
@@ -17,6 +17,10 @@ var CardMaster = {
   buildCard: function(event) {
     var postId = $(event.currentTarget).data('id');
     return new Card(postId);
+  },
+
+  stopVideo: function() {
+    $('#cardVideo').attr('src', '');
   }
 }
 
@@ -54,7 +58,7 @@ CardModal.prototype.updateModalElements = function() {
   $('#cardModalLabel').text(this.dataCache.title);
   $('#cardModalArtistName').text(this.dataCache.artist_name);
   $('#cardModalArtistName').attr("href", this.dataCache.artist_page_url);
-  $('#cardVideo').attr("src", "http://www.youtube.com/embed/" + this.dataCache.youtube_id);
+  $('#cardVideo').attr("src", "http://www.youtube.com/embed/" + this.dataCache.youtube_id + "?controls=2&showinfo=0&rel=0");
   $('.tip-button').html(this.dataCache.payment_button);
   $('.video-description').text(this.dataCache.description);
   $('.fb-like-button').attr("src", this.dataCache.facebook_like_url);

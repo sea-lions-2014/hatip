@@ -1,5 +1,4 @@
-<% @user %>
-<%= form_for [@user, @post], remote: true do |f| %>
+<%= form_for [current_user, Post.new], remote: true do |f| %>
   <div class="form-group">
     <%= f.label :title %>
     <%= f.text_field :title %>
