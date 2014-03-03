@@ -10,7 +10,7 @@
       story { Faker::Lorem.paragraph }
       profile_image_url 'http://placehold.it/230X180'
       featured_youtube_url 'http://www.youtube.com/watch?v=_L9h2w798yY'
-      genre "industrial gothic"
+      category "vocal"
     end
 
       factory :post do
