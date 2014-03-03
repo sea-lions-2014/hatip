@@ -1,8 +1,12 @@
 
 html body {
-  margin-top: 50px;
-  background: url(next-ipsum.png);
+  margin-top: 60px;
+  background: #e4e4e4;
   background-attachment: fixed;
+}
+
+.main-image{
+  width: 100%;
 }
 
 #card-wrapper {
