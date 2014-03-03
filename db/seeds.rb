@@ -5,6 +5,8 @@ urls = [
         "http://youtu.be/puSkP3uym5k",
         "http://youtu.be/YPYGeELPpno",
         "http://youtu.be/ub26kLEfphw",
+        "http://youtu.be/sUlfGOezE48",
+        "http://youtu.be/wphB0fq4PlA",
         "https://www.youtube.com/watch?v=uXMuWi0dUBc",
         "https://www.youtube.com/watch?v=-Ow8Gut-4XY",
         "https://www.youtube.com/watch?v=wphB0fq4PlA",

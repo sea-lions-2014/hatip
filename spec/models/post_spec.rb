@@ -2,6 +2,8 @@ require 'spec_helper'
 
 describe Post do
   it { should belong_to :user }
+  it { should validate_presence_of :youtube_url }
+  it { should validate_presence_of :title }
   it { should have_db_column :title }
   it { should have_db_column :youtube_url }
   it { should have_db_column :description }
