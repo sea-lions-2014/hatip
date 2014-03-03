@@ -9,6 +9,7 @@ var Profile = {
     $("#new_post").on("ajax:success", Profile.notifyUserSuccess);
     $("#new_post").on("ajax:error", Profile.notifyUserFailure);
     Profile.bindTabListeners();
+    $('#postModal').on('hidden.bs.modal', Profile.resetModal);
   },
 
   displayModal: function(){
@@ -23,7 +24,9 @@ var Profile = {
   },
 
   notifyUserSuccess: function() {
-    $('#create-post-button').replaceWith('Post Created!');
+    $('#create-post-button').attr('value', 'Post Created!');
+    $('#create-post-button').attr('disabled', true);
+    $('#new_post').find("input[type=text], textarea").val("");
   },
 
   notifyUserFailure: function(e, xhr, status, error) {
@@ -31,6 +34,12 @@ var Profile = {
     for(var i=0; i<errorList.length; i++) {
       $('.errors').html(errorList[i] + '<br>');
     }
+  },
+
+  resetModal: function() {
+    $('#create-post-button').attr('value', 'Create Post');
+    $('#create-post-button').attr('disabled', false);
+    $('.errors').html('');
   },
 
   bindTabListeners: function() {
