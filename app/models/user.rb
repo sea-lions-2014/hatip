@@ -16,7 +16,7 @@ class User < ActiveRecord::Base
   #                                   message: "%{value} is not a valid category" }
 
   def needs_to_create_profile
-    [self.stage_name, self.genre, self.featured_youtube_url, self.tagline].include?(nil || '')
+    [self.stage_name, self.category, self.featured_youtube_url, self.tagline].include?(nil)
   end
 
   def get_hype_score

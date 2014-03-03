@@ -106,18 +106,18 @@ hr{
   margin-left: 45px;
 }
 
-.modal-body {
+.card-modal-body {
   height: 400px;
   padding: 0;
 }
 
-.modal-dialog {
+.card-modal-dialog {
   width: 80%;
   min-width: 800px;
   max-width: 1000px;
 }
 
-.modal-description {
+.card-modal-description {
   padding-top: 20px;
   margin-left: 10px;
   width: 200px;
@@ -125,7 +125,7 @@ hr{
   float: left;
 }
 
-.modal-description p {
+.card-modal-description p {
   height: 60px;
 }
 
@@ -135,7 +135,7 @@ hr{
   padding-right: 10px;
 }
 
-.modal-title {
+.card-modal-title {
   width: 300px;
 }
 

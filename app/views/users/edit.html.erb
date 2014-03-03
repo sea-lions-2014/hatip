@@ -2,11 +2,13 @@
 <div class="form-container">
 <h2 class="devise-title">Edit Profile</h1>
   <%= form_for @user do |f| %>
-    <div class="form-field"><%= f.text_field :stage_name, :value => @user.stage_name %></div>
+    <div class="form-field"><%= f.text_field :stage_name, :value => @user.stage_name, placeholder: "Stage Name" %> *</div>
 
-    <div class="form-field"><%= f.text_field :tagline, placeholder: "Tagline" %></div>
+    <div class="form-field"><%= f.text_field :tagline, placeholder: "Tagline" %> *</div>
 
-    <div class="form-field"><%= f.text_field :featured_youtube_url, placeholder: "YouTube URL" %></div>
+    <div class="form-field"><%= f.text_field :featured_youtube_url, placeholder: "YouTube URL" %> *</div>
+
+    <div class="form-field"><%= f.text_field :category, placeholder: "category" %> *</div>
 
     <div class="form-field"><%= f.text_field :city, placeholder: "City" %></div>
 
