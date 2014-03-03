@@ -11,11 +11,11 @@ describe 'UserProfile', :js => true  do
     end
 
     it "should have a youtube video embedded" do
-      page.should have_selector 'iframe'
+      page.should have_css('iframe')
     end
 
     it "should show a button for users to tip" do
-      page.should have_selector 'button'
+      page.should have_css('button')
     end
 
     it "should not display an edit button if the profile does not belong to the user" do
@@ -23,12 +23,14 @@ describe 'UserProfile', :js => true  do
     end
 
     it "should display a Create New Post form when the New Post Button is clicked" do
-      click_button( 'Create New Post' )
-      page.should have_css('div.form-group')
+      click_link( 'new_post_button' )
+      page.should have_css('div.modal-content')
     end
 
     it "should display a user's profile image" do
-      page.should have_css("img[src='#{user.profile_image_url}']")
+      # page.should have_css("img[src='#{user.profile_image_url}']")
+      #requires additional conversation about saving/uploading non fbook images
+      pending
     end
 
   end
