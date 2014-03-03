@@ -15,7 +15,7 @@ class YoutubeBuddy < ActiveRecord::Base
   end
 
   def youtube_embed_url
-    "http://www.youtube.com/embed/#{ youtube_id }?controls=2&showinfo=0&rel=0"
+    "http://www.youtube.com/embed/#{ youtube_id }?autoplay=1&controls=2&showinfo=0&rel=0"
   end
 
   def iframe_html(height=510, width=900)
