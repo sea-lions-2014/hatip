@@ -8,6 +8,7 @@ var Profile = {
     $('#new_post_button').click(Profile.displayModal);
     $("#new_post").on("ajax:success", Profile.notifyUserSuccess);
     $("#new_post").on("ajax:error", Profile.notifyUserFailure);
+    Profile.bindTabListeners();
   },
 
   displayModal: function(){
@@ -30,6 +31,22 @@ var Profile = {
     for(var i=0; i<errorList.length; i++) {
       $('.errors').html(errorList[i] + '<br>');
     }
+  },
+
+  bindTabListeners: function() {
+    $('.artist_info').hide();
+
+    $("#show-posts").on('click', function(){
+      $('.artist_info').hide();
+      $('.tv').show();
+      $('#profile-columns').show();
+    });
+
+    $("#more-info").on('click', function(){
+      $('.tv').hide();
+      $('#profile-columns').hide();
+      $('.artist_info').show();
+    });
   }
 }
 

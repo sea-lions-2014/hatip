@@ -16,8 +16,7 @@ Hatip::Application.routes.draw do
   match '/create_verifications', :to => 'users#create_verification'
   match '/revoke_verifications', :to => 'users#revoke_verification'
 
-  match '/show_user_posts', :to => 'users#show_user_posts'
-  match '/show_user_info', :to => 'users#show_user_info'
+
 
 
 
