@@ -2,26 +2,18 @@
 
 <div class="profile-tabs">
   <div class="container">
-    <span class="tab"> <%= link_to "Featured Video", user_path(@user) %> </span>
-    <span class="tab"> <%= link_to "More Videos", "#", remote: true, id: "more-videos" %> </span>
-    <span class="tab"> <%= link_to "More Information", '#', remote:true, id: "more-info" %> </span>
-    <% #if may_edit_profile %>
-      <span class="tab tab-last"> <%= link_to "Manage Profile", '#', remote:true, id: "manage-profile" %> </span>
-    <% #end %>
+    <span class="tab"> <%= link_to "Videos", show_user_posts_path , remote: true, id: "show-posts" %> </span>
+    <span class="tab tab-last"> <%= link_to "About #{@user.stage_name}", show_user_info_path(:user => @user), remote:true, id: "more-info"%> </span>
   </div>
 </div>
 
 <div class="profile-content">
-    <div class="container">
-
-
-      <%= render partial: 'users/featured_video' %>
-      <%= render partial: 'posts/artist_posts' %>
-       <%= render partial: 'users/manage_profile' %>
-
-
-
-    </div>
+  <div class="container display-profile-tab">
+    <%#= render partial: 'users/show_posts' %>
+    <%= render partial: 'users/featured_video' %>
+    <%= render partial: 'posts/artist_posts' %>
+    <%#= render partial: 'users/manage_profile' %>
+  </div>
 </div>
 
 

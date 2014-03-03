@@ -74,6 +74,11 @@ table .user-score{
   float: left;
   margin-left: 20px;
   margin-bottom: 20px;
+  margin-right: 20px;
+}
+
+.fb-like{
+
 }
 
 .hype-score{
@@ -101,9 +106,6 @@ table .user-score{
   border-radius: 50%
 }
 
-.profile-content {
-  background-color: #e0e0e0;
-}
 
 #new_post {
   display: none;
@@ -123,5 +125,11 @@ table .user-score{
 
 .tv{
   padding-top: 40px;
+}
+
+.info{
+  background-color: white;
+  border-radius: 20px;
+  width: 300px;
 }
 

@@ -15,11 +15,11 @@ class YoutubeBuddy < ActiveRecord::Base
   end
 
   def youtube_embed_url
-    "http://www.youtube.com/embed/#{ youtube_id }?controls=2&showinfo=0&rel=0"
+    "http://www.youtube.com/embed/#{ youtube_id }?autoplay=1&controls=2&showinfo=0&rel=0"
   end
 
   def iframe_html(height=510, width=900)
-    %Q{<iframe title="YouTube video player" width="#{width}" height="#{height}" src="http://www.youtube.com/embed/#{ youtube_id }?controls=2&showinfo=0&rel=0"  frameborder="0" allowfullscreen></iframe>}
+    %Q{<iframe class="yt-iframe" title="YouTube video player" width="#{width}" height="#{height}" src="http://www.youtube.com/embed/#{ youtube_id }?controls=2&showinfo=0&rel=0"  frameborder="0" allowfullscreen></iframe>}
   end
 
   def thumbnail_url

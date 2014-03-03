@@ -2,10 +2,8 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
 
   def redirect_if_empty_profile
-    if current_user
-      if current_user.needs_to_create_profile
-        redirect_to edit_user_path(current_user)
-      end
+    if current_user && current_user.needs_to_create_profile
+      redirect_to edit_user_path(current_user)
     end
   end
 

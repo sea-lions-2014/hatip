@@ -1,3 +1,14 @@
+
+html body {
+  margin-top: 60px;
+  background: #e4e4e4;
+  background-attachment: fixed;
+}
+
+.main-image{
+  width: 100%;
+}
+
 #card-wrapper {
   max-width: 1100px;
   min-width: 800px;
@@ -26,11 +37,12 @@
   border: 1px solid #DBDBDB;
   /*box-shadow: 0 1px 3px rgba(7, 6, 6, 0.5);*/
   margin: 0 2px 15px;
+  border-radius: 2px;
   -webkit-column-break-inside: avoid;
   -moz-column-break-inside: avoid;
   column-break-inside: avoid;
-  padding: 15px;
-  padding-bottom: 5px;
+  /*padding-bottom: 5px;*/
+  padding: 3px;
   background: -webkit-linear-gradient(45deg, #FFF, #FFFFFF);
   opacity: 1;
 
@@ -44,10 +56,18 @@
   cursor: pointer;
 }
 
-.post-card img {
+.post-card .post-thumbnail {
   width: 100%;
+  height: 180px;
   padding-bottom: 15px;
   margin-bottom: 5px;
+  margin-top: 0;
+}
+
+.post-card .post-user-pic {
+  height: 25x;
+  width: 25px;
+  margin: 0 10px;
 }
 
 .post-card p {
@@ -56,8 +76,39 @@
   margin: 0;
 }
 
+hr{
+  padding: 10px;
+  margin: 0;
+  color: lightgray;
+}
+
+.post-card-user {
+  margin-top: 10px;
+}
+
+
+.post-title{
+  font-size: 14px;
+  margin: 0 10px;
+  padding-bottom: 10px;
+}
+
+.artist-name{
+  margin: 0 10px 0 0px;
+
+}
+
+.hype-score-card{
+  color: white;
+  background-color: #0A8FD5;
+  padding: 5px;
+  border-radius: 5px;
+  margin-left: 45px;
+}
+
 .modal-body {
-  height: 500px;
+  height: 400px;
+  padding: 0;
 }
 
 .modal-dialog {
@@ -67,8 +118,9 @@
 }
 
 .modal-description {
+  padding-top: 20px;
   margin-left: 10px;
-  width: 250px;
+  width: 200px;
   display: inline-block;
   float: left;
 }
@@ -81,5 +133,14 @@
   display: inline-block;
   float: left;
   padding-right: 10px;
-  border-right: 1px solid black;
+}
+
+.modal-title {
+  width: 300px;
+}
+
+.fb-like-button{
+  position: absolute;
+  right: 10px;
+  width: 50px;
 }

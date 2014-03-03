@@ -1,5 +1,9 @@
 <div class="post-card" data-id="<%= post.id %>">
-  <img src="<%= post.thumbnail_url %>">
-  <div class="artist-name"><%= post.user.stage_name %></div>
-  <div clas="post-title"><%= post.title %></div>
+  <img class="post-thumbnail" src="<%= post.thumbnail_url %>">
+    <div class="post-title"><%= post.title %></div>
+    <hr/>
+    <span class="post-card-user">
+      <img src="<%= post.user.profile_image_url if post.user.profile_image_url%>" class="post-user-pic" />
+      <span class="artist-name"><%= link_to post.user.stage_name, user_path(post.user) %></span> <span class="hype-score-card"><%= post.user.get_hype_score %></span>
+    </span>
 </div>
