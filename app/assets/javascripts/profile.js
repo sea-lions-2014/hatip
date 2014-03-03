@@ -18,7 +18,7 @@ var Profile = {
 
   generateCoinbaseButton: function() {
     var user_id = $('.tip-hat').data('id');
-    $.get('/api/posts/' + user_id, function (data) {
+    $.get('/api/users/' + user_id, function (data) {
       $('.tip-hat').html(data.payment_button);
     });
   },
