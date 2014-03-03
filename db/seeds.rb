@@ -26,7 +26,6 @@ urls = [
     country: Faker::Address.country,
     genre: "country",
     story: Faker::Lorem.paragraph,
-    profile_image_url: 'http://placehold.it/230X180',
     featured_youtube_url: urls.sample
     )
 end

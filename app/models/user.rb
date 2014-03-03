@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
   has_many :posts
   has_many :tips
+  before_save :set_profile_image
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
@@ -12,6 +13,14 @@ class User < ActiveRecord::Base
                   :featured_youtube_url, :is_admin
 
 
+
+  def get_hype_score
+    self.posts.length
+  end
+
+  def set_profile_image
+    self.profile_image_url = "/assets/avatar.png" unless self.profile_image_url
+  end
 
   def highlight_youtube_url
     YoutubeBuddy.new(featured_youtube_url).iframe_html
