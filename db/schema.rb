@@ -56,7 +56,7 @@ ActiveRecord::Schema.define(:version => 20140228232337) do
     t.string   "city"
     t.string   "state"
     t.string   "country"
-    t.string   "genre"
+    t.string   "category"
     t.string   "tagline"
     t.text     "story"
     t.integer  "hype_score",             :default => 0

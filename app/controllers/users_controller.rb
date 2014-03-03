@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
 
+  before_filter :redirect_if_empty_profile, only: [:show]
+
   def show
      @user = User.find(params[:id])
      @post = Post.new

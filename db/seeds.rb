@@ -24,7 +24,7 @@ urls = [
     city: Faker::Address.city,
     state: Faker::Address.state,
     country: Faker::Address.country,
-    genre: "country",
+    category: "acrobatic",
     story: Faker::Lorem.paragraph,
     featured_youtube_url: urls.sample
     )

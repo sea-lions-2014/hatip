@@ -1,10 +1,13 @@
 <div class="container">
-<h1>Edit <%= @user.stage_name %>'s Profile</h1>
-  <%= form_for [ @user] do |f| %>
-    <%= f.label :stage_name %>
+<h1>Edit Profile</h1>
+  <%= form_for @user do |f| %>
+    <%= f.label :stage_name %> *
     <p><%= f.text_field :stage_name, :value => @user.stage_name %></p>
 
-    <%= f.label :featured_youtube_url %>
+    <%= f.label :tagline %> *
+    <p><%= f.text_field :tagline %></p>
+
+    <%= f.label :featured_youtube_url %> *
     <p><%= f.text_field :featured_youtube_url %></p>
 
     <%= f.label :city %>
@@ -18,7 +21,7 @@
 
     <%= f.label :twitter_handle %>
     <p><%= f.text_field :twitter_handle %></p>
-
+    <p>* Field required</p>
     <p><%= f.submit "update user", class: "submit" %></p>
     <% end %>
     <%= button_to "Delete Profile", { action: "destroy", id: @user.id },

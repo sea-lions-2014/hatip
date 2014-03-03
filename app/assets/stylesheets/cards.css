@@ -1,5 +1,7 @@
-body {
-  background-color: #ededed;
+
+html body {
+  background: url(next-ipsum.png);
+  background-attachment: fixed;
 }
 
 #card-wrapper {
@@ -10,7 +12,7 @@ body {
 }
 
 
-.columns {
+ .columns {
   -webkit-column-count: 4;
   -webkit-column-gap: 10px;
   -webkit-column-fill: auto;
