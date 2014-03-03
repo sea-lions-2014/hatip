@@ -6,7 +6,13 @@ urls = [
         "http://youtu.be/YPYGeELPpno",
         "http://youtu.be/2IH8tNQAzSs",
         "http://youtu.be/ub26kLEfphw",
-        "https://www.youtube.com/watch?v=uXMuWi0dUBc"
+        "https://www.youtube.com/watch?v=uXMuWi0dUBc",
+        "https://www.youtube.com/watch?v=-Ow8Gut-4XY",
+        "https://www.youtube.com/watch?v=wphB0fq4PlA",
+        "https://www.youtube.com/watch?v=uue6oJ_jDns",
+        "https://www.youtube.com/watch?v=JlfsXd62Qss",
+        "https://www.youtube.com/watch?v=szeq1M0_7PQ",
+        "https://www.youtube.com/watch?v=rLGpdkYEwrw"
       ]
 
 30.times do
@@ -17,10 +23,10 @@ urls = [
     email: Faker::Internet.email,
     password: "password",
     password_confirmation: "password",
-    stage_name: "The Big Show",
-    twitter_handle: "tbs002",
+    stage_name: Faker::Name.first_name,
+    twitter_handle: Faker::Lorem.word,
     verified: false,
-    tagline: "is this the interwebs?",
+    tagline: Faker::Lorem.sentence,
     city: Faker::Address.city,
     state: Faker::Address.state,
     country: Faker::Address.country,

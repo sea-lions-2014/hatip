@@ -1,29 +1,23 @@
-<div class="container">
-<h1>Edit Profile</h1>
+<div class="devise-form">
+<div class="form-container">
+<h2 class="devise-title">Edit Profile</h1>
   <%= form_for @user do |f| %>
-    <%= f.label :stage_name %> *
-    <p><%= f.text_field :stage_name, :value => @user.stage_name %></p>
+    <div class="form-field"><%= f.text_field :stage_name, :value => @user.stage_name %></div>
 
-    <%= f.label :tagline %> *
-    <p><%= f.text_field :tagline %></p>
+    <div class="form-field"><%= f.text_field :tagline, placeholder: "Tagline" %></div>
 
-    <%= f.label :featured_youtube_url %> *
-    <p><%= f.text_field :featured_youtube_url %></p>
+    <div class="form-field"><%= f.text_field :featured_youtube_url, placeholder: "YouTube URL" %></div>
 
-    <%= f.label :city %>
-    <p><%= f.text_field :city %></p>
+    <div class="form-field"><%= f.text_field :city, placeholder: "City" %></div>
 
-    <%= f.label :state %>
-    <p><%= f.text_field :state %></p>
+    <div class="form-field"><%= f.text_field :state, placeholder: "State" %></div>
 
-    <%= f.label :story %>
-    <p><%= f.text_field :story %></p>
+    <div class="form-field"><%= f.text_field :story, placeholder: "Story" %></div>
 
-    <%= f.label :twitter_handle %>
-    <p><%= f.text_field :twitter_handle %></p>
-    <p>* Field required</p>
-    <p><%= f.submit "update user", class: "submit" %></p>
+    <div class="form-field"><%= f.text_field :twitter_handle, placeholder: "Twitter Handle" %></div>
+    <div>* Field required</div><br/>
+    <div><%= f.submit "Update Profile Information", class: "form-button" %></div>
     <% end %>
-    <%= button_to "Delete Profile", { action: "destroy", id: @user.id },
-    method: :delete, data: { confirm: "Are you sure? You will no longer be a user" } %>
+
+</div>
 </div>

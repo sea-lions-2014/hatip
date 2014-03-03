@@ -8,7 +8,7 @@
         <img src="<%= @user.profile_image_url if @user.profile_image_url%>" height="125" width="125" />
       </td>
       <td class="user-info">
-        <p class="user-name"><%= @user.stage_name %> <a class="twitter" href="http://www.twitter.com/<%= @user.twitter_handle%>">@<%= @user.twitter_handle %></a></p>
+        <p class="user-name"><%= @user.stage_name %> <a class="twitter" href="http://www.twitter.com/<%= @user.twitter_handle%>"><%= @user.twitter_handle  %></a></p>
         <p class="user-city"><%= @user.city %>, <%= @user.state %></p>
         <p class="user-story"><%= @user.story %></p>
         <div class="tip-button">
