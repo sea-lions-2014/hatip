@@ -22,6 +22,7 @@ end
 group :test, :development do
   gem 'rspec-rails'
   gem 'dotenv-rails'
+  gem 'better_errors'
 end
 
 group :test do
