@@ -1,3 +1,5 @@
+/*DEVISE*/
+
 .devise-form{
   margin-left: 150px;
   padding-top: 20px;
@@ -14,35 +16,23 @@
   padding: 8px 70px 20px 40px;
 }
 
+/*USER FORMS*/
 
-
-.actual-form{
-  padding-left: 30px;
+.remember-me{
+  padding-bottom: 10px;
 }
 
-.form-field{
-  padding-bottom: 20px;
+.signin-button{
+  margin-bottom: 10px;
 }
 
-.form-button{
-  color: white;
-  border-radius: 3px;
-  background-color: #26A65B;
-  padding: 8px 20px 8px 20px;
-  border: 0
+.sign-up-form {
+  display: inline-block;
 }
 
-.form-button-danger{
-  color: white;
-  border-radius: 3px;
-  background-color: #D91E18;
-  padding: 8px 20px 8px 20px;
-  border: 0
-}
 
-.form-label{
-  margin-bottom: 20px
-}
+/*FACEBOOK SIGN IN*/
+
 
 .line-holder{
   padding: 10px 0px 10px 0px;
@@ -78,13 +68,4 @@ p.or-fb:after{
   padding-left: 0px;
 }
 
-.remember-me{
-  padding-bottom: 10px;
-}
 
-.signin-button{
-  margin-bottom: 10px;
-}
-
-.required-fields{
-}
