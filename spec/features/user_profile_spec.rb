@@ -11,7 +11,7 @@ describe 'UserProfile', :js => true  do
     end
 
     it "should have a youtube video embedded" do
-      page.should have_css('iframe')
+      expect(page).to have_css('iframe.yt-iframe')
     end
 
     it "should show a button for users to tip" do
@@ -23,7 +23,7 @@ describe 'UserProfile', :js => true  do
     end
 
     it "should display a Create New Post form when the New Post Button is clicked" do
-      click_link( 'new_post_button' )
+      click_on("new_post_button")
       page.should have_css('div.modal-content')
     end
 
