@@ -1,7 +1,13 @@
 class PostsController < ApplicationController
+  respond_to :json
+
   def create
     @post = Post.new(params[:post])
     @post.user = User.find(params[:user_id])
-    @post.save
+    if @post.save
+      render :nothing => true, :status => :ok
+    else
+      render :json => { :errors => @post.errors.full_messages }, :status => 422
+    end
   end
 end
