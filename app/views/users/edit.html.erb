@@ -8,7 +8,7 @@
 
     <div class="form-field"><%= f.text_field :featured_youtube_url, placeholder: "YouTube URL" %> *</div>
 
-    <div class="form-field"><%= f.text_field :category, placeholder: "category" %> *</div>
+    <div class="form-field">* <%= f.select :category, %w(vocal instrumental dance acrobatic visual comedy) %></div>
 
     <div class="form-field"><%= f.text_field :city, placeholder: "City" %></div>
 
@@ -23,3 +23,5 @@
 
 </div>
 </div>
+
+vocal instrumental dance acrobatic visual comedy
