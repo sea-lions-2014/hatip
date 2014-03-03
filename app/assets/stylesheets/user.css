@@ -1,27 +1,11 @@
+/*PROFILE HEADER*/
+
 .profile-header {
   padding-top: 10px;
   background-color: white;
   height: 200px;
 }
 
-.profile-tabs {
-  border-top: 1px solid lightgray;
-  border-bottom: 1px solid lightgray;
-  padding: 20px 0;
-  background-color: #fafafa;
-  color: #0A8FD5;
-}
-
-.tab{
-  border-left: 1px solid lightgray;
-/*  border-right: 1px solid lightgray;
-*/  padding: 22px 16px;
-}
-
-.tab-last{
-  border-right: 1px solid lightgray;
-
-}
 
 .profile-table {
   width: 100%;
@@ -29,15 +13,15 @@
 
 }
 
-table .image {
+.profile-table  .image {
   width: 15%;
 }
 
-table .user-info{
+.profile-table  .user-info{
   width: 70%;
 }
 
-table .user-score{
+.profile-table  .user-score{
   width: 15%;
 }
 
@@ -76,9 +60,6 @@ table .user-score{
   margin-right: 20px;
 }
 
-.fb-like{
-
-}
 
 .hype-score{
   background-color: #0A8FD5;
@@ -103,12 +84,30 @@ table .user-score{
   border-radius: 50%
 }
 
-.container{
-  margin:0 auto;
-  width: 1000px;
-  padding-left: 50px;
-  padding-right: 50px;
+/*PROFILE TABS*/
+
+.profile-tabs {
+  border-top: 1px solid lightgray;
+  border-bottom: 1px solid lightgray;
+  padding: 20px 0;
+  background-color: #fafafa;
+  color: #0A8FD5;
 }
+
+.tab{
+  border-left: 1px solid lightgray;
+/*  border-right: 1px solid lightgray;
+*/  padding: 22px 16px;
+}
+
+.tab-last{
+  border-right: 1px solid lightgray;
+
+}
+
+
+/*PROFILE SECTIONS*/
+
 
 .edit-profile-form input {
   margin-left: 10px;
