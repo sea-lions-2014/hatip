@@ -12,16 +12,33 @@
     .search-form {
       margin-left: 30px;
       left: 200px;
-      padding-top: 18px;
+      padding-top: 20px;
       display: inline-block;
+      border: 0;
     }
 
+    .search-icon{
+      padding-right: 10px;
+      padding-left: 20px;
+      height: 20px;
+    }
+
+    .search{
+      border: 1px solid #ffffff;
+    }
+
+    .nav-items{
+      margin-left: 30px
+    }
+
+
+
     .logo {
-      margin-left: 20px;
+      margin-left: 150px;
       border: 0;
       height: 60px;
       padding-bottom: 5px;
-      padding-top: 5px;
+      padding-top: 8px;
       position: relative;
     }
 
@@ -31,8 +48,12 @@
       display: inline-block;
     }
 
-    .pull-right {
+    .pull-right{
       float: right !important;
+    }
+
+    .pull-right-last {
+      margin-right: 30px;
     }
 
     .nav-first {
@@ -44,7 +65,7 @@
       display: none;
       float: right;
       text-decoration: none;
-      padding: 19px 10px;
+      padding: 19px 30px;
       margin-bottom: 0;
     }
     .menu {
@@ -63,6 +84,8 @@
       width: 100%;
     }
     .menu > li > ul.sub-menu {
+      display: none;
+      width: 200px;
       min-width: 10em;
       padding: 4px 0;
       background-color: #f4f4f4;
@@ -91,15 +114,18 @@
     .menu ul li a {
       display: block;
       text-decoration: none;
-      color: #ae5c10;
-      font-size: .9em;
+      color: #0A8FD5;
+      font-size: 1.1em;
+      font-weight: bold;
     }
     .menu ul li > a {
       height: 58px;
       padding: 19px 12px;
     }
     .menu ul ul {
-      display: inline-block;
+      display: none;
+      right: 0;
+      width: 200px;
       position: absolute;
       top:100%;
       min-width: 160px;

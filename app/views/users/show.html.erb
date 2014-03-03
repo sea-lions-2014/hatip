@@ -1,13 +1,11 @@
 <%= render partial: 'users/profile_header' %>
-<!--     <button class="btn btn-primary btn-lg" data-toggle="modal" id="new_post_button">
-  Create Post
-</button> -->
 <div class="profile-tabs">
   <div class="container">
     <span class="tab"> <%= link_to "Videos", show_user_posts_path , remote: true, id: "show-posts" %> </span>
     <span class="tab tab"> <%= link_to "About #{@user.stage_name}", show_user_info_path(:user => @user), remote:true, id: "more-info"%> </span>
-    <span class="tab tab-last"> <a href="#", id="new_post_button">Create Post</a> </span>
-
+    <% if may_edit_profile %>
+      <span class="tab tab-last"> <a href="#", id="new_post_button">Create Post</a> </span>
+    <% end %>
   </div>
 </div>
 
@@ -18,7 +16,9 @@
   </div>
 </div>
 
-<%= render partial: "new_post_modal" %>
+<% if may_edit_profile %>
+  <%= render partial: "new_post_modal" %>
+<% end %>
 
 
 

@@ -1,0 +1,90 @@
+.devise-form{
+  margin-left: 150px;
+  padding-top: 20px;
+}
+
+.devise-title{
+  color:  #696969;
+}
+
+.form-container{
+  background-color: white;
+  width: 25%;
+  border-radius: 10px;
+  padding: 8px 70px 20px 40px;
+}
+
+
+
+.actual-form{
+  padding-left: 30px;
+}
+
+.form-field{
+  padding-bottom: 20px;
+}
+
+.form-button{
+  color: white;
+  border-radius: 3px;
+  background-color: #26A65B;
+  padding: 8px 20px 8px 20px;
+  border: 0
+}
+
+.form-button-danger{
+  color: white;
+  border-radius: 3px;
+  background-color: #D91E18;
+  padding: 8px 20px 8px 20px;
+  border: 0
+}
+
+.form-label{
+  margin-bottom: 20px
+}
+
+.line-holder{
+  padding: 10px 0px 10px 0px;
+  width: 270px;
+}
+
+.line-center{
+    margin:0;
+    padding:0 0px;
+    background:#fff;
+    display:inline-block;
+    width: 50px;
+}
+
+.or-fb{
+    text-align:center;
+    position:relative;
+    z-index:2;
+    color: gray;
+
+}
+p.or-fb:after{
+    content:"";
+    position:absolute;
+    top:50%;
+    left:0;
+    right:0;
+    border-top:solid 1px lightgray;
+    z-index:-1;
+}
+
+.fbbutton{
+  padding-left: 0px;
+}
+
+.remember-me{
+  padding-bottom: 10px;
+}
+
+.signin-button{
+  margin-bottom: 10px;
+}
+
+.required-fields{
+}

@@ -1,4 +1,4 @@
-<img class="main-image" src="http://localhost:3000/assets/home.png"/>
+<%= image_tag "kickstarter.png", class: "main-image" %>
 <div class="card-container">
   <div id="card-wrapper">
     <%= render partial: 'pages/post_cards', locals: { posts: @posts } %>
