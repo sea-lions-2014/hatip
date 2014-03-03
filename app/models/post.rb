@@ -14,9 +14,14 @@ class Post < ActiveRecord::Base
     YoutubeBuddy.new(youtube_url).thumbnail_url
   end
 
+  def post_youtube_url
+    YoutubeBuddy.new(youtube_url).youtube_embed_url
+  end
+
   def facebook_like_url
     FacebookBuddy.new(self.user.id).like_button_source_url
   end
+
 
   def card_data
 
