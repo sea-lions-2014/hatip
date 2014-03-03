@@ -4,6 +4,7 @@ class Post < ActiveRecord::Base
 
   validates :youtube_url, presence: true
   validates :title, presence: true
+  validates_uniqueness_of :youtube_url, scope: :user_id
 
   validate :validate_youtube_url
 
