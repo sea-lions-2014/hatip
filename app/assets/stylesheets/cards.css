@@ -1,5 +1,6 @@
 
 html body {
+  margin-top: 50px;
   background: url(next-ipsum.png);
   background-attachment: fixed;
 }
@@ -32,11 +33,12 @@ html body {
   border: 1px solid #DBDBDB;
   /*box-shadow: 0 1px 3px rgba(7, 6, 6, 0.5);*/
   margin: 0 2px 15px;
-  border-radius: 5px;
+  border-radius: 2px;
   -webkit-column-break-inside: avoid;
   -moz-column-break-inside: avoid;
   column-break-inside: avoid;
-  padding-bottom: 5px;
+  /*padding-bottom: 5px;*/
+  padding: 3px;
   background: -webkit-linear-gradient(45deg, #FFF, #FFFFFF);
   opacity: 1;
 
