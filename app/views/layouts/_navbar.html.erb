@@ -2,7 +2,7 @@
 
 <nav id="menu" class="menu">
   <ul>
-   <li class="nav-first">
+   <li>
       <%= link_to image_tag("hattip_finished.png", class: "logo"), root_path, id: "logo-link" %>
     </li>
     <li>
@@ -22,9 +22,9 @@
       </ul>
     </li>
   <% else %>
-    <li><%= link_to "Sign Up", new_user_registration_path %></li>
-    <li><%= link_to "Sign In", new_user_session_path %></li>
-    <li><%= link_to "About", new_user_registration_path %></li>
+    <li class="pull-right"><%= link_to "Sign Up", new_user_registration_path %></li>
+    <li class="pull-right"><%= link_to "Sign In", new_user_session_path %></li>
+    <li class="pull-right"><%= link_to "About", new_user_registration_path %></li>
   <% end %>
 
 
