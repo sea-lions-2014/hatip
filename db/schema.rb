@@ -26,7 +26,6 @@ ActiveRecord::Schema.define(:version => 20140228232337) do
   create_table "tips", :force => true do |t|
     t.integer "user_id"
     t.string  "coinbase_id"
-    t.integer "amount"
     t.string  "post_id"
     t.string  "fiat_iso"
     t.integer "fiat_cents"
@@ -57,7 +56,7 @@ ActiveRecord::Schema.define(:version => 20140228232337) do
     t.string   "city"
     t.string   "state"
     t.string   "country"
-    t.string   "genre"
+    t.string   "category"
     t.string   "tagline"
     t.text     "story"
     t.string   "profile_image_url"
