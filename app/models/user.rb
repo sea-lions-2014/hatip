@@ -13,7 +13,7 @@ class User < ActiveRecord::Base
 
 
   def needs_to_create_profile
-    [self.genre, self.featured_youtube_url, self.tagline].include?(nil || '')
+    [self.stage_name, self.genre, self.featured_youtube_url, self.tagline].include?(nil || '')
   end
 
   def highlight_youtube_url
