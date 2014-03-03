@@ -5,6 +5,8 @@ class Post < ActiveRecord::Base
   validates :youtube_url, presence: true
   validates :title, presence: true
 
+  validate :validate_youtube_url
+
   def post_embed
     YoutubeBuddy.new(youtube_url).iframe_html
   end
@@ -63,5 +65,11 @@ class Post < ActiveRecord::Base
       facebook_like_url: facebook_like_url,
       payment_button_code: button.button.code
     }
+  end
+
+  def validate_youtube_url
+    unless YoutubeBuddy.new(youtube_url).valid_video?
+      errors.add(:youtube_url, "is not valid")
+    end
   end
 end
