@@ -5,14 +5,36 @@
       background-color: white;
       width:100%;
       border-bottom: 1px solid;
+      position: fixed;
+      top: 0;
+    }
+
+    .search-form {
+      position: relative;
+      left: 200px;
+      padding-top: 18px;
+      display: inline-block;
     }
 
     .logo {
       margin-left: 20px;
+      border: 0;
+      height: 60px;
+      padding-bottom: 5px;
+      padding-top: 5px;
+      position: relative;
+      left: -1400px;
+    }
+
+    #logo-link {
+      height: 0;
+      padding: 0;
+      display: inline-block;
     }
 
      .nav-first {
       margin-left: 50px;
+      display: inline-block;
     }
 
     .menu-link {
@@ -34,7 +56,8 @@
       margin: 0px;
       list-style: none;
       position: relative;
-      display: inline-table;
+      display: inline-block;
+      width: 100%;
     }
     .menu > li > ul.sub-menu {
       min-width: 10em;
@@ -60,6 +83,7 @@
     }
     .menu > ul > li {
       display: inline-block;
+      float: right;
     }
     .menu ul li a {
       display: block;
@@ -68,11 +92,11 @@
       font-size: .9em;
     }
     .menu ul li > a {
-      height:58px;
+      height: 58px;
       padding: 19px 12px;
     }
     .menu ul ul {
-      display: none;
+      display: inline-block;
       position: absolute;
       top:100%;
       min-width: 160px;
@@ -112,12 +136,29 @@
 
     @media screen and (max-width: 768px) {
 
-      .logo{
-        display: none;
-      }
       .nav-first {
         margin: 0 auto;
-        width: 100%;
+      }
+
+      form {
+        position: relative;
+        left: 200px;
+        padding-top: 1.125em;
+      }
+
+      .logo {
+        margin-left: 1.250em;
+        border: 0;
+        height: 3.750em;
+        padding-bottom: 0.313em;
+        padding-top: 0.313em;
+        position: relative;
+        left: -87.500em;
+      }
+
+      #logo-link {
+        height: 0;
+        padding: 0;
       }
 
         a.menu-link {
