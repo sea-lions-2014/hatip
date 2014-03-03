@@ -1,7 +1,6 @@
 require 'spec_helper'
 
-  describe Post do
-
+describe Post do
   it { should belong_to :user }
   it { should have_db_column :title }
   it { should have_db_column :youtube_url }
@@ -11,5 +10,4 @@ require 'spec_helper'
   it { should allow_mass_assignment_of :title }
   it { should allow_mass_assignment_of :description }
   it { should allow_mass_assignment_of :hype }
-  end
 end

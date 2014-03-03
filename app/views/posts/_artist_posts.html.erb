@@ -1,9 +1,9 @@
-<div class="posts-container">
+<div id="profile-columns">
   <% @user.posts.each do |post| %>
-    <div class="post">
-      <p><%= post.title %></p>
-        <%= raw(post.post_embed) %>
-      <p><%= post.description %></p>
-    </div>
+    <%= render partial: 'posts/profile_post_card', locals: { post: post } %>
   <% end %>
 </div>
+
+
+
+

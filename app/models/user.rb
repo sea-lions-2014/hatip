@@ -12,6 +12,9 @@ class User < ActiveRecord::Base
                   :featured_youtube_url, :is_admin
 
 
+  def needs_to_create_profile
+    [self.genre, self.featured_youtube_url, self.tagline].include?(nil || '')
+  end
 
   def highlight_youtube_url
     YoutubeBuddy.new(featured_youtube_url).iframe_html
