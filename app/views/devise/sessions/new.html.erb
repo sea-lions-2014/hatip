@@ -1,7 +1,13 @@
 <div class="devise-form">
   <div class="form-container">
     <div class="actual-form">
+
       <h2 class="devise-title">Sign in</h2>
+        <ul>
+          <% if flash[:alert] %>
+            <li><%= content_tag(:div, flash[:alert], :id => "flash_alert") %> </li>
+          <% end %>
+        </ul>
 
       <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
       <div class="form-field"><%= f.email_field :email, :autofocus => true, placeholder: "E-Mail Address" %></div>

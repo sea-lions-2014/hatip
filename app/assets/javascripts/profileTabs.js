@@ -1,10 +1,19 @@
 $(function(){
 
-  $('#show-posts').on("ajax:success", function(e, data, status, xhr){
-    $(".display-profile-tab").html(data);
-  });
+  $('.artist_info').hide()
 
-  $('#more-info').on("ajax:success", function(e, data, status, xhr){
-    $(".display-profile-tab").html(data);
-  });
+  $("#show-posts").on('click', function(){
+    $('.artist_info').hide()
+    $('.tv').show();
+    $('#profile-columns').show();
+  })
+
+  $("#more-info").on('click', function(){
+    $('.tv').hide();
+    $('#profile-columns').hide();
+    $('.artist_info').show()
+
+  })
+
+
 });
