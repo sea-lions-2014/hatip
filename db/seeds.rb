@@ -6,18 +6,22 @@ urls = [
         "http://youtu.be/YPYGeELPpno",
         "http://youtu.be/2IH8tNQAzSs",
         "http://youtu.be/ub26kLEfphw",
-        "https://www.youtube.com/watch?v=uXMuWi0dUBc"
+        "http://youtu.be/sUlfGOezE48",
+        "http://youtu.be/wphB0fq4PlA"
       ]
 
 30.times do
+
+  first_name = Faker::Name.first_name
+  last_name = Faker::Name.last_name
   User.create(
     email: Faker::Internet.email,
-    first_name: Faker::Name.first_name,
-    last_name: Faker::Name.last_name,
+    first_name: first_name,
+    last_name: last_name,
     email: Faker::Internet.email,
     password: "password",
     password_confirmation: "password",
-    stage_name: "The Big Show",
+    stage_name: first_name + last_name,
     twitter_handle: "tbs002",
     verified: false,
     tagline: "is this the interwebs?",
