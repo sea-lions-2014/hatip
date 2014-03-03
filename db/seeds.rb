@@ -1,12 +1,12 @@
 require 'faker'
 
 urls = [
-        "http://youtu.be/Cgoqrgc_0cM",
-        "https://www.youtube.com/watch?v=ar-sduhNbi4",
-        "http://youtu.be/Y34jC4I1m70",
+        "http://youtu.be/hXlzci1rKNM",
+        "http://youtu.be/puSkP3uym5k",
+        "http://youtu.be/YPYGeELPpno",
         "http://youtu.be/2IH8tNQAzSs",
-        "http://youtu.be/nQJACVmankY",
-        "http://www.youtube.com/watch?v=N46x3_cObxM"
+        "http://youtu.be/ub26kLEfphw",
+        "https://www.youtube.com/watch?v=uXMuWi0dUBc"
       ]
 
 30.times do

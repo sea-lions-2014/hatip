@@ -14,6 +14,9 @@ class User < ActiveRecord::Base
   # validates :category, inclusion: { in: %w(vocal instrumental dance acrobatic visual comedy),
   #                                   message: "%{value} is not a valid category" }
 
+  def needs_to_create_profile
+    [self.stage_name, self.genre, self.featured_youtube_url, self.tagline].include?(nil || '')
+  end
 
   def highlight_youtube_url
     YoutubeBuddy.new(featured_youtube_url).iframe_html
