@@ -54,11 +54,43 @@ class User < ActiveRecord::Base
   end
 
   def self.new_with_session(params, session)
-     super.tap do |user|
-       if data = session["devise.facebook_data"] && session["devise.facebook_data"]["extra"]["raw_info"]
+    super.tap do |user|
+      if data = session["devise.facebook_data"] && session["devise.facebook_data"]["extra"]["raw_info"]
          user.email = data["email"] if user.email.blank?
-       end
-     end
-   end
+      end
+    end
+  end
+
+  def card_data
+
+    coinbase = Coinbase::Client.new(ENV['COINBASE_API_KEY'], ENV['COINBASE_API_SECRET'])
+
+    opts = {
+              button:
+              {
+                name: "Tip for #{ self.name }",
+                type: 'donation',
+                style: 'custom_small',
+                text: 'tip!',
+                price_currency_iso: "USD",
+                description: "Tip",
+                price_string: '1',
+                custom: "{ user_id: #{ self.id }, post_id: 'user_tip' }",
+                callback_url: 'http://guarded-journey-5941.herokuapp.com/callback',
+                variable_price: true,
+                choose_price: true,
+                price1: '0.5',
+                price2: '1',
+                price3: '2',
+                price4: '5',
+                price5: '10'
+              }
+            }
+    button = coinbase.create_button("Tip for #{ self.name }", 1, 'b', 'b', opts)
+
+    {
+      payment_button: button.embed_html,
+    }
+  end
 end
 
