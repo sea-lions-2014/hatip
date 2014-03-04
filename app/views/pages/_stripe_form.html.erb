@@ -1,0 +1,30 @@
+<button id="stripeButton">Stripe</button>
+
+<script>
+  // I am a sinner. This javascript is bad.
+  var StripeMaster = {
+    user_id: 0,
+    amount: 100
+  }
+  var handler = StripeCheckout.configure({
+    key: 'pk_test_6pRNASCoBOKtIshFeQd4XMUh',
+    // image: '/square-image.png',
+    token: function(token, args) {
+      $.post('/callback/stripe/' + StripeMaster.user_id, { stripe_token: token, amount: StripeMaster.amount });
+      // Use the token to create the charge with a server-side script.
+      // You can access the token ID with `token.id`
+    }
+  });
+
+  document.getElementById('stripeButton').addEventListener('click', function(e) {
+    // Open Checkout with further options
+    StripeMaster.user_id = e.currentTarget.dataset.id;
+    handler.open({
+      name: 'HatTip',
+      description: 'Tip $1.00',
+      amount: StripeMaster.amount
+    });
+    e.preventDefault();
+  });
+
+</script>

@@ -35,6 +35,8 @@ ActiveRecord::Schema.define(:version => 20140228232337) do
     t.string  "tx_id"
     t.string  "status"
     t.string  "receive_address"
+    t.string  "stripe_email"
+    t.string  "stripe_token"
   end
 
   create_table "users", :force => true do |t|

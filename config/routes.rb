@@ -19,9 +19,8 @@ Hatip::Application.routes.draw do
 
 
 
-
   post "callback", :to => 'tips#create'
-  get "callback", :to => 'tips#index'
+  post "callback/stripe/:id", :to =>'tips#create_stripe_tip'
 
   devise_scope :user do
     get 'sign_out', :to => 'devise/sessions#destroy', :as => :destroy_user_session

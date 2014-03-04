@@ -62,4 +62,5 @@ CardModal.prototype.updateModalElements = function() {
   $('.tip-button').html(this.dataCache.payment_button);
   $('.video-description').text(this.dataCache.description);
   $('.fb-like-button').attr("src", this.dataCache.facebook_like_url);
+  $('#stripeButton').attr("data-id", this.dataCache.artist_id)
 }
