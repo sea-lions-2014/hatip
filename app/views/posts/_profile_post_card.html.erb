@@ -1,4 +1,5 @@
 <div class="profile-post-card" data-id="<%= post.id %> " data-embed="<%= post.post_youtube_url %>">
+  <!-- user image_tag, what rails wants rails gets -->
   <img src="<%= post.thumbnail_url %>">
   <div class="artist-name"><%= post.user.stage_name %></div>
   <div clas="post-title"><%= post.title %></div>

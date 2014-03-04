@@ -1,9 +1,9 @@
 <%= image_tag "guitar.png", class: "main-image" %>
 <div class="card-container">
   <div id="card-wrapper">
-    <%= render partial: 'pages/post_cards', locals: { posts: @posts } %>
+    <%= render 'pages/post_cards', posts: @posts %>
   </div>
-  <%= render partial: 'pages/post_card_modal' %>
+  <%= render 'pages/post_card_modal' %>
 </div>
 
 

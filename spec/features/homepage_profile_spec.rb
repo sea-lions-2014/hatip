@@ -11,6 +11,7 @@ describe "Homepage", js: true do
     it "should display a list of cards" do
       visit root_path
 
+      # the user doesn't care about your css, use have_content("....")
       expect(page).to have_css("div.post-card")
     end
     it "should have clickable cards" do

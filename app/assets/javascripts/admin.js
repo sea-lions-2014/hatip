@@ -1,3 +1,4 @@
+// commente code is evil
 // $(function(){
 //   $('.create-verification').on("ajax:success", function(e, data, status, xhr){
 //   $(this).text(data.verified)

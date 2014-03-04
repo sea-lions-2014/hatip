@@ -25,12 +25,12 @@ var CardMaster = {
 }
 
 // Card constructor
-function Card(postId) {
+var Card = function(postId) {
   this.postId = postId;
 }
 
 // Modal constructor (named card modal to not interfere with modal in bootstrap js)
-function CardModal(card, callback) {
+var CardModal = function(card, callback) {
   this.dataCache = {
     postId: card.postId
   };

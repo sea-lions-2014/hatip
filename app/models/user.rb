@@ -1,3 +1,4 @@
+# this class needs some love
 class User < ActiveRecord::Base
   has_many :posts
   has_many :tips
@@ -16,9 +17,12 @@ class User < ActiveRecord::Base
   #                                   message: "%{value} is not a valid category" }
 
   def needs_to_create_profile
-    [self.stage_name, self.category, self.featured_youtube_url, self.tagline].include?(nil)
+    required_profile_data.any? &:blank?
   end
 
+  def required_profile_data
+    [self.stage_name, self.category, self.featured_youtube_url, self.tagline]
+  end
   def get_hype_score
     self.posts.length
   end
@@ -27,10 +31,11 @@ class User < ActiveRecord::Base
     self.profile_image_url = "/assets/avatar.png" unless self.profile_image_url
   end
 
+  # delegate these calls
   def highlight_youtube_url
     YoutubeBuddy.new(featured_youtube_url).iframe_html
   end
-
+  # delegate these calls
   def highlight_thumbnail_url
     YoutubeBuddy.new(featured_youtube_url).thumbnail_url
   end

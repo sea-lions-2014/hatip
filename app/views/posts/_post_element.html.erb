@@ -1,5 +1,6 @@
 <div class="post">
   <p><%= @post.title %></p>
+    <!-- do the YoutubeBudd method call in the controller -->
     <%= raw(YoutubeBuddy.youtube_embed @post.youtube_url, 200, 300) %>
   <p><%= @post.description %></p>
 </div>

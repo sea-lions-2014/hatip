@@ -2,8 +2,8 @@ class PostsController < ApplicationController
   respond_to :json
 
   def create
-    @post = Post.new(params[:post])
-    @post.user = User.find(params[:user_id])
+    user = User.find(params[:user_id])
+    @post = user.posts.build params[:post]
     if @post.save
       render :nothing => true, :status => :ok
     else

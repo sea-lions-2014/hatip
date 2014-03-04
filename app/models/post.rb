@@ -1,3 +1,4 @@
+# this class needs some love
 class Post < ActiveRecord::Base
   attr_accessible :youtube_url, :title, :description, :hype
   belongs_to :user
@@ -8,20 +9,17 @@ class Post < ActiveRecord::Base
 
   validate :validate_youtube_url
 
+  delegate :youtube_id, :thumbnail_url, :to => :youtube_buddy
+
+  def youtube_buddy
+    @buddy ||= YoutubeBuddy.new(youtube_url)
+  end
   def post_embed
-    YoutubeBuddy.new(youtube_url).iframe_html
-  end
-
-  def youtube_id
-    YoutubeBuddy.new(youtube_url).youtube_id
-  end
-
-  def thumbnail_url
-    YoutubeBuddy.new(youtube_url).thumbnail_url
+    youtube_buddy.iframe_html
   end
 
   def post_youtube_url
-    YoutubeBuddy.new(youtube_url).youtube_embed_url
+    youtube_buddy.youtube_embed_url
   end
 
   def facebook_like_url
@@ -30,7 +28,7 @@ class Post < ActiveRecord::Base
 
 
   def card_data
-
+    # I feel this could move to a class or module
     coinbase = Coinbase::Client.new(ENV['COINBASE_API_KEY'], ENV['COINBASE_API_SECRET'])
 
     opts = {
@@ -68,7 +66,7 @@ class Post < ActiveRecord::Base
   end
 
   def validate_youtube_url
-    unless YoutubeBuddy.new(youtube_url).valid_video?
+    unless youtube_buddy.valid_video?
       errors.add(:youtube_url, "is not valid")
     end
   end

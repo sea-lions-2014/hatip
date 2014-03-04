@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe 'UserProfile', :js => true  do
   before :each do
-    visit (user_path(user))
+    visit user_path(user)
   end
   context "Profile Creation" do
     let!(:user) { create :user }
