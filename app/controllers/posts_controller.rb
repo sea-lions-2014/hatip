@@ -1,6 +1,10 @@
 class PostsController < ApplicationController
   respond_to :json
 
+  def show
+    @posts = Post.search(params[:search])
+  end
+
   def create
     @post = Post.new(params[:post])
     @post.user = User.find(params[:user_id])

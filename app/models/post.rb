@@ -8,6 +8,14 @@ class Post < ActiveRecord::Base
 
   validate :validate_youtube_url
 
+  def self.search(search)
+    if search
+      find(:all, conditions: ['name LIKE ?', "%#{search}"])
+    else
+      find(:all)
+    end
+  end
+
   def post_embed
     YoutubeBuddy.new(youtube_url).iframe_html
   end

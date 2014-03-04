@@ -16,10 +16,6 @@ Hatip::Application.routes.draw do
   match '/create_verifications', :to => 'users#create_verification'
   match '/revoke_verifications', :to => 'users#revoke_verification'
 
-
-
-
-
   post "callback", :to => 'tips#create'
   get "callback", :to => 'tips#index'
 
