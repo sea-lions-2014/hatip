@@ -12,6 +12,7 @@
 <div class="profile-content">
   <div class="container display-profile-tab">
     <%= render partial: 'users/featured_video' %>
+    <div class="tip-hat" data-id="<%= @user.id %>"></div>
     <%= render partial: 'posts/artist_posts' %>
     <%= render partial: 'users/artist_info', locals: {user: @user} %>
     <% if may_edit_profile %>

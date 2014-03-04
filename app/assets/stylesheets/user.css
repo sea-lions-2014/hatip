@@ -54,10 +54,11 @@
 }
 
 .tip-hat{
-  float: left;
-  margin-left: 20px;
-  margin-bottom: 20px;
-  margin-right: 20px;
+  display: block;
+  margin:0 auto;
+  margin-bottom: 10px;
+  margin-top: 5px;
+
 }
 
 
