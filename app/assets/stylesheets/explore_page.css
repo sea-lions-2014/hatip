@@ -1,0 +1,37 @@
+.explore_embed{
+  width: 100%;
+}
+
+.explore_description{
+  padding-top: 20px;
+  float: left;
+  margin-left: 50px;
+}
+
+.explore-button{
+  margin-top: 70px;
+  float: right;
+  margin-right: 50px;
+  background-color: #0A8FD5 !important;
+}
+
+
+.explore_table{
+  width: 800px;
+  text-align: left
+}
+
+.explore_post_text{
+  width: 70%;
+  font-weight: normal;
+}
+
+.explore_profile_pic{
+  width: 15%;
+}
+
+
+.explore_profile_pic_image{
+  height: 100px;
+  border-radius: 50%;
+}

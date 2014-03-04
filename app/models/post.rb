@@ -7,6 +7,11 @@ class Post < ActiveRecord::Base
   validates_uniqueness_of :youtube_url, scope: :user_id
 
   validate :validate_youtube_url
+  before_save :save_youtube_id
+
+  def save_youtube_id
+    self.youtube_id = self.youtube_url.split('v=')[1]
+  end
 
   def post_embed
     YoutubeBuddy.new(youtube_url).iframe_html

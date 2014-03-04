@@ -7,6 +7,7 @@
 }
 
 
+
 /*BUTTONS*/
 
 .success-button{
@@ -16,6 +17,7 @@
   padding: 8px 20px 8px 20px;
   border: 0
 }
+
 
 .danger-button{
   color: white;
@@ -37,3 +39,4 @@
 .form-label{
   margin-bottom: 20px
 }
+

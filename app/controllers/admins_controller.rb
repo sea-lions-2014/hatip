@@ -1,5 +1,5 @@
 class AdminsController < ApplicationController
-  before_filter :admin_only!
+  # before_filter :admin_only!
 
   def index
     @unverified_users = User.find_all_by_verified(false)
