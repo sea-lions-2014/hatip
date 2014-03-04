@@ -9,18 +9,17 @@ class TipsController < ApplicationController
   	user = User.find(custom_info[:user_id])
 
     tip_info = {
-    	coinbase_id: 			order['id'],
-      post_id: 					custom_info[:post_id],
-      fiat_iso: 				order['total_native']['currency_iso'],
+      coinbase_id: 			order['id'],
+      post_id: 				custom_info[:post_id],
+      fiat_iso: 			order['total_native']['currency_iso'],
       fiat_cents: 			order['total_native']['cents'],
       crypto_iso: 			order['total_btc']['currency_iso'],
       crypto_cents: 		order['total_btc']['cents'],
-      tx_hash: 					order['transaction']['hash'],
-      tx_id: 						order['transaction']['id'],
-      status: 					order['status'],
-      receive_address: 	order['receive_address']
+      tx_hash: 				order['transaction']['hash'],
+      tx_id: 				order['transaction']['id'],
+      status: 				order['status'],
+      receive_address: 	    order['receive_address']
     }
-    puts tip_info
 
     tip = Tip.create(tip_info)
     user.tips << tip
@@ -33,20 +32,20 @@ end
 # Coinbase callback data looks like this:
 
 # {"order"=>
-	# {	"id"=>"ATNON22I", 
+	# {	"id"=>"ATNON22I",
 	# 	"created_at"=>"2014-03-01T16:46:37-08:00",
 	# 	"status"=>"completed",
 	# 	"total_btc"=>
 	# 		{
 	# 	  	"cents"=>43650,
 	# 	   	"currency_iso"=>"BTC"
-	# 		}, 
+	# 		},
 	# 	"total_native"=>
 
 	# 		{
-	# 			"cents"=>25, 
+	# 			"cents"=>25,
 	# 			"currency_iso"=>"USD"
-	# 		}, 
+	# 		},
 	# 	"custom"=>"#user{ self.user.id }-post{ self.id }",
 	# 	"receive_address"=>"1JVPjWF9igFFzSdYCSegpWZX2XdJv3p945",
 	# 	"button"=>
@@ -62,8 +61,8 @@ end
 	# 			"hash"=>"6c7e54414d613d5a0323bfa0caa93b232ce2a1fea1bbcc94630e860db5c805c4",
 	# 			"confirmations"=>0
 	# 		}
-	# }, 
-	# "action"=>"create", 
-	# "controller"=>"tips", 
+	# },
+	# "action"=>"create",
+	# "controller"=>"tips",
 	# "tip"=>{}
 # }

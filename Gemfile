@@ -9,6 +9,7 @@ gem 'pg'
 gem 'omniauth-facebook'
 gem 'coinbase'
 gem 'faker'
+gem 'tire'
 gem 'will_paginate'
 
 group :assets do
