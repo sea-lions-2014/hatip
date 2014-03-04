@@ -10,7 +10,7 @@ gem 'omniauth-facebook'
 gem 'coinbase'
 gem 'faker'
 gem 'tire'
-
+gem 'will_paginate'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
