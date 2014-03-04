@@ -11,22 +11,16 @@ describe 'UserProfile', :js => true  do
     end
 
     it "should have a youtube video embedded" do
-      expect(page).to have_css('.yt-embed-thumbnail')
-      sleep(3)
+      expect(page).to have_css('div.yt-embed-thumbnail')
     end
 
     it "should show a button for users to tip" do
-      # page.should have_css('button')
-      pending
+      sleep(10)
+      page.should have_css('button')
     end
 
     it "should not display an edit button if the profile does not belong to the user" do
       page.should_not have_selector 'button', text: "Edit Profile"
-    end
-
-    it "should display a Create New Post form when the New Post Button is clicked" do
-      click_link("Create Post")
-      page.should have_css('div.modal-content')
     end
 
     it "should display a user's profile image" do

@@ -19,6 +19,5 @@ describe "Sign Up Page" do
   it "should redirect to facebook login screen on click" do
     # click_link('fbbutton')
     # expect (current_path).to eq user_omniauth_authorize_path
-    pending
   end
 end
