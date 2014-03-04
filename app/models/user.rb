@@ -62,34 +62,15 @@ class User < ActiveRecord::Base
   end
 
   def card_data
+    tip_button_options = {
+      name: "Tip for #{ self.name }",
+      custom: "{ user_id: #{ self.id }, post_id: 'user_tip' }"
+    }
 
-    coinbase = Coinbase::Client.new(ENV['COINBASE_API_KEY'], ENV['COINBASE_API_SECRET'])
-
-    opts = {
-              button:
-              {
-                name: "Tip for #{ self.name }",
-                type: 'donation',
-                style: 'custom_small',
-                text: 'tip!',
-                price_currency_iso: "USD",
-                description: "Tip",
-                price_string: '1',
-                custom: "{ user_id: #{ self.id }, post_id: 'user_tip' }",
-                callback_url: 'http://guarded-journey-5941.herokuapp.com/callback',
-                variable_price: true,
-                choose_price: true,
-                price1: '0.5',
-                price2: '1',
-                price3: '2',
-                price4: '5',
-                price5: '10'
-              }
-            }
-    button = coinbase.create_button("Tip for #{ self.name }", 1, 'b', 'b', opts)
+    tip_button_html = CoinbaseBuddy.new(tip_button_options).iframe_embed_html
 
     {
-      payment_button: button.embed_html,
+      payment_button: tip_button_html,
     }
   end
 end

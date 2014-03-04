@@ -30,31 +30,12 @@ class Post < ActiveRecord::Base
 
 
   def card_data
+    tip_button_options = {
+      name: "Tip for #{ self.user.name }",
+      custom: "{ user_id: #{ self.user.id }, post_id: #{ self.id } }"
+    }
 
-    coinbase = Coinbase::Client.new(ENV['COINBASE_API_KEY'], ENV['COINBASE_API_SECRET'])
-
-    opts = {
-              button:
-              {
-                name: "Tip for #{ self.user.name }",
-                type: 'donation',
-                style: 'custom_small',
-                text: 'tip!',
-                price_currency_iso: "USD",
-                description: "Tip",
-                price_string: '1',
-                custom: "{ user_id: #{ self.user.id }, post_id: #{ self.id } }",
-                callback_url: 'http://guarded-journey-5941.herokuapp.com/callback',
-                variable_price: true,
-                choose_price: true,
-                price1: '0.5',
-                price2: '1',
-                price3: '2',
-                price4: '5',
-                price5: '10'
-              }
-            }
-    button = coinbase.create_button("Tip for #{ self.user.name }", 1, 'b', 'b', opts)
+    tip_button_html = CoinbaseBuddy.new(tip_button_options).iframe_embed_html
 
     {
       artist_name: self.user.name,
@@ -62,7 +43,7 @@ class Post < ActiveRecord::Base
       youtube_id: self.youtube_id,
       description: self.description,
       artist_page_url: Rails.application.routes.url_helpers.user_path(self.user),
-      payment_button: button.embed_html,
+      payment_button: tip_button_html,
       facebook_like_url: facebook_like_url,
     }
   end

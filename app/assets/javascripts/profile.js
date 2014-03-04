@@ -1,6 +1,8 @@
 $(function(){
   Profile.bindEventListeners();
-  Profile.generateCoinbaseButton();
+  if($('.tip-hat')[0] != undefined) {
+    Profile.generateCoinbaseButton();
+  }
 });
 
 var Profile = {
