@@ -57,3 +57,21 @@
   -webkit-transform: translate(0, 0);
 }
 
+#postModal input     {
+  display: block;
+  width: 280px;
+}
+
+#postModal label {
+  display: block;
+}
+
+#postModal .close {
+  float: right;
+}
+
+#postModal .btn {
+  float: right;
+  position: relative;
+  top: -20px;
+}

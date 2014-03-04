@@ -1,5 +1,8 @@
 <div class="post-card" data-id="<%= post.id %>">
-  <img class="post-thumbnail" src="<%= post.thumbnail_url %>">
+  <div class="thumbnail-holder">
+    <img class="post-thumbnail" src="<%= post.thumbnail_url %>">
+    <span class="play"></span>
+  </div>
     <div class="post-title"><%= post.title %></div>
     <hr/>
     <span class="post-card-user">
