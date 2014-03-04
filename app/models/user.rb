@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me, :first_name,
                   :last_name, :password_hash, :stage_name, :twitter_handle, :verified,
                   :tagline, :city, :state, :country, :category, :story, :profile_image_url,
-                  :featured_youtube_url, :is_admin
+                  :featured_youtube_url, :is_admin, :hype_score
 
   # validates :category, inclusion: { in: %w(vocal instrumental dance acrobatic visual comedy),
   #                                   message: "%{value} is not a valid category" }
