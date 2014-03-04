@@ -18,8 +18,6 @@ Hatip::Application.routes.draw do
 
 
 
-
-
   post "callback", :to => 'tips#create'
   get "callback", :to => 'tips#index'
 
