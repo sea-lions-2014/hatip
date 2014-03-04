@@ -6,7 +6,7 @@
       <%= link_to image_tag("Hattip_Finished.png", class: "logo"), root_path, id: "logo-link" %>
     </li>
     <div class="search-form">
-      <% form_tag :post, method: 'get' do %>
+      <% form_tag search_path, method: 'get' do %>
       <p>
         <%= text_field_tag :search, params[:search] %>
         <%= submit_tag "Search Performances", name: nil %>
