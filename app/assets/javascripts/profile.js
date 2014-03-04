@@ -1,5 +1,7 @@
 $(function(){
   Profile.bindEventListeners();
+
+  // May not be the best way to do this
   if($('.tip-hat')[0] != undefined) {
     Profile.generateCoinbaseButton();
   }
