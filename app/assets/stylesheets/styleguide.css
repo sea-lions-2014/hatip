@@ -28,21 +28,23 @@
   padding-top: 200px;
 }
 
-.main_image_button{
+
+
+
+.sign_up_button{
   position: absolute;
   color: white;
   border-radius: 3px;
   background-color: transparent;
-  padding: 8px 20px 8px 20px;
-  border: 2px #0A8FD5 solid;
-}
-
-.sign_up_button{
+  padding: 9px 21px 9px 21px;
+  position: absolute; right: 46%; top: 60%;
+  border: 2px solid white;
+  display:inline-block;
+  font-size: 17px;
 
 }
 
 #my_image { position: relative; }
-#button_id { position: absolute; right: 50%; top: 50%; }
 
 /*FORMS*/
 
