@@ -1,5 +1,5 @@
 class Post < ActiveRecord::Base
-  attr_accessible :youtube_url, :title, :description, :hype
+  attr_accessible :youtube_url, :title, :description, :hype, :category
   belongs_to :user
 
   validates :youtube_url, presence: true

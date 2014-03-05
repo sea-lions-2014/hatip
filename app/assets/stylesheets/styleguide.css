@@ -24,8 +24,21 @@
   border-radius: 3px;
   background-color: #D91E18;
   padding: 8px 20px 8px 20px;
+  border: 0;
+  padding-top: 200px;
+}
+
+.main_image_button{
+  position: absolute;
+  color: white;
+  border-radius: 3px;
+  background-color: #26A65B;
+  padding: 8px 20px 8px 20px;
   border: 0
 }
+
+#my_image { position: relative; }
+#button_id { position: absolute; right: 50%; top: 50%; }
 
 /*FORMS*/
 

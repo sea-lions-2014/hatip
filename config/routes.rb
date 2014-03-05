@@ -18,6 +18,11 @@ Hatip::Application.routes.draw do
 
   match '/explore', :to => 'pages#explore'
 
+  match 'show_music', :to => 'pages#show_music'
+  match 'show_dance', :to => 'pages#show_dance'
+  match 'show_acrobatic', :to => 'pages#show_acrobatic'
+  match 'show_other', :to => 'pages#show_other'
+
 
 
 

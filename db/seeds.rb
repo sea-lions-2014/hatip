@@ -136,12 +136,13 @@ profile_image_urls = [
     city: Faker::Address.city,
     state: Faker::Address.state,
     country: Faker::Address.country,
-    category: "acrobatic",
     story: Faker::Lorem.paragraph,
     featured_youtube_url: urls.sample,
     profile_image_url: profile_image_urls.sample
     )
 end
+
+categories = ["music", "dance", "acrobat", "other"]
 
 User.all.each do |user|
 
@@ -170,7 +171,8 @@ User.all.each do |user|
               title: title,
               youtube_url: "http://www.youtube.com/watch?v=" + id,
               description: description,
-              hype: rand(1..100)
+              hype: rand(1..100),
+              category: categories.sample
               )
           end
       end
