@@ -13,7 +13,7 @@ class HypeBuddy
 
 	 def raw_hype_score
     tip_amount = calculate_total_tips
-    fb_likes = 100
+    fb_likes = @post.fb_likes
     hype_score = tip_amount + fb_likes
   end
 
