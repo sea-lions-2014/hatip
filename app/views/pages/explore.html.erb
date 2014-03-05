@@ -1,39 +1,23 @@
     <script src="http://www.youtube.com/iframe_api"></script>
 
+    <iframe id="explore_js" width="1280" height="600" src="https://www.youtube.com/embed/<%=@video_id%>?enablejsapi=1&autoplay=1&autohide=1&showinfo=0" frameborder="0" class="explore_embed" allowfullscreen></iframe>
+    <div class="explore_description">
 
+      <table class="explore_table">
+        <tr>
+          <th class="explore_profile_pic">
+            <img class="explore_profile_pic_image" src=<%=@post.user.profile_image_url%> />
+          </th>
+          <th class="explore_post_text">
+            <h2><%= @post.title %></h2>
+            <p><%= link_to @post.user.name, user_path(@post.user) %></p>
 
-  <iframe id="explore_js" width="1280" height="600" src="https://www.youtube.com/embed/<%=@video_id%>?enablejsapi=1&autoplay=1&autohide=1&showinfo=0" frameborder="0" class="explore_embed" allowfullscreen></iframe>
-  <div class="explore_description">
+          </th>
+        </tr>
+      </table>
 
-    <table class="explore_table">
-    <tr>
-      <th class="explore_profile_pic">
-        <img class="explore_profile_pic_image" src=<%=@post.user.profile_image_url%> />
-      </th>
-      <th class="explore_post_text">
-        <h2><%= @post.title %></h2>
-                <p><%= link_to @post.user.name, user_path(@post.user) %></p>
-
-      </th>
-    </tr>
-    </table>
-
-
-
-  </div>
-  <div class="explore_button">
-    <%= button_to "Next Performance", explore_path(@next_post, :autoplay => 1), :method => :get, class: "success-button explore-button" %>
-  </div>
-
-
-<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-
-
-  <a style="display: block;" class="video-thumb" id="_r0n9Dv6XnY" href="#">
-      Baltimora: Tarzan Boy
-  </a>
-
-
-  <div id="log">--Logging enabled--</div>
-
+    </div>
+    <div class="explore_button">
+      <%= button_to "Next Performance", explore_path(@next_post, :autoplay => 1), :method => :get, class: "success-button explore-button" %>
+    </div>
 

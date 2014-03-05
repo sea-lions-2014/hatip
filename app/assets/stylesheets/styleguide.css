@@ -32,9 +32,13 @@
   position: absolute;
   color: white;
   border-radius: 3px;
-  background-color: #26A65B;
+  background-color: transparent;
   padding: 8px 20px 8px 20px;
-  border: 0
+  border: 2px #0A8FD5 solid;
+}
+
+.sign_up_button{
+
 }
 
 #my_image { position: relative; }
