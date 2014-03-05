@@ -20,7 +20,25 @@ class User < ActiveRecord::Base
   end
 
   def get_hype_score
-    self.posts.length
+    tip_amount = calculate_total_tips
+    fb_likes = 100
+    hype_score = tip_amount + fb_likes
+  end
+
+  def current_hype
+    gravity = 0.3
+    age = (Time.zone.now - self.created_at) / 3600
+    score = get_hype_score / age ** gravity
+    score.round
+  end
+
+  def calculate_total_tips
+    total_tip_amount = 0
+    tips = Tip.where(user_id: self.id)
+    tips.each do |tip|
+      total_tip_amount += tip.fiat_cents/100
+    end
+    total_tip_amount
   end
 
   def set_profile_image
@@ -75,3 +93,4 @@ class User < ActiveRecord::Base
   end
 end
 
+# https://graph.facebook.com/fql?q=SELECT url, normalized_url, share_count, like_count, comment_count, total_count,commentsbox_count, comments_fbid, click_count FROM link_stat WHERE url='http://www.google.com'
