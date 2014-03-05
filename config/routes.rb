@@ -11,6 +11,10 @@ Hatip::Application.routes.draw do
     resources :posts, shallow: true
   end
 
+  resources :tags, only: [] do
+    get :autocomplete_tag_name, :on => :collection
+  end
+
   resources :posts, only: [:index]
   resources :tips, :only => [:create]
 
