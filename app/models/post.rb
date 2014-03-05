@@ -22,10 +22,9 @@ class Post < ActiveRecord::Base
 
   def self.text_search(query)
     if query.present?
-      where("title @@ :q or description @@ :q", q: query)
       search(query)
     else
-      find(:all)
+      scoped
     end
   end
 

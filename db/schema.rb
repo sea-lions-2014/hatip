@@ -64,6 +64,7 @@ ActiveRecord::Schema.define(:version => 20140228232337) do
     t.string   "country"
     t.string   "tagline"
     t.text     "story"
+    t.string   "category"
     t.integer  "hype_score",             :default => 0
     t.string   "profile_image_url",      :default => "/assets/avatar.png"
     t.string   "featured_youtube_url"
