@@ -12,5 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require stripe_checkout
 //= require bootstrap-modal.js
 //= require_tree .
