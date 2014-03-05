@@ -14,6 +14,8 @@ class CreateTips < ActiveRecord::Migration
       t.string      :receive_address
       t.string      :stripe_email
       t.string      :stripe_token
+
+      t.timestamps
     end
   end
 end

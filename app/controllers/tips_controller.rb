@@ -1,26 +1,10 @@
 class TipsController < ApplicationController
   def create
-  	order = params['order']
-  	custom_info = eval(order['custom']) # results in hash
-  	user = User.find(custom_info[:user_id])
-
-    tip_info = {
-    	coinbase_id: 			order['id'],
-      post_id: 					custom_info[:post_id],
-      fiat_iso: 				order['total_native']['currency_iso'],
-      fiat_cents: 			order['total_native']['cents'],
-      crypto_iso: 			order['total_btc']['currency_iso'],
-      crypto_cents: 		order['total_btc']['cents'],
-      tx_hash: 					order['transaction']['hash'],
-      tx_id: 						order['transaction']['id'],
-      status: 					order['status'],
-      receive_address: 	order['receive_address']
-    }
-    puts tip_info
-
-    tip = Tip.create(tip_info)
-    user.tips << tip
-    render json: { success: "success" }
+    tip = Tip.build_from_callback(params)
+    if tip.save
+      render json: { success: "success" }
+    else
+      render json: { error: "error" }
   end
 
   def create_stripe_tip

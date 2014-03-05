@@ -10,6 +10,13 @@ gem 'omniauth-facebook'
 gem 'coinbase'
 gem 'faker'
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
+gem 'tire'
+gem 'will_paginate'
+gem 'sidekiq'
+gem 'sinatra', require: false
+gem 'slim'
+gem 'pg_search'
+gem 'whenever', :require => false
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'

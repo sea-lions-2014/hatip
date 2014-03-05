@@ -10,17 +10,13 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me, :first_name,
                   :last_name, :password_hash, :stage_name, :twitter_handle, :verified,
                   :tagline, :city, :state, :country, :category, :story, :profile_image_url,
-                  :featured_youtube_url, :is_admin
+                  :featured_youtube_url, :is_admin, :hype_score
 
   # validates :category, inclusion: { in: %w(vocal instrumental dance acrobatic visual comedy),
   #                                   message: "%{value} is not a valid category" }
 
   def needs_to_create_profile
     [self.stage_name, self.category, self.featured_youtube_url, self.tagline].include?(nil)
-  end
-
-  def get_hype_score
-    self.posts.length
   end
 
   def set_profile_image
@@ -75,3 +71,4 @@ class User < ActiveRecord::Base
   end
 end
 
+# https://graph.facebook.com/fql?q=SELECT url, normalized_url, share_count, like_count, comment_count, total_count,commentsbox_count, comments_fbid, click_count FROM link_stat WHERE url='http://www.google.com'

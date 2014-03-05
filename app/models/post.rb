@@ -1,5 +1,5 @@
 class Post < ActiveRecord::Base
-  attr_accessible :youtube_url, :title, :description, :hype
+  attr_accessible :youtube_url, :title, :description, :hype, :fb_likes
   belongs_to :user
 
   validates :youtube_url, presence: true
@@ -7,6 +7,21 @@ class Post < ActiveRecord::Base
   validates_uniqueness_of :youtube_url, scope: :user_id
 
   validate :validate_youtube_url
+
+  include PgSearch
+  pg_search_scope :search, against: [:title, :description],
+    using: { tsearch: { dictionary: "english" } },
+    associated_against: { user: [:stage_name, :country] }
+
+  def self.text_search(query)
+    if query.present?
+      # where("title @@ :q or description @@ :q", q: query)
+      search(query)
+    else
+      # find(:all)
+      scoped
+    end
+  end
 
   def post_embed
     YoutubeBuddy.new(youtube_url).iframe_html
@@ -25,9 +40,12 @@ class Post < ActiveRecord::Base
   end
 
   def facebook_like_url
-    FacebookBuddy.new(self.user.id).like_button_source_url
+    FacebookBuddy.post_like_button_source_url(self.id)
   end
 
+  def current_hype
+    HypeBuddy.new(self).current_hype
+  end
 
   def card_data
     tip_button_options = {
