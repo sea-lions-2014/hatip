@@ -1,7 +1,7 @@
 require 'rubygems'
-require 'google/api_client'
-require 'trollop'
-require 'youtube_it'
+# require 'google/api_client'
+# require 'trollop'
+# require 'youtube_it'
 require 'faker'
 
 
@@ -9,13 +9,13 @@ require 'faker'
 # Set DEVELOPER_KEY to the "API key" value from the "Access" tab of the
 # Google Developers Console <https://cloud.google.com/console>
 # Please ensure that you have enabled the YouTube Data API for your project.
-DEVELOPER_KEY = "AIzaSyCE0MVxKIJWDbbcfFBDwqD2PW7Igpo8zwY"
-YOUTUBE_API_SERVICE_NAME = "youtube"
-YOUTUBE_API_VERSION = "v3"
-client = Google::APIClient.new(:key => DEVELOPER_KEY,
-                               :authorization => nil)
-youtube = client.discovered_api(YOUTUBE_API_SERVICE_NAME, YOUTUBE_API_VERSION)
-yt_client = YouTubeIt::Client.new(:dev_key => DEVELOPER_KEY)
+# DEVELOPER_KEY = "AIzaSyCE0MVxKIJWDbbcfFBDwqD2PW7Igpo8zwY"
+# YOUTUBE_API_SERVICE_NAME = "youtube"
+# YOUTUBE_API_VERSION = "v3"
+# client = Google::APIClient.new(:key => DEVELOPER_KEY,
+#                                :authorization => nil)
+# youtube = client.discovered_api(YOUTUBE_API_SERVICE_NAME, YOUTUBE_API_VERSION)
+# yt_client = YouTubeIt::Client.new(:dev_key => DEVELOPER_KEY)
 
 
 search_terms =  [
@@ -146,35 +146,35 @@ categories = ["music", "dance", "acrobat", "other"]
 
 User.all.each do |user|
 
-    opts = Trollop::options do
-      opt :q, 'Search term', :type => String, :default => search_terms.sample
-      opt :maxResults, 'Max results', :type => :int, :default => 5
-    end
+    # opts = Trollop::options do
+    #   opt :q, 'Search term', :type => String, :default => search_terms.sample
+    #   opt :maxResults, 'Max results', :type => :int, :default => 5
+    # end
 
-    opts[:part] = 'id,snippet'
-    search_response = client.execute!(
-      :api_method => youtube.search.list,
-      :parameters => opts
-    )
+    # opts[:part] = 'id,snippet'
+    # search_response = client.execute!(
+    #   :api_method => youtube.search.list,
+    #   :parameters => opts
+    # )
     # Create results
-    search_response.data.items.each do |search_result|
-      if search_result.id.kind == 'youtube#video'
-        video = yt_client.video_by(search_result.id.videoId)
-          if video.noembed == false && video.view_count > 1000 && video.duration > 20
-            id = video.unique_id
-            title = video.title
-            video.description ? description = video.description : description = ""
-            video.uploaded_at ? uploaded_at = video.uploaded_at : uploaded_at = Time.now
-            video.view_count ? view_count = video.view_count : view_count = 0
-            video.duration ? duration = video.duration : duration = 0
+  #   search_response.data.items.each do |search_result|
+  #     if search_result.id.kind == 'youtube#video'
+  #       video = yt_client.video_by(search_result.id.videoId)
+  #         if video.noembed == false && video.view_count > 1000 && video.duration > 20
+  #           id = video.unique_id
+  #           title = video.title
+  #           video.description ? description = video.description : description = ""
+  #           video.uploaded_at ? uploaded_at = video.uploaded_at : uploaded_at = Time.now
+  #           video.view_count ? view_count = video.view_count : view_count = 0
+  #           video.duration ? duration = video.duration : duration = 0
             user.posts.create(
-              title: title,
-              youtube_url: "http://www.youtube.com/watch?v=" + id,
-              description: description,
+              title: search_terms.sample,
+              youtube_url: urls.sample,
+              description: Faker::Lorem.paragraph,
               hype: rand(1..100),
               category: categories.sample
               )
-          end
-      end
-  end
+  #         end
+  #      end
+  # end
 end

@@ -19,9 +19,7 @@ gem 'pg_search'
 gem 'whenever', :require => false
 
 
-gem "google-api-client", "~> 0.7.1"
-gem "trollop", "~> 2.0"
-gem "youtube_it", "~> 2.4.0"
+
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
@@ -30,12 +28,17 @@ group :assets do
 end
 
 group :development do
+  # gem "google-api-client", "~> 0.7.1"
+  # gem "trollop", "~> 2.0"
+  # gem "youtube_it", "~> 2.4.0"
   gem 'binding_of_caller'
 end
 group :test, :development do
   gem 'rspec-rails'
   gem 'dotenv-rails'
   gem 'better_errors'
+  gem 'jasmine'
+  gem 'jasmine-jquery-rails'
 end
 
 group :test do
@@ -45,6 +48,7 @@ group :test do
   gem 'shoulda-matchers'
   gem 'factory_girl_rails', '~> 4.0'
   gem 'faker'
+
 end
 
 gem 'jquery-rails'
