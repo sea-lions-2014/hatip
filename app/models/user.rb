@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   has_many :posts
+  has_many :post_searches, as: :searchable
   has_many :tips
   before_save :set_profile_image
 

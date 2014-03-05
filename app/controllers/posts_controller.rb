@@ -1,8 +1,12 @@
 class PostsController < ApplicationController
   respond_to :json
 
-  def show
-    @posts = Post.search(params[:search])
+  def index
+    if params[:search].present?
+      @posts = PostSearch.new(query: params[:search]).results
+    else
+      @posts = Post.all(limit:20)
+    end
   end
 
   def create

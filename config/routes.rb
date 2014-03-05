@@ -5,8 +5,10 @@ Hatip::Application.routes.draw do
 
   root :to => "pages#index"
   resources :users do
-    resources :posts
+    resources :posts, except: [:index]
   end
+
+  resources :posts, only: [:index]
 
   resources :tips, :only => [:create]
 

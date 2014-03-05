@@ -17,6 +17,25 @@ urls = [
         "http://www.youtube.com/watch?v=jEA9aG0UNVA"
       ]
 
+descriptions = [
+        "juggler in the streets of bangkok",
+        "fire eating while break dancing",
+        "guitarist tribute to radiohead",
+        "ukulele orchestra of great britain",
+        "twerking on the streets of san francisco",
+        "bongos and maracas at a carnival",
+        "salsa dancing in rio",
+        "glitter fight visual art installation",
+        "dots: a graffiti retrospective on the sidewalk",
+        "sick skateboarding skillz",
+        "comedian slays street audience in nyc, hilarious",
+        "kermit the frog costumed dancer",
+        "sitar savant",
+        "jingle bells rendition of 90s pop music"
+      ]
+
+
+
 30.times do
   first_name = Faker::Name.first_name
   User.create(
@@ -42,9 +61,9 @@ end
 User.all.each do |user|
   4.times do
     user.posts.create(
-      title: Faker::Lorem.words(3).join(' '),
+      title: descriptions.sample.split(' ').first(4).join(' '),
       youtube_url: urls.sample,
-      description: Faker::Lorem.sentence,
+      description: descriptions.sample,
       hype: rand(1..100)
       )
   end

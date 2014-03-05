@@ -10,6 +10,7 @@ var CardMaster = {
   },
 
   launchModal: function(event){
+    console.log("I'm clicked!!");
     var card = CardMaster.buildCard(event);
     var modal = new CardModal(card, 'launch');
   },

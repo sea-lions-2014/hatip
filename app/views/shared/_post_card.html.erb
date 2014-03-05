@@ -1,0 +1,16 @@
+<div class="post-card" data-id="<%= post.id %>">
+  <div class="thumbnail-holder">
+    <img class="post-thumbnail" src="<%= post.thumbnail_url %>">
+    <span class="play"></span>
+  </div>
+    <div class="post-title"><%= post.title.capitalize! %></div>
+    <hr/>
+    <span class="post-card-user">
+      <img src="<%= post.user.profile_image_url if post.user.profile_image_url%>" class="post-user-pic" />
+      <span class="artist-name"><%= link_to post.user.stage_name, user_path(post.user) %></span>
+      <span class="hype-score-card"><%= post.user.get_hype_score %></span>
+    </span>
+    <div class="post-card-user-location">
+      <%= post.user.city if post.user.city; post.user.state if post.user.state; post.user.country if post. user.country %>
+    </div>
+</div>

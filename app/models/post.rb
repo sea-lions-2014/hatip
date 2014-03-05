@@ -1,20 +1,13 @@
 class Post < ActiveRecord::Base
   attr_accessible :youtube_url, :title, :description, :hype
   belongs_to :user
+  has_many :post_searches, as: :searchable
 
   validates :youtube_url, presence: true
   validates :title, presence: true
   validates_uniqueness_of :youtube_url, scope: :user_id
 
   validate :validate_youtube_url
-
-  def self.search(search)
-    if search
-      find(:all, conditions: ['name LIKE ?', "%#{search}"])
-    else
-      find(:all)
-    end
-  end
 
   def post_embed
     YoutubeBuddy.new(youtube_url).iframe_html
