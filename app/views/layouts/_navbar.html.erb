@@ -3,18 +3,18 @@
 <nav id="menu" class="menu">
   <ul class="nav-items">
    <li>
-    <%= link_to image_tag("Hattip_Finished.png", class: "logo"), root_path, id: "logo-link" %>
-  </li>
-  <li>
-    <%= form_tag posts_path, method: 'get', :class => "search-form" do %>
-    <p>
-      <img class="search-icon" src="http://png-4.findicons.com/files/icons/1389/g5_system/32/toolbar_find.png"/>
-      <%#= search_field :post, :title, placeholder: "Search Performances", class: "search rounded"  %>
-      <%= text_field_tag :query, params[:query] %>
-      <%= submit_tag "Search Performances", name: nil %>
-    </p>
-    <% end %>
-  </li>
+      <%= link_to image_tag("Hattip_Finished.png", class: "logo"), root_path, id: "logo-link" %>
+    </li>
+    <li>
+          <%= form_tag posts_path, method: 'get', class: "search-form" do %>
+          <p>
+            <img class="search-icon" src="http://png-4.findicons.com/files/icons/1389/g5_system/32/toolbar_find.png"/>
+            <%#= search_field :post, :title, placeholder: "Search Performances", class: "search rounded"  %>
+            <%= text_field_tag :query, params[:query], class: 'tags_with_autocomplete', :data => {autocompleteurl: autocomplete_tag_name_tags_path} %>
+            <%= submit_tag "Search Performances", name: nil %>
+          </p>
+          <% end %>
+        </li>
   <% if current_user %>
   <li class="has-submenu pull-right pull-right-last">
     <% if current_user.stage_name %>
