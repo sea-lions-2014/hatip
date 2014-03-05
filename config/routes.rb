@@ -24,10 +24,8 @@ Hatip::Application.routes.draw do
   match '/create_verifications', :to => 'users#create_verification'
   match '/revoke_verifications', :to => 'users#revoke_verification'
 
-  # mount Sidekiq::Web, at: '/sidekiq'
-
   post "callback", :to => 'tips#create'
-  get "callback", :to => 'tips#index'
+  post "callback/stripe/:id", :to =>'tips#create_stripe_tip'
 
   devise_scope :user do
     get 'sign_out', :to => 'devise/sessions#destroy', :as => :destroy_user_session

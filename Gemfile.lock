@@ -1,3 +1,12 @@
+GIT
+  remote: https://github.com/stripe/stripe-ruby
+  revision: 637d5899f614a6f4d0fa2147f9b3b8b1c8b39b28
+  specs:
+    stripe (1.10.2)
+      json (~> 1.8.1)
+      mime-types (~> 1.25)
+      rest-client (~> 1.4)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -276,6 +285,7 @@ DEPENDENCIES
   sidekiq
   sinatra
   slim
+  stripe!
   tire
   uglifier (>= 1.0.3)
   whenever

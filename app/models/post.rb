@@ -57,6 +57,7 @@ class Post < ActiveRecord::Base
 
     {
       artist_name: self.user.name,
+      artist_id: self.id,
       title: self.title,
       youtube_id: self.youtube_id,
       description: self.description,
