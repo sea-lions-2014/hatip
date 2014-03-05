@@ -1,29 +1,34 @@
 class TipsController < ApplicationController
-	def index
-		render json: { message: "this is the tips controller" }
-	end
-
   def create
-  	order = params['order']
-  	custom_info = eval(order['custom']) # results in hash
-  	user = User.find(custom_info[:user_id])
+    tip = Tip.build_from_callback(params)
+    if tip.save
+      render json: { success: "success" }
+    else
+      render json: { error: "error" }
+  end
 
-    tip_info = {
-      coinbase_id: 			order['id'],
-      post_id: 				custom_info[:post_id],
-      fiat_iso: 			order['total_native']['currency_iso'],
-      fiat_cents: 			order['total_native']['cents'],
-      crypto_iso: 			order['total_btc']['currency_iso'],
-      crypto_cents: 		order['total_btc']['cents'],
-      tx_hash: 				order['transaction']['hash'],
-      tx_id: 				order['transaction']['id'],
-      status: 				order['status'],
-      receive_address: 	    order['receive_address']
-    }
+  def create_stripe_tip
+    Stripe.api_key = "sk_test_BQokikJOvBiI2HlWgH4olfQ2"
+    # Get the credit card details submitted by the form
+    token = params[:stripe_token][:id]
+    email = params[:email]
+    amount = params[:amount]
+    user_id = params[:id]
 
-    tip = Tip.create(tip_info)
-    user.tips << tip
-    render json: { success: "success" }
+    # Create the charge on Stripe's servers - this will charge the user's card
+    begin
+      charge = Stripe::Charge.create(
+        :amount => amount, # amount in cents, again
+        :currency => "usd",
+        :card => token,
+        :description => email
+      )
+      User.find(user_id).tips.create(fiat_cents: amount, stripe_email: email, stripe_token: token)
+      render json: { success: "success" }
+    rescue Stripe::CardError => e
+      puts e
+      render json: { error: "error" }
+    end
   end
 end
 
