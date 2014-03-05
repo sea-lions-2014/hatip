@@ -1,6 +1,13 @@
 <%= image_tag "guitar.png", class: "main-image" %>
 <div class="card-container">
   <div id="card-wrapper">
+    <span class="filters">
+      <span class="filter"><img src="https://cdn1.iconfinder.com/data/icons/metro-uinvert-dock/128/Music_Library.png" height="16" /> Musical </span>
+      <span class="filter"><img src="https://cdn1.iconfinder.com/data/icons/windows8_icons_iconpharm/26/yoga.png" height="16"> Dance </span>
+      <span class="filter"><img src="https://cdn1.iconfinder.com/data/icons/customicondesign-office7-shadow-png/128/Sport-hurdle.png" height="16" /> Acrobatic </span>
+      <span class="filter"><img src="https://cdn1.iconfinder.com/data/icons/super-mono-basic/yellow/medal_basic_yellow.png" height="16" /> Other</span>
+    </span>
+    <br/><br/>
     <%= render partial: 'pages/post_cards', locals: { posts: @posts } %>
   </div>
   <%= render partial: 'pages/post_card_modal' %>

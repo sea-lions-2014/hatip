@@ -14,10 +14,10 @@
 ActiveRecord::Schema.define(:version => 20140228232337) do
 
   create_table "posts", :force => true do |t|
-    t.string   "title"
+    t.text     "title"
     t.string   "youtube_url"
     t.string   "youtube_id"
-    t.string   "description"
+    t.text     "description"
     t.integer  "hype"
     t.integer  "user_id"
     t.datetime "created_at",  :null => false

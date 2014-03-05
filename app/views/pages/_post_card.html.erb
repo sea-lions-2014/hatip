@@ -1,6 +1,6 @@
 <div class="post-card" data-id="<%= post.id %>">
   <img class="post-thumbnail" src="<%= post.thumbnail_url %>">
-    <div class="post-title"><%= post.title %></div>
+    <div class="post-title"><%= post.title.length > 55  ? post.title[0..55] + "..." : post.title %></div>
     <hr/>
     <span class="post-card-user">
       <img src="<%= post.user.profile_image_url if post.user.profile_image_url%>" class="post-user-pic" />

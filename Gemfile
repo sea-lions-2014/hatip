@@ -10,6 +10,10 @@ gem 'omniauth-facebook'
 gem 'coinbase'
 gem 'faker'
 
+gem "google-api-client", "~> 0.7.1"
+gem "trollop", "~> 2.0"
+gem "youtube_it", "~> 2.4.0"
+
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
