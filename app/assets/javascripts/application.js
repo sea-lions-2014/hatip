@@ -12,7 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require 
 //= require jquery-ui-1.10.4.custom.min
 //= require stripe_checkout
 //= require bootstrap-modal.js

@@ -8,14 +8,12 @@ var profileController = {
 		$('#show-posts').on('click', profileController.scrollToVideo)
 	},
 
-	playerScroll: function(e) {
-		e.preventDefault();
+	playerScroll: function() {
 		$(".yt-iframe").attr("src", $(this).data("embed"));
 		$("html, body").animate({ scrollTop: "270px" });
 	},
 
-	scrollToVideo: function(e) {
-		e.preventDefault();
+	scrollToVideo: function() {
 		$('html, body').animate({ scrollTop: "810px"})
 	}
 }
