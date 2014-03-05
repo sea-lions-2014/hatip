@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(:version => 20140228232337) do
     t.string   "youtube_url"
     t.string   "description"
     t.integer  "hype"
+    t.integer  "fb_likes"
     t.integer  "user_id"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false

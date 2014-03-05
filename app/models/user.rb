@@ -19,10 +19,6 @@ class User < ActiveRecord::Base
     [self.stage_name, self.category, self.featured_youtube_url, self.tagline].include?(nil)
   end
 
-  def get_hype_score
-    self.posts.length
-  end
-
   def set_profile_image
     self.profile_image_url = "/assets/avatar.png" unless self.profile_image_url
   end
@@ -75,3 +71,4 @@ class User < ActiveRecord::Base
   end
 end
 
+# https://graph.facebook.com/fql?q=SELECT url, normalized_url, share_count, like_count, comment_count, total_count,commentsbox_count, comments_fbid, click_count FROM link_stat WHERE url='http://www.google.com'
