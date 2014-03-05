@@ -1,8 +1,8 @@
 class PostsController < ApplicationController
   respond_to :json
 
-  def show
-    @posts = Post.search(params[:search])
+  def index
+    @posts = Post.text_search(params[:query])
   end
 
   def create

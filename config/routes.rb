@@ -11,6 +11,7 @@ Hatip::Application.routes.draw do
     resources :posts, shallow: true
   end
 
+  resources :posts, only: [:index]
   resources :tips, :only => [:create]
 
   match 'admin', to: 'admins#index', via: :get

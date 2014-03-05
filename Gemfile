@@ -14,6 +14,7 @@ gem 'will_paginate'
 gem 'sidekiq'
 gem 'sinatra', require: false
 gem 'slim'
+gem 'pg_search'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
