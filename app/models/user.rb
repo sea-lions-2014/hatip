@@ -19,7 +19,7 @@ class User < ActiveRecord::Base
     [self.stage_name, self.category, self.featured_youtube_url, self.tagline].include?(nil)
   end
 
-  def get_hype_score
+  def raw_hype_score
     tip_amount = calculate_total_tips
     fb_likes = 100
     hype_score = tip_amount + fb_likes
@@ -28,7 +28,7 @@ class User < ActiveRecord::Base
   def current_hype
     gravity = 0.3
     age = (Time.zone.now - self.created_at) / 3600
-    score = get_hype_score / age ** gravity
+    score = raw_hype_score / age ** gravity
     score.round
   end
 

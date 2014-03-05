@@ -1,3 +1,6 @@
+# require 'sidekiq/web'
+
+
 Hatip::Application.routes.draw do
 
   # devise_for :users, path: "auth", path_names: { sign_in: 'login', sign_out: 'logout', password: 'secret', confirmation: 'verification', unlock: 'unblock', registration: 'register', sign_up: 'cmon_let_me_in' }
@@ -5,7 +8,7 @@ Hatip::Application.routes.draw do
 
   root :to => "pages#index"
   resources :users do
-    resources :posts
+    resources :posts, shallow: true
   end
 
   resources :tips, :only => [:create]
@@ -16,7 +19,7 @@ Hatip::Application.routes.draw do
   match '/create_verifications', :to => 'users#create_verification'
   match '/revoke_verifications', :to => 'users#revoke_verification'
 
-
+  # mount Sidekiq::Web, at: '/sidekiq'
 
   post "callback", :to => 'tips#create'
   get "callback", :to => 'tips#index'

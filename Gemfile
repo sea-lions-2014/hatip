@@ -11,6 +11,9 @@ gem 'coinbase'
 gem 'faker'
 gem 'tire'
 gem 'will_paginate'
+gem 'sidekiq'
+gem 'sinatra', require: false
+gem 'slim'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
