@@ -8,11 +8,18 @@ class Post < ActiveRecord::Base
 
   validate :validate_youtube_url
 
-  def self.search(search)
-    if search
-      find(:all, conditions: ['title LIKE ?', "%#{search}%"])
+  include PgSearch
+  pg_search_scope :search, against: [:title, :description],
+    using: { tsearch: { dictionary: "english" } },
+    associated_against: { user: [:stage_name, :country] }
+
+  def self.text_search(query)
+    if query.present?
+      # where("title @@ :q or description @@ :q", q: query)
+      search(query)
     else
-      find(:all)
+      # find(:all)
+      scoped
     end
   end
 

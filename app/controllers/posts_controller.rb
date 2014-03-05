@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   respond_to :json
 
   def index
-    @posts = Post.search(params[:search])
+    @posts = Post.text_search(params[:query])
   end
 
   def create

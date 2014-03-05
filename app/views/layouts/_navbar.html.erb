@@ -10,7 +10,7 @@
           <p>
             <img class="search-icon" src="http://png-4.findicons.com/files/icons/1389/g5_system/32/toolbar_find.png"/>
             <%#= search_field :post, :title, placeholder: "Search Performances", class: "search rounded"  %>
-            <%= text_field_tag :search, params[:search] %>
+            <%= text_field_tag :query, params[:query] %>
             <%= submit_tag "Search Performances", name: nil %>
           </p>
           <% end %>
