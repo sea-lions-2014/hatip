@@ -37,7 +37,7 @@ class CoinbaseBuddy
       }
   end
 
-  def self.parse_callback
+  def self.parse_callback(data)
     order = data['order']
     custom_info = get_custom_info(order)
     user = User.find(custom_info[:user_id])
@@ -65,7 +65,6 @@ class CoinbaseBuddy
     end
 
     # Validate that string is encoded hash of params and not malicious code
-
     def self.invalid_custom_params?(order)
       /{ *\w{2,10}: \d+, *\w{2,10}: \d+ }/.match(order['custom']).nil?
     end
