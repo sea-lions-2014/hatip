@@ -18,24 +18,26 @@ ActiveRecord::Schema.define(:version => 20140228232337) do
     t.string   "youtube_url"
     t.string   "description"
     t.integer  "hype"
-    t.integer  "fb_likes"
+    t.integer  "fb_likes",    :default => 0
     t.integer  "user_id"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",                 :null => false
+    t.datetime "updated_at",                 :null => false
   end
 
   create_table "tips", :force => true do |t|
-    t.integer "user_id"
-    t.string  "coinbase_id"
-    t.string  "post_id"
-    t.string  "fiat_iso"
-    t.integer "fiat_cents"
-    t.string  "crypto_iso"
-    t.integer "crypto_cents"
-    t.string  "tx_hash"
-    t.string  "tx_id"
-    t.string  "status"
-    t.string  "receive_address"
+    t.integer  "user_id"
+    t.string   "coinbase_id"
+    t.string   "post_id"
+    t.string   "fiat_iso"
+    t.integer  "fiat_cents"
+    t.string   "crypto_iso"
+    t.integer  "crypto_cents"
+    t.string   "tx_hash"
+    t.string   "tx_id"
+    t.string   "status"
+    t.string   "receive_address"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
   end
 
   create_table "users", :force => true do |t|

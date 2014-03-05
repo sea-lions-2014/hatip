@@ -5,7 +5,7 @@ class CreatePosts < ActiveRecord::Migration
       t.string :youtube_url
       t.string :description
       t.integer :hype
-      t.integer :fb_likes
+      t.integer :fb_likes, default: 0
       t.belongs_to :user
 
       t.timestamps
