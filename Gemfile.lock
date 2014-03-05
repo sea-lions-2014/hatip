@@ -282,14 +282,11 @@ DEPENDENCIES
   sass-rails (~> 3.2.3)
   selenium-webdriver
   shoulda-matchers
-<<<<<<< HEAD
-  stripe!
-=======
   sidekiq
   sinatra
   slim
+  stripe!
   tire
->>>>>>> master
   uglifier (>= 1.0.3)
   whenever
   will_paginate
