@@ -9,7 +9,7 @@ var profileController = {
 	},
 
 	playerScroll: function(e) {
-		e.preventDefault
+		e.preventDefault();
 		$(".yt-iframe").attr("src", $(this).data("embed"));
 		$("html, body").animate({ scrollTop: "270px" });
 	},
