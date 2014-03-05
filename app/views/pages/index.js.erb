@@ -1,0 +1,6 @@
+$('#columns').append("<%= j render(:partial => 'shared/post_cards') %>");
+<% if @posts.next_page %>
+  $('.pagination').replaceWith('<%= j will_paginate(@posts) %>');
+<% else %>
+  $('.pagination').remove();
+<% end %>

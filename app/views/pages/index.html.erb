@@ -1,7 +1,7 @@
 <div id="my_image">
   <%= image_tag "http://i.imgur.com/IObdjFI.png", class: "main-image" %>
-<button id="button_id" class="sign_up_button">Explore Acts</button>
-<%= button_to "Explore Acts", explore_path, :class => "sign_up_button", :method => :get %>
+  <button id="button_id" class="sign_up_button">Explore Acts</button>
+  <%= button_to "Explore Acts", explore_path, :class => "sign_up_button", :method => :get %>
 
 </div>
 
@@ -16,11 +16,12 @@
     </span>
     <br/><br/>
     <div class="home_cards">
-      <%= render partial: 'pages/post_cards', locals: { posts: @posts } %>
-    </div>
-  </div>
-  <%= render partial: 'pages/post_card_modal' %>
-</div>
 
+      <%= render 'shared/post_cards', locals: { posts: @posts } %>
+    </div>
+    <%= render partial: 'shared/post_card_modal' %>
+  </div>
+
+  <%= will_paginate @posts %>
 
 

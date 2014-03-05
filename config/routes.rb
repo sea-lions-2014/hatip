@@ -1,3 +1,6 @@
+# require 'sidekiq/web'
+
+
 Hatip::Application.routes.draw do
 
   # devise_for :users, path: "auth", path_names: { sign_in: 'login', sign_out: 'logout', password: 'secret', confirmation: 'verification', unlock: 'unblock', registration: 'register', sign_up: 'cmon_let_me_in' }
@@ -5,9 +8,14 @@ Hatip::Application.routes.draw do
 
   root :to => "pages#index"
   resources :users do
-    resources :posts
+    resources :posts, shallow: true
   end
 
+  resources :tags, only: [] do
+    get :autocomplete_tag_name, :on => :collection
+  end
+
+  resources :posts, only: [:index]
   resources :tips, :only => [:create]
 
   match 'admin', to: 'admins#index', via: :get
@@ -24,11 +32,8 @@ Hatip::Application.routes.draw do
   match 'show_other', :to => 'pages#show_other'
 
 
-
-
-
   post "callback", :to => 'tips#create'
-  get "callback", :to => 'tips#index'
+  post "callback/stripe/:id", :to =>'tips#create_stripe_tip'
 
   devise_scope :user do
     get 'sign_out', :to => 'devise/sessions#destroy', :as => :destroy_user_session

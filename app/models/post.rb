@@ -1,5 +1,7 @@
 class Post < ActiveRecord::Base
-  attr_accessible :youtube_url, :title, :description, :hype, :category
+
+  attr_accessible :youtube_url, :title, :description, :hype, :fb_likes, :category
+
   belongs_to :user
 
   validates :youtube_url, presence: true
@@ -7,10 +9,24 @@ class Post < ActiveRecord::Base
   validates_uniqueness_of :youtube_url, scope: :user_id
 
   validate :validate_youtube_url
-  before_save :save_youtube_id
+  # before_save :save_youtube_id
 
-  def save_youtube_id
-    self.youtube_id = self.youtube_url.split('v=')[1]
+  # def save_youtube_id
+  #   self.youtube_id = self.youtube_url.split('v=')[1]
+  # end
+
+  include PgSearch
+  pg_search_scope :search, against: [:title, :description],
+    using: { tsearch: { dictionary: "english" } },
+    associated_against: { user: [:stage_name, :country] }
+
+  def self.text_search(query)
+    if query.present?
+      where("title @@ :q or description @@ :q", q: query)
+      search(query)
+    else
+      find(:all)
+    end
   end
 
   def post_embed
@@ -30,44 +46,29 @@ class Post < ActiveRecord::Base
   end
 
   def facebook_like_url
-    FacebookBuddy.new(self.user.id).like_button_source_url
+    FacebookBuddy.post_like_button_source_url(self.id)
   end
 
+  def current_hype
+    HypeBuddy.new(self).current_hype
+  end
 
   def card_data
+    tip_button_options = {
+      name: "Tip for #{ self.user.name }",
+      custom: "{ user_id: #{ self.user.id }, post_id: #{ self.id } }"
+    }
 
-    coinbase = Coinbase::Client.new(ENV['COINBASE_API_KEY'], ENV['COINBASE_API_SECRET'])
-
-    opts = {
-              button:
-              {
-                name: "Tip for #{ self.user.name }",
-                type: 'donation',
-                style: 'custom_small',
-                text: 'tip!',
-                price_currency_iso: "USD",
-                description: "Tip",
-                price_string: '1',
-                custom: "{ user_id: #{ self.user.id }, post_id: #{ self.id } }",
-                callback_url: 'http://guarded-journey-5941.herokuapp.com/callback',
-                variable_price: true,
-                choose_price: true,
-                price1: '0.5',
-                price2: '1',
-                price3: '2',
-                price4: '5',
-                price5: '10'
-              }
-            }
-    button = coinbase.create_button("Tip for #{ self.user.name }", 1, 'b', 'b', opts)
+    tip_button_html = CoinbaseBuddy.new(tip_button_options).iframe_embed_html
 
     {
       artist_name: self.user.name,
+      artist_id: self.id,
       title: self.title,
       youtube_id: self.youtube_id,
       description: self.description,
       artist_page_url: Rails.application.routes.url_helpers.user_path(self.user),
-      payment_button: button.embed_html,
+      payment_button: tip_button_html,
       facebook_like_url: facebook_like_url,
     }
   end

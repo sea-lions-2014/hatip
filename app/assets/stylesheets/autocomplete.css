@@ -1,0 +1,16 @@
+.ui-menu-item {
+  list-style: none;
+  margin: 0 auto;
+  background-color: #F4F4F4;
+  padding:3px;
+  border: 1px solid lightgray;
+  opacity: 0.93;
+}
+
+.ui-corner-all {
+  width: 200px;
+}
+
+.ui-helper-hidden-accessible {
+  display:none;
+}

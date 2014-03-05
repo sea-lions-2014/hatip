@@ -70,10 +70,11 @@ table .user-score{
 }
 
 .tip-hat{
-  float: left;
-  margin-left: 20px;
-  margin-bottom: 20px;
-  margin-right: 20px;
+  display: block;
+  margin:0 auto;
+  margin-bottom: 10px;
+  margin-top: 5px;
+
 }
 
 .fb-like{
@@ -109,6 +110,20 @@ table .user-score{
   padding-left: 50px;
   padding-right: 50px;
 }
+
+
+.tab{
+  border-left: 1px solid lightgray;
+/*  border-right: 1px solid lightgray;
+*/  padding: 22px 16px;
+}
+
+.tab-last{
+  border-right: 1px solid lightgray;
+
+}
+
+/*PROFILE SECTIONS*/
 
 .edit-profile-form input {
   margin-left: 10px;

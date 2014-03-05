@@ -10,17 +10,13 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me, :first_name,
                   :last_name, :password_hash, :stage_name, :twitter_handle, :verified,
                   :tagline, :city, :state, :country, :category, :story, :profile_image_url,
-                  :featured_youtube_url, :is_admin
+                  :featured_youtube_url, :is_admin, :hype_score
 
   # validates :category, inclusion: { in: %w(vocal instrumental dance acrobatic visual comedy),
   #                                   message: "%{value} is not a valid category" }
 
   def needs_to_create_profile
     [self.stage_name, self.category, self.featured_youtube_url, self.tagline].include?(nil)
-  end
-
-  def get_hype_score
-    self.posts.length
   end
 
   def set_profile_image
@@ -62,35 +58,17 @@ class User < ActiveRecord::Base
   end
 
   def card_data
+    tip_button_options = {
+      name: "Tip for #{ self.name }",
+      custom: "{ user_id: #{ self.id }, post_id: 'user_tip' }"
+    }
 
-    coinbase = Coinbase::Client.new(ENV['COINBASE_API_KEY'], ENV['COINBASE_API_SECRET'])
-
-    opts = {
-              button:
-              {
-                name: "Tip for #{ self.name }",
-                type: 'donation',
-                style: 'custom_small',
-                text: 'tip!',
-                price_currency_iso: "USD",
-                description: "Tip",
-                price_string: '1',
-                custom: "{ user_id: #{ self.id }, post_id: 'user_tip' }",
-                callback_url: 'http://guarded-journey-5941.herokuapp.com/callback',
-                variable_price: true,
-                choose_price: true,
-                price1: '0.5',
-                price2: '1',
-                price3: '2',
-                price4: '5',
-                price5: '10'
-              }
-            }
-    button = coinbase.create_button("Tip for #{ self.name }", 1, 'b', 'b', opts)
+    tip_button_html = CoinbaseBuddy.new(tip_button_options).iframe_embed_html
 
     {
-      payment_button: button.embed_html,
+      payment_button: tip_button_html,
     }
   end
 end
 
+# https://graph.facebook.com/fql?q=SELECT url, normalized_url, share_count, like_count, comment_count, total_count,commentsbox_count, comments_fbid, click_count FROM link_stat WHERE url='http://www.google.com'

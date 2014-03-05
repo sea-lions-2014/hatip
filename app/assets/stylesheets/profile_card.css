@@ -63,3 +63,22 @@
   padding-left: 10px;
 }
 
+
+#postModal input     {
+  display: block;
+  width: 280px;
+}
+
+#postModal label {
+  display: block;
+}
+
+#postModal .close {
+  float: right;
+}
+
+#postModal .btn {
+  float: right;
+  position: relative;
+  top: -20px;
+}
