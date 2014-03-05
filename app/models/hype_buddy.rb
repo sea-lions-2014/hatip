@@ -27,5 +27,4 @@ class HypeBuddy
   def calculate_total_tips
     Tip.where(user_id: @post.user.id).sum(:fiat_cents) / 100
   end
-
 end
