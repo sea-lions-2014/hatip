@@ -1,16 +1,31 @@
-class HypeBuddy < ActiveRecord::Base
-	def initialize(user, fiat_cents)
-		@user = user
-		@fiat_cents = fiat_cents
+class HypeBuddy
+	def initialize(post)
+		@post = post
 	end
 
 	def add_tip_hype
-		@user.update_attributes(hype_score: ( @user.hype_score + get_dollars.ceil ))
+		@post.update_attributes(hype_score: ( @post.hype + get_dollars.ceil ))
 	end
 
 	def get_dollars
-		@fiat_cents/100
+		@fiat_cents / 100
 	end
 
+	 def raw_hype_score
+    tip_amount = calculate_total_tips
+    fb_likes = 100
+    hype_score = tip_amount + fb_likes
+  end
+
+  def current_hype
+    gravity = 0.3
+    age = (Time.now - @post.created_at) / 3600
+    score = raw_hype_score / age ** gravity
+    score.round
+  end
+
+  def calculate_total_tips
+    Tip.where(user_id: @post.user.id).sum(:fiat_cents) / 100
+  end
 
 end

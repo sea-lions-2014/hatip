@@ -1,5 +1,5 @@
 class Post < ActiveRecord::Base
-  attr_accessible :youtube_url, :title, :description, :hype
+  attr_accessible :youtube_url, :title, :description, :hype, :fb_likes
   belongs_to :user
 
   validates :youtube_url, presence: true
@@ -40,9 +40,12 @@ class Post < ActiveRecord::Base
   end
 
   def facebook_like_url
-    FacebookBuddy.new(self.user.id).like_button_source_url
+    FacebookBuddy.post_like_button_source_url(self.id)
   end
 
+  def current_hype
+    HypeBuddy.new(self).current_hype
+  end
 
   def card_data
     tip_button_options = {

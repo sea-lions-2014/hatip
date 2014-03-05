@@ -19,28 +19,6 @@ class User < ActiveRecord::Base
     [self.stage_name, self.category, self.featured_youtube_url, self.tagline].include?(nil)
   end
 
-  def raw_hype_score
-    tip_amount = calculate_total_tips
-    fb_likes = 100
-    hype_score = tip_amount + fb_likes
-  end
-
-  def current_hype
-    gravity = 0.3
-    age = (Time.zone.now - self.created_at) / 3600
-    score = raw_hype_score / age ** gravity
-    score.round
-  end
-
-  def calculate_total_tips
-    total_tip_amount = 0
-    tips = Tip.where(user_id: self.id)
-    tips.each do |tip|
-      total_tip_amount += tip.fiat_cents/100
-    end
-    total_tip_amount
-  end
-
   def set_profile_image
     self.profile_image_url = "/assets/avatar.png" unless self.profile_image_url
   end
