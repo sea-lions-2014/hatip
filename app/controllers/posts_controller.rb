@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   respond_to :json
 
-  def show
+  def index
     @posts = Post.search(params[:search])
   end
 
