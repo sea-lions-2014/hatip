@@ -16,7 +16,15 @@ class User < ActiveRecord::Base
   #                                   message: "%{value} is not a valid category" }
 
   def needs_to_create_profile
-    [self.stage_name, self.category, self.featured_youtube_url, self.tagline].include?(nil)
+    has_invalid_video || missing_required_categories
+  end
+
+  def has_invalid_video
+    !YoutubeBuddy.new(self.featured_youtube_url).valid_video?
+  end
+
+  def missing_required_categories
+    [self.stage_name, self.category, self.featured_youtube_url, self.tagline].any? &:blank?
   end
 
   def set_profile_image
@@ -34,7 +42,6 @@ class User < ActiveRecord::Base
   def name
     self.first_name + ' ' + self.last_name
   end
-
 
   def self.find_for_facebook_oauth(auth)
     where(auth.slice(:provider, :uid)).first_or_create do |user|
