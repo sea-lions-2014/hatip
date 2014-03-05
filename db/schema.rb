@@ -17,8 +17,13 @@ ActiveRecord::Schema.define(:version => 20140228232337) do
     t.string   "title"
     t.string   "youtube_url"
     t.string   "description"
+<<<<<<< HEAD
     t.integer  "hype",        :default => 0, :null => false
     t.integer  "fb_likes",    :default => 0, :null => false
+=======
+    t.integer  "hype"
+    t.integer  "fb_likes",    :default => 0
+>>>>>>> autocomplete_the_best
     t.integer  "user_id"
     t.datetime "created_at",                 :null => false
     t.datetime "updated_at",                 :null => false
