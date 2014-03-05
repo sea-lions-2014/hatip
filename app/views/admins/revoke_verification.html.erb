@@ -1,11 +1,8 @@
 <%= render partial: 'admin_navbar' %>
-
-
 <table cellspacing="0">
 <tr><th>ID</th><th>User</th><th>Revoke Verification</th></tr>
 <% @verified_users.each do |user| %>
     <tr><td><%= user.id %></td><td><%=  user.email %></td><td><%= link_to "Revoke Verification",  revoke_verifications_path(:user => user), remote: true, class: "revoke-verification", method: :post %>
 </td></tr>
-
 <% end %>
 </table>
