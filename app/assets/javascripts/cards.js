@@ -7,7 +7,7 @@ $(function(){
 var CardMaster = {
 
   bindEventListeners: function(){
-    $('.post-card').click(CardMaster.launchModal);
+    $(document.body).on('click', '.post-card', CardMaster.launchModal);
     $('#cardModal').on('hidden.bs.modal', CardMaster.stopVideo);
   },
 

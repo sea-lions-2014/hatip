@@ -8,10 +8,8 @@
     <li>
           <%= form_tag posts_path, method: 'get', class: "search-form" do %>
           <p>
-            <img class="search-icon" src="http://png-4.findicons.com/files/icons/1389/g5_system/32/toolbar_find.png"/>
-            <%#= search_field :post, :title, placeholder: "Search Performances", class: "search rounded"  %>
+            <%= image_submit_tag "http://png-4.findicons.com/files/icons/1389/g5_system/32/toolbar_find.png", class: "search-icon" %>
             <%= text_field_tag :query, params[:query], class: 'tags_with_autocomplete', :data => {autocompleteurl: autocomplete_tag_name_tags_path} %>
-            <%= submit_tag "Search Performances", name: nil %>
           </p>
           <% end %>
         </li>
