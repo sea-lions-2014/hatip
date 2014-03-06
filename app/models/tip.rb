@@ -1,11 +1,16 @@
 class Tip < ActiveRecord::Base
 	attr_accessible :coinbase_id, :post_id, :fiat_iso, :fiat_cents, :crypto_iso, :crypto_cents, :tx_hash, :tx_id, :status, :receive_address, :stripe_email, :stripe_token
 	belongs_to :user
-	validates :tx_hash, length: { is: 64 }
+	# validates :tx_hash, length: { is: 64 }
 
   def build_from_callback(data)
     tip_info = CoinbaseBuddy.parse_callback(data)
     user.tips.build(tip_info)
+  end
+
+  def self.build_stripe_tip(data)
+    puts "building tip"
+    StripeBuddy.build_tip(data)
   end
 end
 

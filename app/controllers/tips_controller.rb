@@ -5,59 +5,26 @@ class TipsController < ApplicationController
       render json: { success: "success" }
     else
       render json: { error: "error" }
+    end
   end
 
   def create_stripe_tip
-    Stripe.api_key = "sk_test_BQokikJOvBiI2HlWgH4olfQ2"
-    # Get the credit card details submitted by the form
-    token = params[:stripe_token][:id]
-    email = params[:email]
-    amount = params[:amount]
-    user_id = params[:id]
-
-    # Create the charge on Stripe's servers - this will charge the user's card
-    begin
-      charge = Stripe::Charge.create(
-        :amount => amount, # amount in cents, again
-        :currency => "usd",
-        :card => token,
-        :description => email
-      )
-      User.find(user_id).tips.create(fiat_cents: amount, stripe_email: email, stripe_token: token)
-      render json: { success: "success" }
-    rescue Stripe::CardError => e
-      puts e
-      render json: { error: "error" }
-    end
+    Stripe.api_key = ENV['STRIPE_API_KEY']
+    success_status = StripeBuddy.create_tip(params)
+    render json: { status: success_status }
   end
 end
 
-  def create_stripe_tip
+#   def create_stripe_tip
+#     begin
+#       tip = Tip.build_stripe_tip(params)
+#       tip.save ? render json: { success: "success" } : render json: { error: "invalid params" }
+#     rescue
+#       render json: { error: "Payment " }
 
-    tip = Tip.build_stripe_tip(params)
-    Stripe.api_key = "sk_test_BQokikJOvBiI2HlWgH4olfQ2"
-    # Get the credit card details submitted by the form
-    token = params[:stripe_token][:id]
-    email = params[:email]
-    amount = params[:amount]
-    user_id = params[:id]
 
-    # Create the charge on Stripe's servers - this will charge the user's card
-    begin
-      charge = Stripe::Charge.create(
-        :amount => amount, # amount in cents, again
-        :currency => "usd",
-        :card => token,
-        :description => email
-      )
-      User.find(user_id).tips.create(fiat_cents: amount, stripe_email: email, stripe_token: token)
-      render json: { success: "success" }
-    rescue Stripe::CardError => e
-      puts e
-      render json: { error: "error" }
-    end
-  end
-end
+#   end
+# end
 
 
 ###################

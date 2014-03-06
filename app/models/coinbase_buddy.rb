@@ -56,6 +56,7 @@ class CoinbaseBuddy
   end
 
   private
+
     def self.get_custom_info(order)
       unless invalid_custom_params?(order['custom'])
         eval(order['custom']) # creates hash from string encoded custom parameter
