@@ -20,6 +20,7 @@ class User < ActiveRecord::Base
   end
 
   def has_invalid_video
+    return true if self.featured_youtube_url.blank?
     !YoutubeBuddy.new(self.featured_youtube_url).valid_video?
   end
 
@@ -41,6 +42,10 @@ class User < ActiveRecord::Base
 
   def name
     self.first_name + ' ' + self.last_name
+  end
+
+  def total_tips
+    self.tips.map(&:fiat_cents).inject(:+)
   end
 
   def self.find_for_facebook_oauth(auth)
@@ -77,5 +82,3 @@ class User < ActiveRecord::Base
     }
   end
 end
-
-# https://graph.facebook.com/fql?q=SELECT url, normalized_url, share_count, like_count, comment_count, total_count,commentsbox_count, comments_fbid, click_count FROM link_stat WHERE url='http://www.google.com'

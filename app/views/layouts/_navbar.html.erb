@@ -1,24 +1,22 @@
-<a class="menu-link" href="#menu">Menu</a>
-
 <nav id="menu" class="menu">
   <ul class="nav-items">
    <li>
-      <%= link_to image_tag("Hattip_Finished.png", class: "logo"), root_path, id: "logo-link" %>
-    </li>
-    <li>
-          <%= form_tag posts_path, method: 'get', class: "search-form" do %>
-          <p>
-            <%= image_submit_tag "http://png-4.findicons.com/files/icons/1389/g5_system/32/toolbar_find.png", class: "search-icon" %>
-            <%= text_field_tag :query, params[:query], class: 'tags_with_autocomplete', :data => {autocompleteurl: autocomplete_tag_name_tags_path} %>
-          </p>
-          <% end %>
-        </li>
+    <%= link_to image_tag("Hattip_Finished.png", class: "logo"), root_path, id: "logo-link" %>
+  </li>
+  <li>
+    <%= form_tag posts_path, method: 'get', class: "search-form" do %>
+    <p>
+      <%= image_submit_tag "http://png-4.findicons.com/files/icons/1389/g5_system/32/toolbar_find.png", class: "search-icon" %>
+      <%= text_field_tag :query, params[:query], class: 'tags_with_autocomplete', :data => {autocompleteurl: autocomplete_tag_name_tags_path} %>
+    </p>
+    <% end %>
+  </li>
   <% if current_user %>
     <li class="has-submenu pull-right pull-right-last">
-      <% if current_user.stage_name %>
-        <%= link_to current_user.stage_name, user_path(current_user) %>
+      <% if current_user.stage_name.length > 0 %>
+        <%= link_to "Welcome " + current_user.stage_name, user_path(current_user) %>
       <% else %>
-        <%= link_to "New User", user_path(current_user) %>
+        <%= link_to "Welcome", user_path(current_user) %>
       <% end %>
       <ul class="sub-menu">
          <li><%= link_to "Edit Profile Information", edit_user_path(current_user) %></li>
@@ -31,10 +29,7 @@
     <li class="pull-right"><%= link_to "Sign In", new_user_session_path %></li>
     <li class="pull-right"><%= link_to "Explore", explore_path %></li>
   <% end %>
-
-
-
-</ul>
+  </ul>
 </nav>
 
 

@@ -15,10 +15,13 @@
         </span>
       </td>
       <td class="user-score">
-        <div class="hype-score">
-          <p class="score-number"><%#= @user.current_hype %></p>
-          <p class="score-text">HYPE SCORE</p>
-        </div>
+        <%if current_user == @user %>
+
+          <div class="hype-score">
+            <p class="tip-text">Tip Total:</p>
+            <p class="tip-number">$20,497.67</p>
+          </div>
+        <% end %>
       </td>
     </tr>
     </table>
