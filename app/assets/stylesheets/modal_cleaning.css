@@ -1,9 +1,3 @@
-.tip-button{
-	width:45%;
-	margin-right: 0;
-	display: inline-block;
-}
-
 #stripeButton {
 	position: relative;
 	top: -23px;
@@ -23,4 +17,27 @@
 
 .fb-like-button {
 	width: 100%;
+}
+
+#coinbaseButton {
+    position: relative;
+    top: -23px;
+    display:inline;
+    height:40px;
+    width:81px;
+    border-radius: 4px;
+    background-color: #4D6BC4;
+    color: white;
+    margin-top: -1000px;
+    border: none;
+}
+
+#coinbaseButton a {
+  text-decoration: none;
+  color: white;
+}
+
+
+#coinbaseButton:hover {
+  background-color: #2a6496;
 }

@@ -12,15 +12,19 @@ class CoinbaseBuddy
     @client.create_button("#", 1, '#', '#', merged_options)
   end
 
-  def iframe_embed_html
-    button.embed_html
-  end
+  # def iframe_embed_html
+  #   button.embed_html
+  # end
+
+  # def button_code
+  #   button.button.code
+  # end
 
   def button_defaults
       {
         name: "NAME PLACEHOLDER",
         type: 'donation',
-        style: 'custom_small',
+        style: 'none',
         text: 'tip!',
         price_currency_iso: "USD",
         description: "Tip",
