@@ -2,7 +2,7 @@
   <div class="form-container">
     <div class="field-holder">
 
-      <h2 class="devise-title">Sign up</h2>
+      <h1 class="devise-title">Sign up</h1>
 
       <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
       <%= devise_error_messages! %>
@@ -20,7 +20,7 @@
         <p class="or-fb"><span class="line-center">OR</span></p>
       </div>
     <div class="actual-form">
-      <%= image_tag "fblogin.png", class: "fbbutton" %>
+      <%= image_tag "fblogin.png", class: "fbbutton fbsignup" %>
     </div>
   </div>
 </div>

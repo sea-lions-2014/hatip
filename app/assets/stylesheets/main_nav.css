@@ -162,3 +162,9 @@
       left: 100%;
       top:0;
     }
+
+.search_google{
+  padding-top: 7px;
+  margin-left: 40px;
+  width: 400px;
+}

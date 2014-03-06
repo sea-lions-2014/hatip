@@ -35,6 +35,12 @@ class User < ActiveRecord::Base
     self.first_name + ' ' + self.last_name
   end
 
+  def total_tips
+    total = 0
+    tips = self.tips
+    tips.each {|tip| total +=}
+  end
+
 
   def self.find_for_facebook_oauth(auth)
     where(auth.slice(:provider, :uid)).first_or_create do |user|

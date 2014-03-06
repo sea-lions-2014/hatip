@@ -47,6 +47,7 @@ table .user-score{
   font-weight: bold;
   font-size: 20px;
   margin-bottom: 0;
+  margin-top: 10px;
 }
 
 .twitter{
@@ -59,6 +60,12 @@ table .user-score{
   text-align: left;
   padding-left: 20px;
   padding-right: 20px;
+  margin-bottom: 20px;
+  margin-top: 10px;
+}
+
+.fb-like{
+  margin-top: 10px;
 }
 
 .user-story {
@@ -67,6 +74,7 @@ table .user-score{
   padding-right: 20px;
   color: gray;
   font-size: 12px;
+  margin-top: -10px;
 }
 
 .tip-hat{
@@ -77,8 +85,8 @@ table .user-score{
 
 }
 
-.fb-like{
-
+.image{
+  padding-top: 20px;
 }
 
 .hype-score{
@@ -89,15 +97,16 @@ table .user-score{
   text-align: center;
   margin-left: 15px;
 }
-.score-number{
+.tip-number{
   color: white;
-  font-size: 45px;
+  font-size: 18px;
   margin: 0
 }
 
-.score-text{
+.tip-text{
   color: white;
-  margin-top: 0
+  margin-top: 0;
+  font-size: 12px;
 }
 
 .profile-header img{
@@ -114,6 +123,7 @@ table .user-score{
 
 .tab{
   border-left: 1px solid lightgray;
+
 /*  border-right: 1px solid lightgray;
 */  padding: 22px 16px;
 }
@@ -138,4 +148,17 @@ table .user-score{
   background-color: white;
   border-radius: 20px;
   width: 300px;
+}
+
+.more-info-section{
+  padding-bottom: 20px;
+}
+
+.artist-info{
+  margin-top: 20px;
+  width: 50%;
+}
+
+.cancel_account{
+  margin-bottom: 20px;
 }

@@ -25,7 +25,6 @@
   background-color: #D91E18;
   padding: 8px 20px 8px 20px;
   border: 0;
-  padding-top: 200px;
 }
 
 
@@ -59,3 +58,10 @@
   margin-bottom: 20px
 }
 
+MODALS
+
+.close{
+  color: white !important;
+  background-color: #D91E18 !important;
+  border-radius: 3px !important;
+}
