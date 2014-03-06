@@ -1,3 +1,22 @@
+/*HOMEPAGE*/
+p, h1, h2, h3, h4, h5 {
+    font-family: 'Open Sans', sans-serif;
+}
+
+
+
+.main_text{
+  width: 70%;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 50px;
+  display: block;
+  color: white;
+  position: relative;
+  bottom: 450px;
+  font-family: 'Open Sans', sans-serif;
+}
+
 /* CONTAINER */
 .container{
   margin:0 auto;
@@ -41,10 +60,14 @@
   border: 2px solid white;
   display:inline-block;
   font-size: 17px;
+  margin: 0 auto;
 
 }
 
-#my_image { position: relative; }
+#my_image {
+  position: relative;
+  height: 500px;
+}
 
 /*FORMS*/
 
@@ -57,5 +80,14 @@
 }
 .form-label{
   margin-bottom: 20px
+}
+
+.header-image{
+  height: 600px;
+  width: 100%;
+}
+
+.card-container{
+  padding-top: 50px;
 }
 
