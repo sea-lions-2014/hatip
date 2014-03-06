@@ -16,7 +16,7 @@ class HypeBuddy
   def current_hype
     gravity = 0.3
     age = (Time.now - @post.created_at) / 3600
-    score = raw_hype_score / age ** gravity
+    score = (raw_hype_score / age ** gravity) * 10
     score.round
   end
 

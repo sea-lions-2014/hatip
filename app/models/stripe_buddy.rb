@@ -5,7 +5,7 @@ class StripeBuddy
     token = params[:stripe_token][:id]
     email = params[:email]
     amount = 100
-    user_id = params[:id]
+    post_id = params[:id]
     # Create the charge on Stripe's servers - this will charge the user's card
     begin
       charge = Stripe::Charge.create(
@@ -14,7 +14,7 @@ class StripeBuddy
         :card => token,
         :description => email
       )
-      User.find(user_id).tips.create!(fiat_cents: amount, stripe_email: email, stripe_token: token)
+      Post.find(post_id).user.tips.create!(fiat_cents: amount, stripe_email: email, stripe_token: token)
       return "success"
     rescue Stripe::CardError => e
       return "payment failed"

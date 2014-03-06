@@ -11,6 +11,7 @@
       <span class="hype-score-card"><%= post.current_hype %></span>
     </span>
     <div class="post-card-user-location">
-      <%= post.user.city if post.user.city; post.user.state if post.user.state; post.user.country if post. user.country %>
+      <%= post.display_location %>
+
     </div>
 </div>

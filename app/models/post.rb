@@ -28,6 +28,11 @@
     end
   end
 
+  def display_location
+    user = self.user
+    [user.city, user.state, user.country].delete_if(&:blank?).first
+  end
+
   def post_embed
     YoutubeBuddy.new(youtube_url).iframe_html
   end
@@ -79,4 +84,9 @@
       errors.add(:youtube_url, "is not valid")
     end
   end
+
+  def self.organize_by_hype
+   Post.all.sort_by(&:hype).reverse
+  end
+
 end

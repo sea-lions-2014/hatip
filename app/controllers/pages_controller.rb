@@ -1,8 +1,10 @@
+require 'will_paginate/array'
+
 class PagesController < ApplicationController
   before_filter :redirect_if_empty_profile
 
   def index
-	@posts = Post.paginate(:page => params[:page], :per_page => 8)
+	@posts = Post.organize_by_hype.paginate(:page => params[:page], :per_page => 8)
   end
 
   def explore
