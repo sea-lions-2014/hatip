@@ -14,27 +14,33 @@
 ActiveRecord::Schema.define(:version => 20140228232337) do
 
   create_table "posts", :force => true do |t|
-    t.string   "title"
+    t.text     "title"
     t.string   "youtube_url"
-    t.string   "description"
-    t.integer  "hype"
+    t.text     "description"
+    t.string   "category"
+    t.integer  "hype",        :default => 0, :null => false
+    t.integer  "fb_likes",    :default => 0, :null => false
     t.integer  "user_id"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",                 :null => false
+    t.datetime "updated_at",                 :null => false
   end
 
   create_table "tips", :force => true do |t|
-    t.integer "user_id"
-    t.string  "coinbase_id"
-    t.string  "post_id"
-    t.string  "fiat_iso"
-    t.integer "fiat_cents"
-    t.string  "crypto_iso"
-    t.integer "crypto_cents"
-    t.string  "tx_hash"
-    t.string  "tx_id"
-    t.string  "status"
-    t.string  "receive_address"
+    t.integer  "user_id"
+    t.string   "coinbase_id"
+    t.string   "post_id"
+    t.string   "fiat_iso"
+    t.integer  "fiat_cents"
+    t.string   "crypto_iso"
+    t.integer  "crypto_cents"
+    t.string   "tx_hash"
+    t.string   "tx_id"
+    t.string   "status"
+    t.string   "receive_address"
+    t.string   "stripe_email"
+    t.string   "stripe_token"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
   end
 
   create_table "users", :force => true do |t|
@@ -56,9 +62,9 @@ ActiveRecord::Schema.define(:version => 20140228232337) do
     t.string   "city"
     t.string   "state"
     t.string   "country"
-    t.string   "category"
     t.string   "tagline"
     t.text     "story"
+    t.string   "category"
     t.integer  "hype_score",             :default => 0
     t.string   "profile_image_url",      :default => "/assets/avatar.png"
     t.string   "featured_youtube_url"

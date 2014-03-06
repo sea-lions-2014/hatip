@@ -41,11 +41,4 @@ class UsersController < ApplicationController
     user.save ? verified = "User has been verified" : verified = "There was an error"
     render json: {verified: verified}
   end
-
-
-
-
-
-
-
 end

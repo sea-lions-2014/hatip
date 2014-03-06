@@ -1,11 +1,27 @@
-/*PROFILE HEADER*/
-
 .profile-header {
   padding-top: 10px;
   background-color: white;
   height: 200px;
 }
 
+.profile-tabs {
+  border-top: 1px solid lightgray;
+  border-bottom: 1px solid lightgray;
+  padding: 20px 0;
+  background-color: #fafafa;
+  color: #0A8FD5;
+}
+
+.tab{
+  border-right: 1px solid lightgray;
+  border-left: 1px solid lightgray;
+  padding: 22px 16px;
+}
+
+.tab-last{
+  border-right: 1px solid lightgray;
+
+}
 
 .profile-table {
   width: 100%;
@@ -13,15 +29,15 @@
 
 }
 
-.profile-table  .image {
+table .image {
   width: 15%;
 }
 
-.profile-table  .user-info{
+table .user-info{
   width: 70%;
 }
 
-.profile-table  .user-score{
+table .user-score{
   width: 15%;
 }
 
@@ -62,6 +78,7 @@
 }
 
 
+
 .hype-score{
   background-color: #0A8FD5;
   width: 75%;
@@ -85,25 +102,21 @@
   border-radius: 50%
 }
 
-/*PROFILE TABS*/
-
-.profile-tabs {
-  border-top: 1px solid lightgray;
-  border-bottom: 1px solid lightgray;
-  padding: 20px 0;
-  background-color: #fafafa;
-  color: #0A8FD5;
+.container{
+  margin:0 auto;
+  width: 1000px;
+  padding-left: 50px;
+  padding-right: 50px;
 }
+
 
 .tab{
   border-left: 1px solid lightgray;
-/*  border-right: 1px solid lightgray;
-*/  padding: 22px 16px;
+  padding: 22px 16px;
 }
 
 .tab-last{
   border-right: 1px solid lightgray;
-
 }
 
 /*PROFILE SECTIONS*/
@@ -122,4 +135,3 @@
   border-radius: 20px;
   width: 300px;
 }
-

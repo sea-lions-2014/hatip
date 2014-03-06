@@ -27,9 +27,9 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.string  :city
       t.string  :state
       t.string  :country
-      t.string  :category
       t.string  :tagline
       t.text    :story
+      t.string  :category
       t.integer :hype_score, default: 0
       t.string  :profile_image_url, default: "/assets/avatar.png"
       t.string  :featured_youtube_url

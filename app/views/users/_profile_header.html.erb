@@ -4,7 +4,6 @@
     <table class="profile-table" cellspacing="0" cellpadding="0">
     <tr>
       <td class="image">
-
         <img src="<%= @user.profile_image_url if @user.profile_image_url%>" height="125" width="125" />
       </td>
       <td class="user-info">
@@ -17,7 +16,7 @@
       </td>
       <td class="user-score">
         <div class="hype-score">
-          <p class="score-number"><%= @user.get_hype_score %></p>
+          <p class="score-number"><%#= @user.current_hype %></p>
           <p class="score-text">HYPE SCORE</p>
         </div>
       </td>

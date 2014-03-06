@@ -1,11 +1,13 @@
 $(function(){
   CardMaster.bindEventListeners();
+  $('#stripeButton').click(StripeMaster.stripeLaunch)
 });
 
 // CardMaster is the controller to handle the card and card modal creation
 var CardMaster = {
+
   bindEventListeners: function(){
-    $('.post-card').click(CardMaster.launchModal);
+    $(document.body).on('click', '.post-card', CardMaster.launchModal);
     $('#cardModal').on('hidden.bs.modal', CardMaster.stopVideo);
   },
 
@@ -62,4 +64,33 @@ CardModal.prototype.updateModalElements = function() {
   $('.tip-button').html(this.dataCache.payment_button);
   $('.video-description').text(this.dataCache.description);
   $('.fb-like-button').attr("src", this.dataCache.facebook_like_url);
+  $('#stripeButton').attr("data-id", this.dataCache.artist_id)
 }
+
+var StripeMaster = {
+
+  setHandler: function() {
+    StripeMaster.handler = StripeCheckout.configure({
+    key: 'pk_test_6pRNASCoBOKtIshFeQd4XMUh',
+    // image: '/square-image.png',
+    token: function(token, args) {
+      $.post('/callback/stripe/' + user_id, { stripe_token: token, amount: StripeMaster.amount });
+      // Use the token to create the charge with a server-side script.
+      // You can access the token ID with `token.id`
+    }
+  });
+  },
+
+  stripeLaunch: function(e) {
+    StripeMaster.setHandler();
+    user_id = e.currentTarget.dataset.id;
+    StripeMaster.handler.open({
+      name: 'HatTip',
+      description: 'Tip $1.00',
+      amount: 100
+    });
+    e.preventDefault();
+  }
+}
+
+
