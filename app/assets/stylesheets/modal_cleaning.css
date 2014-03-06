@@ -1,0 +1,22 @@
+.tip-button{
+	width:45%;
+	margin-right: 0;
+	display: inline-block;
+}
+
+#stripeButton {
+	position: relative;
+	top: -23px;
+	display:inline;
+	height:40px;
+	width:81px;
+	border-radius: 4px;
+    background-color: #4D6BC4;
+    color: white;
+    margin-top: -1000px;
+    border: none;
+}
+
+.fb-like-button {
+	width: 100%;
+}

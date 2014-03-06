@@ -148,7 +148,7 @@ html body {
 .card-modal-dialog {
   width: 80%;
   min-width: 800px;
-  max-width: 1000px;
+  max-width: 880px;
 }
 
 .card-modal-description {
@@ -171,10 +171,4 @@ html body {
 
 .card-modal-title {
   width: 300px;
-}
-
-.fb-like-button{
-  position: absolute;
-  right: 10px;
-  width: 50px;
 }
