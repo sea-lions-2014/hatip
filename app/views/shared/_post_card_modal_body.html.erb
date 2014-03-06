@@ -1,23 +1,30 @@
 <div class="modal-body card-modal-body">
   <iframe class="modal-video" id="cardVideo" width="600" height="400" src="" frameborder="0" scrolling="no"> </iframe>
   <div class="modal-description card-modal-description">
+    <div class="modal-text-holder">
 
 
-    <h2 class="modal-title card-modal-title" id="cardModalLabel">Modal title</h2>
+      <h2 class="modal-title card-modal-title" id="cardModalLabel">Modal title</h2>
 
       <h3><a id="cardModalArtistName" href=""></a></h3>
 
-    <p class="video-description"></p>
-    <p>Love the Show?<br/>Show the Love!</p>
-
-    <div class="tip-button">
+      <div class="video-description"></div>
     </div>
-    <button id="coinbaseButton">
-      <a href='#' class='my-custom-link'>Bitcoin</a>
-    </button>
-    <%= render "shared/stripe_form" %>
+    <div class="tip-border">
+    <div class="love-message">
+      Love the Show?<br/>Show the Love!
+    </div>
+      <div class="tip-button">
+      </div>
+      <div class="tip-button-holder">
+        <button id="coinbaseButton" class="blue-tip-button">
+          <a href='#' class='my-custom-link'>Bitcoin</a>
+        </button>
+        <%= render "shared/stripe_form" %>
+      </div>
       <div class="like-button">
         <iframe src="" scrolling="no" frameborder="0" style="border:none; overflow:hidden; height:25px;" allowTransparency="true" class="fb-like-button"></iframe>
       </div>
+    </div>
   </div>
 </div>

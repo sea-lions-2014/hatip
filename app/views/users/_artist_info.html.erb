@@ -1,6 +1,10 @@
 <div class='artist_info'>
-  <h2 class="hometown">Hometown</h2>
-  <p><%= user.city %>, <%= user.state %></p>
-  <h3>Background Story</h3>
-  <p><%= user.story %></p>
+  <% if user.city.length > 0 %>
+    <h2 class="hometown">Hometown</h2>
+    <p class="more-info-section"><%= user.city %>, <%= user.state %></p>
+  <% end %>
+  <% if user.story.length > 0 %>
+    <h3>Background Story</h3>
+    <p class="more-info-section"><%= user.story %></p>
+  <% end %>
 </div>

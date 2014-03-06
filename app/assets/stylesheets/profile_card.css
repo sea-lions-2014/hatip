@@ -22,7 +22,6 @@
   margin: 0 2px 15px;
   padding: 15px;
   padding-bottom: 5px;
-
 }
 
 .profile-post-card:hover {
@@ -39,38 +38,4 @@
   font: 12px/18px Arial, sans-serif;
   color: #333;
   margin: 0;
-}
-
-#postModal {
-  margin-top: 150px;
-}
-
-#postModal > div {
-  -webkit-transform: translate(0, 0);
-}
-
-.filter{
-  color: #0A8FD5;
-  font-weight: bold;
-  padding-left: 10px;
-}
-
-
-#postModal input     {
-  display: block;
-  width: 280px;
-}
-
-#postModal label {
-  display: block;
-}
-
-#postModal .close {
-  float: right;
-}
-
-#postModal .btn {
-  float: right;
-  position: relative;
-  top: -20px;
 }
