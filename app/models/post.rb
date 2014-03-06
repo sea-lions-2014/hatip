@@ -1,4 +1,4 @@
-class Post < ActiveRecord::Base
+ class Post < ActiveRecord::Base
 
   attr_accessible :youtube_url, :title, :description, :hype, :fb_likes, :category
 
@@ -26,6 +26,11 @@ class Post < ActiveRecord::Base
     else
       scoped
     end
+  end
+
+  def display_location
+    user = self.user
+    [user.city, user.state, user.country].delete_if(&:blank?).first
   end
 
   def post_embed
@@ -79,4 +84,9 @@ class Post < ActiveRecord::Base
       errors.add(:youtube_url, "is not valid")
     end
   end
+
+  def self.organize_by_hype
+   Post.all.sort_by(&:hype).reverse
+  end
+
 end

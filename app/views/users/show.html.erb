@@ -12,7 +12,14 @@
 <div class="profile-content">
   <div class="container display-profile-tab">
     <%= render partial: 'users/featured_video' %>
-    <div class="tip-hat" data-id="<%= @user.id %>"></div>
+    <!-- <div class="tip-hat" data-id="<%= @user.id %>">
+      <div class="tip-button-holder">
+        <button id="coinbaseButton" class="blue-tip-button">
+          <a href='#' class='my-custom-link'>Bitcoin</a>
+        </button>
+        <%#= render "shared/stripe_form" %>
+      </div>
+    </div> -->
     <%= render partial: 'posts/artist_posts' %>
     <%= render partial: 'users/artist_info', locals: {user: @user} %>
     <% if may_edit_profile %>

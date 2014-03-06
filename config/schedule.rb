@@ -18,6 +18,6 @@
 # end
 
 # Learn more: http://github.com/javan/whenever
-every 1.days do
-  runner "FacebookBuddy.update_post_likes"
+every 2.minutes do
+  rake "hype:update"
 end
