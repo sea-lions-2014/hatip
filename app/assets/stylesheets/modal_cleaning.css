@@ -17,6 +17,10 @@
     border: none;
 }
 
+#stripeButton:hover {
+	background-color: #2a6496;
+}
+
 .fb-like-button {
 	width: 100%;
 }
