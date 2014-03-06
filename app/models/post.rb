@@ -57,8 +57,9 @@ class Post < ActiveRecord::Base
       name: "Tip for #{ self.user.name }",
       custom: "{ user_id: #{ self.user.id }, post_id: #{ self.id } }"
     }
-
-    tip_button_html = CoinbaseBuddy.new(tip_button_options).iframe_embed_html
+    cb_button = CoinbaseBuddy.new(tip_button_options).button
+    tip_button_html = cb_button.embed_html
+    tip_button_code = cb_button.button.code
 
     {
       artist_name: self.user.name,
@@ -69,6 +70,7 @@ class Post < ActiveRecord::Base
       artist_page_url: Rails.application.routes.url_helpers.user_path(self.user),
       payment_button: tip_button_html,
       facebook_like_url: facebook_like_url,
+      button_code: tip_button_code
     }
   end
 
