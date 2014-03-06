@@ -20,6 +20,7 @@ class User < ActiveRecord::Base
   end
 
   def has_invalid_video
+    return true if self.featured_youtube_url.blank?
     !YoutubeBuddy.new(self.featured_youtube_url).valid_video?
   end
 
