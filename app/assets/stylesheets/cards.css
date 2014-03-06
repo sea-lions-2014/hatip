@@ -8,6 +8,7 @@ html body {
 .main-image{
   width: 100%;
   margin-bottom: -40px;
+  z-index: -1;
 }
 
 #card-wrapper {
@@ -81,7 +82,7 @@ html body {
   margin: -150px 10px 0 0;
   height: 80px;
   position: relative;
-  z-index: 100;
+  z-index: -.5;
   /*opacity: 0.8;*/
 }
 
@@ -148,7 +149,7 @@ html body {
 .card-modal-dialog {
   width: 80%;
   min-width: 800px;
-  max-width: 1000px;
+  max-width: 880px;
 }
 
 .card-modal-description {
@@ -170,11 +171,6 @@ html body {
 }
 
 .card-modal-title {
-  width: 300px;
+  width: 100%;
 }
 
-.fb-like-button{
-  position: absolute;
-  right: 10px;
-  width: 50px;
-}

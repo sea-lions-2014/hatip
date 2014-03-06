@@ -1,5 +1,9 @@
 <div class="profile-post-card" data-id="<%= post.id %> " data-embed="<%= post.post_youtube_url %>">
-  <img src="<%= post.thumbnail_url %>">
-  <div class="artist-name"><%= post.user.stage_name %></div>
-  <div clas="post-title"><%= post.title %></div>
+  <%= image_tag post.thumbnail_url %>
+  <div class="artist-name">
+    <%= post.user.stage_name %>
+  </div>
+  <div clas="post-title">
+    <%= post.title %>
+  </div>
 </div>

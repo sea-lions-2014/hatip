@@ -1,41 +1,16 @@
 class Tip < ActiveRecord::Base
 	attr_accessible :coinbase_id, :post_id, :fiat_iso, :fiat_cents, :crypto_iso, :crypto_cents, :tx_hash, :tx_id, :status, :receive_address, :stripe_email, :stripe_token
 	belongs_to :user
-	validates :tx_hash, length: { is: 64 }
+	# validates :tx_hash, length: { is: 64 }
 
   def build_from_callback(data)
-    order = data['order']
-    custom_info = get_custom_info(order)
-    user = User.find(custom_info[:user_id])
-    tip_info = {
-          coinbase_id:       order['id'],
-          post_id:           custom_info[:post_id],
-          fiat_iso:          order['total_native']['currency_iso'],
-          fiat_cents:        order['total_native']['cents'],
-          crypto_iso:        order['total_btc']['currency_iso'],
-          crypto_cents:      order['total_btc']['cents'],
-          tx_hash:           order['transaction']['hash'],
-          tx_id:             order['transaction']['id'],
-          status:            order['status'],
-          receive_address:   order['receive_address']
-        }
+    tip_info = CoinbaseBuddy.parse_callback(data)
     user.tips.build(tip_info)
   end
 
- private
-
-  def get_custom_info(order)
-    unless invalid_custom_params?(order['custom'])
-      eval(order['custom']) # creates hash from string encoded custom parameter
-    else
-      raise "callback data does not match expected Regexp"
-    end
-  end
-
-  # Validate that string is encoded hash of params and not malicious code
-
-  def invalid_custom_params?(order)
-    /{ *\w{2,10}: \d+, *\w{2,10}: \d+ }/.match(order['custom']).nil?
+  def self.build_stripe_tip(data)
+    puts "building tip"
+    StripeBuddy.build_tip(data)
   end
 end
 
