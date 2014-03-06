@@ -5,6 +5,7 @@ class TipsController < ApplicationController
       render json: { success: "success" }
     else
       render json: { error: "error" }
+    end
   end
 
   def create_stripe_tip

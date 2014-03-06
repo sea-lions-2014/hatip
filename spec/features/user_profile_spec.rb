@@ -22,13 +22,6 @@ describe 'UserProfile', :js => true  do
     it "should not display an edit button if the profile does not belong to the user" do
       page.should_not have_selector 'button', text: "Edit Profile"
     end
-
-    it "should display a user's profile image" do
-      # page.should have_css("img[src='#{user.profile_image_url}']")
-      #requires additional conversation about saving/uploading non fbook images
-      pending
-    end
-
   end
 end
 

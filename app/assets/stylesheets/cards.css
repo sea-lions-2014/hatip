@@ -8,6 +8,11 @@ html body {
 .main-image{
   width: 100%;
   margin-bottom: -40px;
+  z-index: -1;
+}
+
+.main-image img {
+  height: 100%;
 }
 
 #card-wrapper {

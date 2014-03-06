@@ -17,7 +17,7 @@ describe 'Sign In Page' do
   end
 
   it "should redirect to facebook when sign in with facebook is clicked" do
-    # click_link('fb-image')
-    # expect(current_path).to eq(user_omniauth_authorize_path)
+    click_link('fb-image')
+    expect(current_path).to eq(user_omniauth_authorize_path)
   end
 end

@@ -14,16 +14,12 @@ describe UsersController do
       expect(user.stage_name).to eq "New Show"
     end
     it "should not update a user's profile with invalid params" do
-      # user.update_attributes(stage_name: "")
-      # expect(user.valid?).to eq false
-      #currently updates with invalid params except in Heroku version
-      pending
+      user.update_attributes(stage_name: "")
+      expect(user.valid?).to eq false
     end
     it "should render the errors partial on attempt to save invalid params" do
-      # user.update_attributes(stage_name: "")
-      # response.should render_template(partial: "update_form_error")
-      #currently does not render errors except in Heroku version
-      pending
+      user.update_attributes(stage_name: "")
+      response.should render_template(partial: "update_form_error")
     end
   end
   context 'destroy' do

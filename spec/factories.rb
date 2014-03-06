@@ -1,5 +1,18 @@
 
   FactoryGirl.define do
+
+    urls = [
+      "http://www.youtube.com/watch?v=l4nvzB7DT4M",
+      "http://www.youtube.com/watch?v=uue6oJ_jDns",
+      "http://www.youtube.com/watch?v=X_xNbtlgiMI",
+      "http://www.youtube.com/watch?v=ldsYjFRsRU8",
+      "http://www.youtube.com/watch?v=-Ow8Gut-4XY",
+      "http://www.youtube.com/watch?v=83OCgca9N3k",
+      "http://www.youtube.com/watch?v=Pbdewwtm70w",
+      "http://www.youtube.com/watch?v=GNZBSZD16cY",
+      "http://www.youtube.com/watch?v=y7_ZrShOtEE"
+    ]
+
     factory :user do
       email { Faker::Internet.email }
       first_name { Faker::Name.first_name }
@@ -15,7 +28,7 @@
 
       factory :post do
         title { Faker::Lorem.sentence }
-        youtube_url { Faker::Internet.url }
+        youtube_url urls.sample
         description { Faker::Lorem.sentence }
         hype 4
         user

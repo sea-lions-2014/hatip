@@ -15,6 +15,7 @@ Hatip::Application.routes.draw do
     get :autocomplete_tag_name, :on => :collection
   end
 
+  resources :about, only: [:index]
   resources :posts, only: [:index]
   resources :tips, :only => [:create]
 

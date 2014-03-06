@@ -10,7 +10,6 @@ describe User do
   it { should have_db_column :city }
   it { should have_db_column :state }
   it { should have_db_column :country }
-  it { should have_db_column :category }
   it { should have_db_column :tagline }
   it { should have_db_column :story }
   it { should have_db_column :profile_image_url }
