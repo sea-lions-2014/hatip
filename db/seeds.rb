@@ -133,7 +133,7 @@ profile_image_urls = [
     tagline: Faker::Lorem.sentence,
     city: Faker::Address.city,
     state: Faker::Address.state,
-    country: Faker::Address.country,
+    country: Faker::Address.country.slice(0,15),
     story: Faker::Lorem.paragraph,
     featured_youtube_url: urls.sample,
     profile_image_url: profile_image_urls.sample
