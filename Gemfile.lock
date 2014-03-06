@@ -337,6 +337,6 @@ DEPENDENCIES
   tire
   trollop (~> 2.0)
   uglifier (>= 1.0.3)
-  will_paginate
   whenever
+  will_paginate
   youtube_it (~> 2.4.0)
