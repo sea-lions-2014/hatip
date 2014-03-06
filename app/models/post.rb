@@ -1,4 +1,4 @@
-class Post < ActiveRecord::Base
+ class Post < ActiveRecord::Base
 
   attr_accessible :youtube_url, :title, :description, :hype, :fb_likes, :category
 

@@ -18,13 +18,10 @@ class FacebookBuddy
     URI.encode("https://api.facebook.com/method/fql.query?query=select total_count,like_count,comment_count,share_count,click_count from link_stat where url='#{post_url}'&format=json")
   end
 
-  def self.update_post_likes
-    Post.all.each do |post|
-      response = HTTParty.get(like_count_path(post.id))
-      like_count = response.parsed_response.first['like_count']
-      post.update_attributes(fb_likes: like_count)
-      sleep 0.1
-    end
+  def self.update_post_likes(post)
+    response = HTTParty.get(like_count_path(post.id))
+    like_count = response.parsed_response.first['like_count']
+    post.update_attributes(fb_likes: like_count)
   end
 
 end

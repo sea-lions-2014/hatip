@@ -3,10 +3,6 @@ class HypeBuddy
 		@post = post
 	end
 
-	def add_tip_hype
-		@post.update_attributes(hype_score: ( @post.hype + get_dollars.ceil ))
-	end
-
 	def get_dollars
 		@fiat_cents / 100
 	end
@@ -26,5 +22,10 @@ class HypeBuddy
 
   def calculate_total_tips
     Tip.where(user_id: @post.user.id).sum(:fiat_cents) / 100
+  end
+
+  def update_hype_score
+    FacebookBuddy.update_post_likes(@post)
+    @post.update_attributes(hype: current_hype)
   end
 end
