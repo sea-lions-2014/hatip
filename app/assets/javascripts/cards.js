@@ -7,7 +7,7 @@ $(function(){
 var CardMaster = {
 
   bindEventListeners: function(){
-    $('.post-card').click(CardMaster.launchModal);
+    $(document.body).on('click', '.post-card', CardMaster.launchModal);
     $('#cardModal').on('hidden.bs.modal', CardMaster.stopVideo);
   },
 
@@ -56,7 +56,14 @@ CardModal.prototype.getDataFromServer = function() {
   });
 }
 
+CardModal.prototype.launchCoinbase = function() {
+
+  $(document).trigger('coinbase_show_modal', data.button_code);
+  return false;
+}
+
 CardModal.prototype.updateModalElements = function() {
+  data = this.dataCache;
   $('#cardModalLabel').text(this.dataCache.title);
   $('#cardModalArtistName').text(this.dataCache.artist_name);
   $('#cardModalArtistName').attr("href", this.dataCache.artist_page_url);
@@ -64,7 +71,15 @@ CardModal.prototype.updateModalElements = function() {
   $('.tip-button').html(this.dataCache.payment_button);
   $('.video-description').text(this.dataCache.description);
   $('.fb-like-button').attr("src", this.dataCache.facebook_like_url);
-  $('#stripeButton').attr("data-id", this.dataCache.artist_id)
+  $('#stripeButton').attr("data-id", this.dataCache.artist_id);
+
+// Dirty, will change this on future rewrite of the code.
+  $('.my-custom-link').click(this.launchCoinbase);
+
+  $(document).on('coinbase_payment_complete', function(event, code){
+    console.log("Payment completed for button "+code);
+    window.location = "/confirmation.html";
+  });
 }
 
 var StripeMaster = {
@@ -92,5 +107,3 @@ var StripeMaster = {
     e.preventDefault();
   }
 }
-
-

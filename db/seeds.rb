@@ -4,8 +4,6 @@ require 'trollop'
 require 'youtube_it'
 require 'faker'
 
-
-
 # Set DEVELOPER_KEY to the "API key" value from the "Access" tab of the
 # Google Developers Console <https://cloud.google.com/console>
 # Please ensure that you have enabled the YouTube Data API for your project.
@@ -135,7 +133,7 @@ profile_image_urls = [
     tagline: Faker::Lorem.sentence,
     city: Faker::Address.city,
     state: Faker::Address.state,
-    country: Faker::Address.country,
+    country: Faker::Address.country.slice(0,15),
     story: Faker::Lorem.paragraph,
     featured_youtube_url: urls.sample,
     profile_image_url: profile_image_urls.sample
@@ -170,7 +168,7 @@ User.all.each do |user|
             user.posts.create(
               title: title,
               youtube_url: "http://www.youtube.com/watch?v=" + id,
-              description: description,
+              description: description.split(' ').first(15).join(' '),
               hype: rand(1..100),
               category: categories.sample
               )

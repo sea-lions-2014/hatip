@@ -3,6 +3,7 @@
 .devise-form{
   margin-left: 150px;
   padding-top: 20px;
+  width: 900px;
 }
 
 .devise-title{
@@ -41,7 +42,7 @@
 
 .line-center{
     margin:0;
-    padding:0 0px;
+    padding:10px 0px;
     background:#fff;
     display:inline-block;
     width: 50px;
@@ -67,3 +68,9 @@ p.or-fb:after{
 .fbbutton{
   padding-left: 0px;
 }
+
+.fbsignup{
+  padding-left: 35px;
+}
+
+

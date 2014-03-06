@@ -2,7 +2,7 @@
 <div class="profile-tabs">
   <div class="container">
     <span class="tab"> <%= link_to "Videos", "#", id: "show-posts" %> </span>
-    <span class="tab"> <%= link_to "About #{@user.stage_name}", "#", id: "more-info"%> </span>
+    <span class="tab tab-last"> <%= link_to "About #{@user.stage_name}", "#", id: "more-info"%> </span>
     <% if may_edit_profile %>
       <span class="tab tab-last"> <a href="#", id="new_post_button">Create Post</a> </span>
     <% end %>
@@ -18,7 +18,6 @@
     <% if may_edit_profile %>
       <%= render partial: "new_post_modal" %>
     <% end %>
-
   </div>
 </div>
 
