@@ -8,6 +8,7 @@ html body {
 .main-image{
   width: 100%;
   margin-bottom: -40px;
+  z-index: -1;
 }
 
 #card-wrapper {
@@ -81,7 +82,7 @@ html body {
   margin: -150px 10px 0 0;
   height: 80px;
   position: relative;
-  z-index: 100;
+  z-index: -.5;
   /*opacity: 0.8;*/
 }
 
@@ -172,3 +173,4 @@ html body {
 .card-modal-title {
   width: 100%;
 }
+
