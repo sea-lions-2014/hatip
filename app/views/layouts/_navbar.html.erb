@@ -13,10 +13,10 @@
   </li>
   <% if current_user %>
     <li class="has-submenu pull-right pull-right-last">
-      <% if current_user.stage_name.length > 0 %>
-        <%= link_to "Welcome " + current_user.stage_name, user_path(current_user) %>
+      <% if current_user.stage_name %>
+        <%= link_to current_user.stage_name, user_path(current_user) %>
       <% else %>
-        <%= link_to "Welcome", user_path(current_user) %>
+        <%= link_to "New User", user_path(current_user) %>
       <% end %>
       <ul class="sub-menu">
          <li><%= link_to "Edit Profile Information", edit_user_path(current_user) %></li>
